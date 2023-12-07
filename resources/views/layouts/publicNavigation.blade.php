@@ -39,7 +39,7 @@
                             <button class="btn" type="submit">
                                 <i class="material-icons">search</i>
                             </button>
-                            <input type="text" class="form-control" placeholder="Search" />
+                            <input type="text" class="form-control" placeholder="Buscar" />
                         </form>
 
                         <ul class="nav navbar-nav ml-auto d-none d-md-flex">
@@ -210,27 +210,26 @@
                                         class=" d-flex align-items-center nav-link dropdown-toggle"
                                         data-toggle="dropdown" data-caret="false">
                                         <span class="mr-2 d-flex-inline">
-                                            <span class="text-light">Usuario.</span>
+                                            <span class="text-light">Usuario</span>
                                         </span>
-                                        <img src="assets/images/avatar/demi.png" class="rounded-circle"
-                                            width="32" alt="Frontted" />
+                                        <img src="{{ asset('/ext/images/user.png') }}" class="rounded-circle"
+                                            width="25" alt="Frontted" />
                                     </a>
                                     <div id="account_menu" class="dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-item-text dropdown-item-text--lh">
-                                            <div><strong>Adrian Demian</strong></div>
-                                            <div class="text-muted">@adriandemian</div>
+                                            <div><strong>Usuario</strong></div>
+                                            <div class="text-muted">@usuario</div>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="fixed-dashboard.html"><i
-                                                class="material-icons">dvr</i> Dashboard</a>
+                                                class="material-icons">dvr</i> Panel</a>
                                         <a class="dropdown-item" href="fixed-profile.html"><i
-                                                class="material-icons">account_circle</i> My
-                                            profile</a>
+                                                class="material-icons">account_circle</i> Mi perfil</a>
                                         <a class="dropdown-item" href="fixed-edit-account.html"><i
-                                                class="material-icons">edit</i> Edit account</a>
+                                                class="material-icons">edit</i> Editar Cuenta</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="fixed-login.html"><i
-                                                class="material-icons">exit_to_app</i> Logout</a>
+                                                class="material-icons">exit_to_app</i> Cerrar Sesión</a>
                                     </div>
                             </li>
                         </ul>
@@ -253,91 +252,76 @@
 
                         <div class="navbar-collapse collapse" id="navbarsExample03">
                             <ul class="nav navbar-nav">
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown {{ request()->is('/') ? 'active' : '' }}">
                                     <a href="#" class="nav-link dropdown-toggle"
                                         data-toggle="dropdown">Inicio</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="fixed-dashboard.html">Default</a>
-                                        <a class="dropdown-item" href="fixed-analytics.html">Analytics</a>
-                                        <a class="dropdown-item" href="fixed-staff.html">CRM/Staff</a>
-                                        <a class="dropdown-item" href="fixed-ecommerce.html">E-commerce</a>
+                                        <a class="dropdown-item" href="{{ url('./') }}">Inicio</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle"
+                                    <a href="{{ url('/citas') }}" class="nav-link dropdown-toggle"
                                         data-toggle="dropdown">Citas</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="fixed-app-activities.html">Trello</a>
-                                        <a class="dropdown-item" href="fixed-app-trello.html">Trello</a>
-                                        <a class="dropdown-item" href="fixed-app-projects.html">Projects</a>
-                                        <a class="dropdown-item" href="fixed-app-fullcalendar.html">Event
-                                            Calendar</a>
-                                        <a class="dropdown-item" href="fixed-app-chat.html">Chat</a>
-                                        <a class="dropdown-item" href="fixed-app-email.html">Email</a>
+                                        <a class="dropdown-item" href="{{ url('/citas') }}">Cita</a>
+                                        <a class="dropdown-item" href="{{ url('/admin/citas') }}">Admin Cita</a>
                                         <div class="dropdown-divider"></div>
-                                        <div class="dropdown-header">Education</div>
-                                        <a class="dropdown-item" href="fixed-app-browse-courses.html">Browse
-                                            Courses</a>
-                                        <a class="dropdown-item" href="fixed-app-course.html">Course</a>
-                                        <a class="dropdown-item" href="fixed-app-lesson.html">Lesson</a>
+                                        <div class="dropdown-header">Titulo</div>
+                                        <a class="dropdown-item" href="{{ url('/citas/editar') }}">Editar Cita</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown active">
-                                    <a href="#" class="nav-link dropdown-toggle"
+                                <script>
+                                    function myFunction() {
+                                        var x = document.getElementById("myTopnav");
+
+                                    }
+                                </script>
+                                <li class="nav-item {{ request()->is('servicios*') ? 'active' : '' }}">
+                                    <a href="{{ url('/servicios') }}" class="nav-link dropdown-toggle"
                                         data-toggle="dropdown">Servicios</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="fixed-stories.html">Cotización</a>
-                                        <a class="dropdown-item" href="fixed-invoice.html">Invoice</a>
-                                        <a class="dropdown-item" href="fixed-pricing.html">Pricing</a>
-                                        <a class="dropdown-item" href="fixed-edit-account.html">Edit Account</a>
-                                        <a class="dropdown-item" href="fixed-profile.html">Profile</a>
-                                        <a class="dropdown-item" href="fixed-payout.html">Payout</a>
-                                        <a class="dropdown-item" href="login.html">Login</a>
-                                        <a class="dropdown-item" href="signup.html">Sign Up</a>
-                                        <a class="dropdown-item" href="fixed-digital-product.html">Digital
-                                            Product</a>
+                                        <a class="dropdown-item" href="{{ url('/servicios') }}">Servicio</a>
                                         <a class="dropdown-item d-flex align-items-center"
-                                            href="fixed-product-listing.html">
-                                            <span class="flex mr-2">Product Listing</span>
-                                            <span class="badge badge-primary">NEW</span>
+                                            href="{{ url('/servicios') }}">
+                                            <span class="flex mr-2">Servicio</span>
                                         </a>
                                         <a class="dropdown-item d-flex align-items-center active"
-                                            href="fixed-blank.html">
-                                            <span class="flex mr-2">Blank Page</span>
-                                            <span class="badge badge-primary">NEW</span>
+                                            href="{{ url('/servicios') }}">
+                                            <span class="flex mr-2">Servicio</span>
+                                            <span class="badge badge-primary">NUEVO</span>
                                         </a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown {{ request()->is('productos*') ? 'active' : '' }}">
                                     <a href="#" class="nav-link dropdown-toggle"
                                         data-toggle="dropdown">Productos</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="fixed-ui-buttons.html">Buttons</a>
-                                        <a class="dropdown-item" href="fixed-ui-alerts.html">Alerts</a>
-                                        <a class="dropdown-item" href="fixed-ui-avatars.html">Avatars</a>
-                                        <a class="dropdown-item" href="fixed-ui-modals.html">Modals</a>
-                                        <a class="dropdown-item" href="fixed-ui-charts.html">Charts</a>
-                                        <a class="dropdown-item" href="fixed-ui-icons.html">Icons</a>
-                                        <a class="dropdown-item" href="fixed-ui-forms.html">Forms</a>
-                                        <a class="dropdown-item" href="fixed-ui-range-sliders.html">Range
-                                            Sliders</a>
-                                        <a class="dropdown-item" href="fixed-ui-datetime.html">Time &amp; Date</a>
-                                        <a class="dropdown-item" href="fixed-ui-tables.html">Tables</a>
-                                        <a class="dropdown-item" href="fixed-ui-tabs.html">Tabs</a>
-                                        <a class="dropdown-item" href="fixed-ui-loaders.html">Loaders</a>
-                                        <a class="dropdown-item" href="fixed-ui-drag.html">Drag &amp; Drop</a>
-                                        <a class="dropdown-item" href="fixed-ui-pagination.html">Pagination</a>
-                                        <a class="dropdown-item" href="fixed-ui-vector-maps.html">Vector Maps</a>
+                                        <a class="dropdown-item" href="{{ url('/productos') }}">Producto 1</a>
+                                        <a class="dropdown-item" href="{{ url('/admin/productos') }}">Admin
+                                            Productos</a>
+                                        <a class="dropdown-item" href="{{ url('/admin/productos/editar') }}">Admin
+                                            Productos Editar</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown {{ request()->is('inventario*') ? 'active' : '' }}">
                                     <a href="#" class="nav-link dropdown-toggle"
-                                        data-toggle="dropdown">Cotizaciones</a>
+                                        data-toggle="dropdown">Inventario</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="blank.html">Default</a>
-                                        <a class="dropdown-item" href="fluid-blank.html">Full Width Navs</a>
-                                        <a class="dropdown-item active" href="fixed-blank.html">Fixed Navs</a>
-                                        <a class="dropdown-item" href="mini-blank.html">Mini Sidebar + Navs</a>
+                                        <a class="dropdown-item" href="{{ url('/admin/inventario') }}">Admin
+                                            Inventario</a>
+                                        <a class="dropdown-item" href="{{ url('/admin/inventario/editar') }}">Admin
+                                            Inventario Editar</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown {{ request()->is('inventario*') ? 'active' : '' }}">
+                                    <a href="#" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown">Autenticación</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ url('iniciarsesion') }}">Iniciar
+                                            Sesión</a>
+                                        <a class="dropdown-item" href="{{ url('registrarse') }}">Registrarse</a>
+                                        <a class="dropdown-item" href="{{ url('recuperar') }}">Recuperar
+                                            Contraseña</a>
                                     </div>
                                 </li>
                             </ul>
@@ -355,16 +339,16 @@
                                 <li class="breadcrumb-item">
                                     <a href="#"><i class="material-icons icon-20pt">home</i></a>
                                 </li>
-                                <li class="breadcrumb-item">Blank</li>
+                                <li class="breadcrumb-item">RUTA</li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Page
+                                    Pagina
                                 </li>
                             </ol>
                         </nav>
                         <!-- <h1 class="m-0">TITULO</h1>  -->
                     </div>
 
-                    <a href="" class="btn btn-success ml-1">Action</a>
+                    <!-- <a href="" class="btn btn-success ml-1">Action</a> -->
                 </div>
             </div>
             <div class="container page__container">

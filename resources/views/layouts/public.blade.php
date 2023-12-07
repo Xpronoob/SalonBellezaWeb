@@ -35,7 +35,7 @@
     <link type="text/css" href="{{ asset('assets/css/vendor-fontawesome-free.css') }}" rel="stylesheet" />
     <link type="text/css" href="{{ asset('assets/css/vendor-fontawesome-free.rtl.css') }}" rel="stylesheet" /> --}}
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {{-- <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133433427-1"></script>
     <script>
         window.dataLayer = window.dataLayer || []
@@ -45,7 +45,7 @@
         }
         gtag('js', new Date())
         gtag('config', 'UA-133433427-1')
-    </script>
+    </script> --}}
 
     <!-- Scripts -->
     @vite(['resources/assets/vendor/perfect-scrollbar.css', 'resources/assets/css/app.css', 'resources/assets/css/vendor-material-icons.css', 'resources/assets/css/vendor-fontawesome-free.css', 'resources/assets/vendor/jquery.min.js', 'resources/assets/vendor/popper.min.js', 'resources/assets/vendor/bootstrap.min.js', 'resources/assets/vendor/perfect-scrollbar.min.js', 'resources/assets/vendor/dom-factory.js', 'resources/assets/vendor/material-design-kit.js', 'resources/assets/js/toggle-check-all.js', 'resources/assets/js/check-selected-row.js', 'resources/assets/js/dropdown.js', 'resources/assets/js/sidebar-mini.js', 'resources/assets/js/app.js', 'resources/assets/js/app-settings.js'])
@@ -53,7 +53,7 @@
 
 
 @include('layouts.publicNavigation')
-<div class="loader loader-info"></div>
+
 {{ $slot }} <!-- VISTA -->
 
 @include('layouts.publicFooter')
