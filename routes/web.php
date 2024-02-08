@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,9 @@ Route::get('/citas', function () {
 Route::get('/citas/editar', function () {
     return view('users.appointmentEdit');
 });
+
+
+Route::resource('home2', ClienteController::class);
 
 
 Route::prefix('admin')->group(function () {
