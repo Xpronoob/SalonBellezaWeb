@@ -4,6 +4,10 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\SupplierController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +57,9 @@ Route::get('/citas/editar', function () {
 
 
 Route::resource('home2', ClienteController::class);
+
+Route::resource('home3', SupplierController::class);
+
 
 
 Route::prefix('admin')->group(function () {
