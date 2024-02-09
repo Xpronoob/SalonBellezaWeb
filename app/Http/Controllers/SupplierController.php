@@ -14,7 +14,7 @@ class SupplierController extends Controller
     {
         $suppliers = Supplier::all();
         return view('supplier.index', compact('suppliers'));
-        
+
     }
 
     /**
@@ -30,7 +30,25 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            //Creamos un objeto:
+            $suppliers = new Supplier;
+
+            //Datos del formulario:
+            $suppliers->provider_name = $request->input('provider_name');
+            $suppliers->contact_number = $request->input('contact_number');
+            $suppliers->email = $request->input('email');
+            $suppliers->address = $request->input('address');
+
+            //Guardamos los datos en la base de datos con el método save.
+            $suppliers->save();
+
+            //Redireccionamos hacia atrás:
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // Manejo de la excepción aquí
+            return redirect()->back()->with('error', 'Hubo un problema al guardar los datos.');
+        }
     }
 
     /**

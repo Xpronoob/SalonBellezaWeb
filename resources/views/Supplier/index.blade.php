@@ -6,6 +6,11 @@
     <div class="col-md-2"></div>
     <div class="col-md-8"> <br><br>
 
+     <!-- Button trigger modal -->
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+            Nuevo
+        </button><br><br>
+
         <div class="table-responsive">
             <table class="table">
                 <thead class="table-dark">
@@ -36,6 +41,7 @@
                 </tbody>
             </table>
         </div>
+        @include('Supplier.create')
     </div>
     <div class="col-md-2"></div>
 </div>

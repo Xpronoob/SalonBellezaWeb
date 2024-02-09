@@ -3,38 +3,48 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Cliente</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Proveedor</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-            <form action="{{route('home2.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('home3.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                
+
                 <!-- Cuerpo del Modal: -->
                 <div class="modal-body">
 
-                    <!--  Input Nombre -->
+                    <!-- Input Nombre del Proveedor -->
                     <div class="mb-3">
-                        <label for="" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="" aria-describedby="helpId"
-                            placeholder="" />
+                        <label for="provider_name" class="form-label">Nombre del Proveedor</label>
+                        <input type="text" class="form-control" name="provider_name" id="provider_name"
+                            aria-describedby="providerNameHelp" placeholder="Ingrese el nombre del proveedor"
+                            required />
                     </div>
 
-                    <!--  Input Telefono -->
+                    <!-- Input Número de Contacto -->
                     <div class="mb-3">
-                        <label for="" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" id="" aria-describedby="helpId"
-                            placeholder="" />
+                        <label for="contact_number" class="form-label">Número de Contacto</label>
+                        <input type="tel" class="form-control" name="contact_number" id="contact_number"
+                            aria-describedby="contactNumberHelp" placeholder="Ingrese el número de contacto" required />
                     </div>
 
-                    <!--  Input Correo -->
+                    <!-- Input Correo Electrónico -->
                     <div class="mb-3">
-                        <label for="" class="form-label">Correo</label>
-                        <input type="email" class="form-control" name="correo" id="" aria-describedby="helpId"
-                            placeholder="" />
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                            placeholder="Ingrese el correo electrónico" required />
                     </div>
+
+                    <!-- Input Dirección -->
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" name="address" id="address"
+                            aria-describedby="addressHelp" placeholder="Ingrese la dirección" required />
+                    </div>
+
+
                 </div>
 
                 <div class="modal-footer">
