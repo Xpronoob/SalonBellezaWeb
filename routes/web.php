@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,13 +23,19 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/iniciarsesion', function () {
-    return view('users.auth.login');
-});
+// Route::get('/iniciarsesion', function () {
+//     return view('users.auth.login');
+// });
 
-Route::get('/registrarse', function () {
-    return view('users.auth.register');
-});
+// Route::get('/registrarse', function () {
+//     return view('users.auth.register');
+// })->name('registrarse');
+
+// Route::get('iniciarsesion', [AuthenticatedSessionController::class, 'create'])
+//     ->name('iniciarsesion');
+
+// Route::post('iniciarsesion', [AuthenticatedSessionController::class, 'store']);
+
 
 Route::get('/recuperar', function () {
     return view('users.auth.resetPassword');
@@ -84,4 +91,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

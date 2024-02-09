@@ -40,6 +40,7 @@
 </head>
 
 <body class="layout-login">
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <div class="layout-login__overlay"></div>
     <div class="layout-login__form bg-white" data-perfect-scrollbar>
@@ -53,12 +54,14 @@
         <h4 class="m-0">Utopía Beauty Salón</h4> <br>
         <p class="mb-5">Ingresa las credenciales para iniciar sesión:</p>
 
-        <form action="../index.html">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
             <div class="form-group">
-                <label class="text-label" for="email_2">Correo Electrónico:</label>
+                <label class="text-label" for="email" name="email">Correo Electrónico:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email_2" type="email" class="form-control form-control-prepended"
-                        placeholder="Ej: Alejandro@gmail.com" required>
+                    <input id="email" for="email" name="email" type="email"
+                        class="form-control form-control-prepended" placeholder="Correo Electrónico" required>
+
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="far fa-envelope"></span>
@@ -66,12 +69,13 @@
                     </div>
                 </div>
             </div>
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
             <div class="form-group">
-                <label class="text-label" for="password_2">Contraseña:</label>
+                <label class="text-label" for="password" name="password">Contraseña:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password_2" type="password" required class="form-control form-control-prepended"
-                        placeholder="Ingresa la contraseña">
+                    <input id="password" for="password" name="password" type="password" required
+                        class="form-control form-control-prepended" placeholder="Ingresa la contraseña">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="fa fa-key"></span>
@@ -79,6 +83,8 @@
                     </div>
                 </div>
             </div>
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" checked="" id="remember">
@@ -88,8 +94,8 @@
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-primary mb-5" type="submit">Iniciar Sesión</button> <br>
-                <a href="{{ url('./recuperar') }}">¿Olvidaste la contraseña?</a> <br><br>
-                No tienes cuenta? <a class="text-body text-underline" href="{{ url('./registrarse') }}">¡Registrate!</a>
+                <a href="{{ route('password.request') }}">¿Olvidaste la contraseña?</a> <br><br>
+                No tienes cuenta? <a class="text-body text-underline" href="{{ route('register') }}">¡Registrate!</a>
             </div>
         </form>
     </div>

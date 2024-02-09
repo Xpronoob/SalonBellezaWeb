@@ -50,40 +50,49 @@
             </a>
             <p class="m-0">Utopía Beauty Salón</p>
         </div>
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <div class="alert alert-soft-success d-flex" role="alert">
-            <i class="material-icons mr-3">check_circle</i>
-            <div class="text-body">¡Tu contraseña será enviada al correo electrónico registrado anteriormente!</div>
-        </div>
+        @isset($status)
+            <div class="alert alert-soft-success d-flex" role="alert">
+                <i class="material-icons mr-3">check_circle</i>
+                {{-- <div class="text-body">¡Tu contraseña será enviada al correo electrónico registrado anteriormente!</div> --}}
+                <div class="text-body">{{ $status }}</div>
+
+            </div>
+        @endisset
 
         <div class="page-separator">
             <div class="page-separator__text">Ingresar Credenciales</div>
         </div>
 
-        <form action="../index.html" validate> <!-- AQUI SE TIENE QUE PONER VALIDATE PARA QUE VALIDE EL FORM -->
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+
+            <!-- Email Address -->
             <div class="form-group">
-                <label class="text-label" for="email_2">Correo Electrónico:</label>
-                <div class="input-group input-group-merge">
-                    <input id="email_2" type="email" required="" class="form-control form-control-prepended"
-                        placeholder="Sebastian1@gmail.com">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <span class="far fa-envelope"></span>
-                        </div>
-                    </div>
-                </div>
+                <label class="text-label" for="email">{{ __('Correo Electrónico') }}</label>
+                <input placeholder="Correo Electrónico" id="email"
+                    class="form-control @error('email') is-invalid @enderror" type="email" name="email"
+                    value="{{ old('email') }}" required autofocus />
+                @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
-            <div class="form-group">
-                <button class="btn btn-block btn-primary" type="submit">Enviar contraseña al correo</button><br>
-            </div>
+            {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
 
-            <div class="form-group text-center">
-                <a href="{{ url('./iniciarsesion') }}">Iniciar Sesión</a> <br><br>
-                No tienes una cuenta? <a class="text-body text-underline"
-                    href="{{ url('./registrarse') }}">Registrarse!</a>
+            <div class="form-group">
+                <button type="submit"
+                    class="btn btn-block btn-primary">{{ __('Enviar contraseña al correo') }}</button>
             </div>
         </form>
+
+        <div class="form-group text-center">
+            <a href="{{ route('login') }}">Iniciar Sesión</a> <br><br>
+            No tienes una cuenta? <a class="text-body text-underline" href="{{ route('register') }}">Registrarse!</a>
+        </div>
+
     </div>
 
     <!-- jQuery -->

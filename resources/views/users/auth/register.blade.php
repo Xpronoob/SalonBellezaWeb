@@ -21,9 +21,11 @@
     <link type="text/css" href="../assets/css/vendor-material-icons.css" rel="stylesheet">
     <link type="text/css" href="../assets/css/vendor-material-icons.rtl.css" rel="stylesheet">
 
-    <!-- Font Awesome FREE Icons -->
+    {{-- <!-- Font Awesome FREE Icons -->
     <link type="text/css" href="../assets/css/vendor-fontawesome-free.css" rel="stylesheet">
-    <link type="text/css" href="../assets/css/vendor-fontawesome-free.rtl.css" rel="stylesheet">
+    <link type="text/css" href="../assets/css/vendor-fontawesome-free.rtl.css" rel="stylesheet"> --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133433427-1"></script>
@@ -55,44 +57,81 @@
             <div class="page-separator__text">Ingresar Credenciales</div>
         </div>
 
-        <form style="padding-top: 20px;" action="../index.html" novalidate>
+        <form style="padding-top: 20px;" method="POST" action="{{ route('register') }}">
+            @csrf
             <div class="form-group">
-                <label class="text-label" for="name_2">Nombre Completo:</label>
+                <label class="text-label" for="name">Nombre Completo:</label>
                 <div class="input-group input-group-merge">
-                    <input id="name_2" type="text" required="" class="form-control form-control-prepended"
-                        placeholder="Alejandro Rojas" required>
+                    <input id="name" type="text" for="name" name="name" required=""
+                        class="form-control form-control-prepended" placeholder="Nombre completo" required>
                     <div class="input-group-prepend">
                         <div class="input-group-text">
-                            <span class="far fa-user"></span>
+                            {{-- <span class="far fa-user"></span> --}}
+                            <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
                 </div>
             </div>
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+
             <div class="form-group">
-                <label class="text-label" for="email_2">Correo Electrónico:</label>
+                <label class="text-label" for="email">Correo Electrónico:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email_2" type="email" class="form-control form-control-prepended"
-                        placeholder="Alejandro@gmail.com" required>
+                    <input id="email" for="email" name="email" type="email"
+                        class="form-control form-control-prepended" placeholder="Correo electrónico" required>
                     <div class="input-group-prepend">
                         <div class="input-group-text">
-                            <span class="far fa-envelope"></span>
+                            {{-- <span class="far fa-envelope"></span> --}}
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+            <div class="form-group">
+                <label class="text-label" for="password">Contraseña:</label>
+                <div class="input-group input-group-merge">
+                    <input id="password" type="password" for="password" name="password" required
+                        autocomplete="new-password" class="form-control form-control-prepended"
+                        placeholder="Ingresa tu contraseña" required>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+            <div class="form-group">
+                <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
+                <div class="input-group input-group-merge">
+                    <input id="password_confirmation" type="password" for="password_confirmation"
+                        name="password_confirmation" required autocomplete="new-password"
+                        class="form-control form-control-prepended" placeholder="Confirma tu contraseña">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+
+            <div class="form-group">
+                <label class="text-label" for="phone">Número de teléfono:</label>
+                <div class="input-group input-group-merge">
+                    <input id="phone" name="phone" for="phone" type="text" required
+                        class="form-control form-control-prepended" placeholder="Número de teléfono" required>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-phone"></i>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="text-label" for="password_2">Contraseña:</label>
-                <div class="input-group input-group-merge">
-                    <input id="password_2" type="password" required="" class="form-control form-control-prepended"
-                        placeholder="Ingresa tu contraseña" required>
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <span class="far fa-key"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" checked class="custom-control-input" id="terms" />
@@ -102,7 +141,7 @@
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-primary mb-2" type="submit">Crear Cuenta</button><br>
-                <a class="text-body text-underline" href="{{ url('./iniciarsesion') }}">Tienes una cuenta? ¡Inicia
+                <a class="text-body text-underline" href="{{ route('login') }}">Tienes una cuenta? ¡Inicia
                     Sesión!</a>
             </div>
         </form>
