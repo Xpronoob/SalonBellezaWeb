@@ -12,70 +12,87 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        
-        $clientes=Cliente::all();
-        return view('cliente.index',compact('clientes'));
+
+        $clientes = Cliente::all();
+        return view('cliente.index', compact('clientes'));
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-       
-        //Creamos un objeto:
-        $clientes=new Cliente;
+        try {
+            //Creamos un objeto:
+            $clientes = new Cliente;
+    
+            //Datos del formulario:
+            $clientes->nombre = $request->input('nombre');
+            $clientes->correo = $request->input('correo');
+            $clientes->telefono = $request->input('telefono');
+    
+            //Guardamos los datos en la base de datos con el método save.
+            $clientes->save();
+    
+            //Redireccionamos hacia atrás:
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // Manejo de la excepción aquí
+            return redirect()->back()->with('error', 'Hubo un problema al guardar los datos.');
+        }
+    }
+    
+    public function update(Request $request, $id)
+    {
+        try {
+            $clientes = Cliente::find($id);
+    
+            $clientes->nombre = $request->input('nombre');
+            $clientes->telefono = $request->input('telefono');
+            $clientes->correo = $request->input('correo');
+    
+            $clientes->save();
+    
+            return redirect()->back();
+        } catch (\Exception $e) {
+            
+            return redirect()->back()->with('error', 'Hubo un problema al actualizar los datos.');
+        }
+    }
+    
 
-        //Datos del formulario:
-        $clientes ->nombre  =$request->input('nombre');        
-        $clientes ->correo  =$request->input('correo');
-        $clientes ->telefono=$request->input('telefono');
-        
-        //Guardamos los datos en la base de datos con el método save.
-        $clientes->save(); 
+    public function destroy($id)
+    {
+        try {
+            $clientes = Cliente::find($id);
+    
+            // Verificar si el cliente existe
+            if (!$clientes) {
+                throw new \Exception('El cliente no existe.');
+            }
+    
+            // Usamos la función eliminar
+            $clientes->delete();
+            
+            // Redireccionamos hacia atrás:
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // Manejo de la excepción aquí
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+    
 
-        //Redireccionamos hacia atrás:
-        return redirect()->back();
+
+    public function edit($id)
+    {
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Cliente $cliente)
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Cliente $cliente)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Cliente $cliente)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Cliente $cliente)
-    {
-        //
-    }
 }

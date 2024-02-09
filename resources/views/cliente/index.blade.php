@@ -5,12 +5,12 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8"> <br><br>
-       
-    <!-- Button trigger modal -->
+
+        <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
             Nuevo
         </button><br><br>
-        
+
         <div class="table-responsive">
             <table class="table">
                 <thead class="table-dark">
@@ -19,7 +19,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Telefono</th>
                         <th scope="col">Correo Electronico</th>
-                        <th scope="col">Acciones</th>
+                        <th class="text-center" scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,13 @@
                         <td>{{$cliente->nombre}}</td>
                         <td>{{$cliente->telefono}}</td>
                         <td>{{$cliente->correo}}</td>
+
+                        <td class="text-center">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$cliente->id}}">Editar</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$cliente->id}}">Eliminar</button>
+                        </td>
                     </tr>
+                    @include('cliente.info')
                     @endforeach
                 </tbody>
             </table>
