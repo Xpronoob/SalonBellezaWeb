@@ -1,5 +1,4 @@
 <!-- Modal PARA EDITAR-->
-<!-- Modal PARA EDITAR-->
 <div class="modal fade" id="edit{{$cliente->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

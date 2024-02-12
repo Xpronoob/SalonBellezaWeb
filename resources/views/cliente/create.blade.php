@@ -25,7 +25,7 @@
                     <!--  Input Telefono -->
                     <div class="mb-3">
                         <label for="" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" id="" aria-describedby="helpId"
+                        <input type="tel" class="form-control" name="telefono" id="" aria-describedby="helpId"
                             placeholder="" />
                     </div>
 

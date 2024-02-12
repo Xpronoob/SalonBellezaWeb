@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>HOME3</title>
+    <title>CRUD Proveedores | Sprint 1</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,11 +13,19 @@
 </head>
 
 <body>
-    <h1>
-        esto es parte del layout
-    </h1>
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">CRUD DE UTOPIA BEAUTY SALON - NAVBAR DE RELLENO</a>
+    </nav>
+
 
     @yield('content')
+
+    <div class="footer fixed-bottom bg-light">
+        <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2022 FOOTER DE PRUEBA, Inc</p>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

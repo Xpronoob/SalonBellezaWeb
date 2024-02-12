@@ -32,11 +32,12 @@
                         <td>{{$supplier->email}}</td>
                         <td>{{$supplier->address}}</td>
 
-                        <!-- <td class="text-center">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$supplier->id}}">Editar</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$supplier->id}}">Eliminar</button>
-                        </td> -->
+                        <td class="text-center">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$supplier->id_supplier}}">Editar</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$supplier->id_supplier}}">Eliminar</button>
+                        </td> 
                     </tr>
+                    @include('Supplier.info')
                     @endforeach
                 </tbody>
             </table>

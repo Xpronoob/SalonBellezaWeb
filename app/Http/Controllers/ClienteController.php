@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 
@@ -26,7 +25,6 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         try {
-            //Creamos un objeto:
             $clientes = new Cliente;
     
             //Datos del formulario:
@@ -37,10 +35,9 @@ class ClienteController extends Controller
             //Guardamos los datos en la base de datos con el método save.
             $clientes->save();
     
-            //Redireccionamos hacia atrás:
             return redirect()->back();
         } catch (\Exception $e) {
-            // Manejo de la excepción aquí
+
             return redirect()->back()->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
