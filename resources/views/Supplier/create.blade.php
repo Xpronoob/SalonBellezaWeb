@@ -9,7 +9,7 @@
                 </button>
             </div>
 
-            <form action="{{route('home3.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('proveedores.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <!-- Cuerpo del Modal: -->
@@ -33,8 +33,8 @@
                     <!-- Input Correo Electrónico -->
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
-                            placeholder="Ingrese el correo electrónico" required />
+                        <input type="email" class="form-control" name="email" id="email"
+                            aria-describedby="emailHelp" placeholder="Ingrese el correo electrónico" required />
                     </div>
 
                     <!-- Input Dirección -->

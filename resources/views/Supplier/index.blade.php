@@ -1,4 +1,4 @@
-@extends('home3')
+@extends('proveedor')
 @section('content')
 
 
@@ -16,10 +16,10 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">provider_name</th>
-                        <th scope="col">contact_number</th>
-                        <th scope="col">email</th>
-                        <th scope="col">address</th>
+                        <th scope="col">Nombre Proveedor</th>
+                        <th scope="col">Número Contacto</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Dirección</th>
                         <th class="text-center" scope="col">Acciones</th>
                     </tr>
                 </thead>
@@ -35,7 +35,7 @@
                         <td class="text-center">
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$supplier->id_supplier}}">Editar</button>
                             <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$supplier->id_supplier}}">Eliminar</button>
-                        </td> 
+                        </td>
                     </tr>
                     @include('Supplier.info')
                     @endforeach

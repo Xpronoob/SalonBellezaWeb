@@ -65,7 +65,7 @@ Route::get('/citas/editar', function () {
 
 Route::resource('home2', ClienteController::class);
 
-Route::resource('home3', SupplierController::class);
+Route::resource('proveedores', SupplierController::class);
 
 
 

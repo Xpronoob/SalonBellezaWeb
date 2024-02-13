@@ -46,7 +46,9 @@
     <div class="layout-login__form bg-white" data-perfect-scrollbar>
         <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
             <a href="../index.html" class="navbar-brand" style="min-width: 0">
-                <img class="navbar-brand-icon" src="../assets/images/LogoSalon.png" width="100" alt="">
+                {{-- <img class="navbar-brand-icon" src="../assets/images/LogoSalon.png" width="100" alt=""> --}}
+                <img class="navbar-brand-icon" src="{{ asset('assets/images/LogoSalon.png') }}" width="100"
+                    alt="">
                 <span></span>
             </a>
         </div>
