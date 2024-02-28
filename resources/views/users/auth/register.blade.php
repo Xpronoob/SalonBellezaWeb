@@ -90,6 +90,18 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
             <div class="form-group">
+                <label class="text-label" for="phone">Número de teléfono:</label>
+                <div class="input-group input-group-merge">
+                    <input id="phone" name="phone" for="phone" type="text" required
+                        class="form-control form-control-prepended" placeholder="Número de teléfono" required>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="text-label" for="password">Contraseña:</label>
                 <div class="input-group input-group-merge">
                     <input id="password" type="password" for="password" name="password" required
@@ -119,26 +131,101 @@
             </div>
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
 
-            <div class="form-group">
-                <label class="text-label" for="phone">Número de teléfono:</label>
-                <div class="input-group input-group-merge">
-                    <input id="phone" name="phone" for="phone" type="text" required
-                        class="form-control form-control-prepended" placeholder="Número de teléfono" required>
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <style>
+                /* Estilos para la ventana emergente */
+                .popup {
+                    display: none;
+                    position: fixed;
+                    z-index: 9999;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 50px;
+                }
+
+                .popup-content {
+                    background-color: #fff;
+                    padding: 20px;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                }
+
+                .close {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+            </style>
+
+
 
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" checked class="custom-control-input" id="terms" />
+                    <input type="checkbox" checked class="custom-control-input" id="terms" required />
                     <label class="custom-control-label" style="padding-top: 2px;" for="terms">Acepto <a
-                            href="#TERMINOS Y CONDICIONES">Terminos y Condiciones</a></label>
+                            href="#" id="openPopup">Términos y Condiciones</a></label>
                 </div>
             </div>
+
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close" id="closePopup">&times;</span>
+                    <h2>Términos y Condiciones - Utopia Beauty Salon</h2>
+                    <!-- Contenido de los términos y condiciones aquí -->
+                    <p>
+                        Reservas y Cancelaciones:
+                        Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación
+                        pueden incurrir en cargos.
+                    </p>
+
+                    <p>
+                        Pagos:
+                        Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.
+                    </p>
+                    <p>
+                        Responsabilidad:
+                        No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o
+                        condiciones médicas.
+                    </p>
+                    <p>
+                        Comportamiento del Cliente:
+                        Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el
+                        derecho de negar el servicio por comportamiento inapropiado.</p>
+                    <p>
+                        Garantía:
+                        Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.
+                    </p>
+                    <p>
+                        Derechos de Autor:
+                        Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.
+                    </p>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById("openPopup").addEventListener("click", function(event) {
+                    event.preventDefault();
+                    document.getElementById("popup").style.display = "block";
+                });
+
+                document.getElementById("closePopup").addEventListener("click", function() {
+                    document.getElementById("popup").style.display = "none";
+                });
+
+                // Cerrar la ventana emergente cuando se hace clic fuera de ella
+                window.addEventListener("click", function(event) {
+                    var popup = document.getElementById("popup");
+                    if (event.target == popup) {
+                        popup.style.display = "none";
+                    }
+                });
+            </script>
+
             <div class="form-group text-center">
                 <button class="btn btn-primary mb-2" type="submit">Crear Cuenta</button><br>
                 <a class="text-body text-underline" href="{{ route('login') }}">Tienes una cuenta? ¡Inicia
