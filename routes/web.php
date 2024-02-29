@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\SupplierController;
@@ -28,6 +29,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
+
+// Route::resource('/servicios', ServiceController::class);
+
+Route::prefix('gestion')->group(function () {
+    Route::resource('servicios', ServiceController::class);
+});
+
 // Route::get('/iniciarsesion', function () {
 //     return view('users.auth.login');
 // });
@@ -46,9 +57,9 @@ Route::get('/recuperar', function () {
     return view('users.auth.resetPassword');
 });
 
-Route::get('/servicios', function () {
-    return view('users.services');
-});
+// Route::get('/servicios', function () {
+//     return view('users.services');
+// });
 
 Route::get('/productos', function () {
     return view('users.products');

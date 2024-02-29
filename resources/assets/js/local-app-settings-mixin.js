@@ -2234,11 +2234,11 @@ __webpack_require__.r(__webpack_exports__);
           component: 'b-form-radio-group',
           options: [{
             text: 'Light',
-            value: 'light'
+            value: 'light',
+            selected: true
           }, {
             text: 'Dark',
-            value: 'dark',
-            selected: true
+            value: 'dark'
           }]
         }]
       }, {
