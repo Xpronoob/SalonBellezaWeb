@@ -7,8 +7,7 @@ use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\SupplierController;
-
-
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +64,7 @@ Route::get('/productos', function () {
     return view('users.products');
 });
 
+
 Route::get('/citas', function () {
     return view('users.appointments');
 });
@@ -78,6 +78,7 @@ Route::resource('home2', ClienteController::class);
 
 Route::resource('proveedores', SupplierController::class);
 
+Route::resource('categorias', CategoryController::class);
 
 
 Route::prefix('admin')->group(function () {
@@ -111,6 +112,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('category', CategoryController::class);
 });
 
 require __DIR__ . '/auth.php';

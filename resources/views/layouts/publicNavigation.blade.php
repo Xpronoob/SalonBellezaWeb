@@ -357,6 +357,9 @@
                             <li class="nav-item  {{ request()->is('inventario*') ? 'active' : '' }}">
                                 <a class="dropdown-item" href="{{ url('proveedores') }}">Proveedores</a>
                             </li>
+                            <li class="nav-item  {{ request()->is('inventario*') ? 'active' : '' }}">
+                                <a class="dropdown-item" href="{{ url('categorias') }}">Categorias</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
