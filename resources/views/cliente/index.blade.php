@@ -1,4 +1,4 @@
-@extends('LayoutCliente')
+@extends('home2')
 @section('content')
 
 

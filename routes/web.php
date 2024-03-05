@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -76,9 +75,9 @@ Route::get('/citas/editar', function () {
 
 
 Route::resource('home2', ClienteController::class);
+
 Route::resource('proveedores', SupplierController::class);
-Route::resource('servicios', ServiceController::class);
-Route::resource('productos', ProductoController::class);
+
 
 
 Route::prefix('admin')->group(function () {

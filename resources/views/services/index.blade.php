@@ -1,43 +1,52 @@
-@extends('LayoutServices')
-@section('content')
-<div class="row">
-   <div class="col-md-2"></div>
-   <div class="col-md-8">
-      <br><br>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
-      Nuevo
-      </button><br><br>
-      <div class="table-responsive">
-         <table class="table">
-            <thead class="table-dark">
-               <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Título del Servicio</th>
-                  <th scope="col">Descripción</th>
-                  <th scope="col">Imagen</th>
-                  <th class="text-center" scope="col">Acciones</th>
-               </tr>
-            </thead>
-            <tbody>
-               @foreach($services as $service)
-               <tr class="">
-                  <td scope="row">{{$service->id_service}}</td>
-                  <td>{{$service->service_title}}</td>
-                  <td>{{$service->description}}</td>
-                  <td><img src="{{$service->image_url}}" alt="Imagen de servicio" style="max-width: 100px;"></td>
-                  <td class="text-center">
-                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$service->id_service}}">Editar</button>
-                     <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$service->id_service}}">Eliminar</button>
-                  </td>
-               </tr>
-               @include('Services.info')
-               @endforeach
-            </tbody>
-         </table>
-      </div>
-      @include('Services.create')
-   </div>
-   <div class="col-md-2"></div>
-</div>
-@endsection
+<x-main-layout>
+    <div class="card card-form">
+        <div class="row no-gutters">
+            <div class="col-lg-12 card-form__body">
+
+                <div class="table-responsive border-bottom" data-toggle="lists"
+                    data-lists-values='["js-lists-values-employee-name"]'>
+
+                    <div class="search-form search-form--light m-3">
+                        <input type="text" class="form-control search" placeholder="Search">
+                        <button class="btn" type="button"><i class="material-icons">search</i></button>
+                    </div>
+
+                    <table class="table mb-0 thead-border-top-0">
+                        <thead>
+                            <tr>
+
+                                <th>Título</th>
+
+                                {{-- <th style="width: 37px;">Título</th> --}}
+                                <th style="width: 120px;">Descripción</th>
+                                <th style="width: 51px;">URL Imagen</th>
+                                <th style="width: 51px;">Activo</th>
+                                <th style="width: 24px;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="staff02">
+                            @foreach ($services as $service)
+                                <tr>
+
+                                    <td>
+
+                                        <span class="js-lists-values-employee-name">{{ $service->title }}</span>
+
+                                    </td>
+
+                                    <td><span class="badge badge-warning">{{ $service->description }}</span></td>
+                                    <td><small class="text-muted">{{ $service->image_url }}</small></td>
+                                    <td>✅</td>
+                                    <td><a href="" class="text-muted"><i class="material-icons">more_vert</i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</x-main-layout>

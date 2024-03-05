@@ -3,46 +3,65 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreServiceRequest;
+use App\Http\Requests\UpdateServiceRequest;
 
 class ServiceController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         $services = Service::all();
         return view('services.index', compact('services'));
     }
 
-    //Metodo para crear:
-    public function store(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $service = new Service;
-        $service->service_title = $request->input('service_title');
-        $service->description = $request->input('description');
-        $service->image_url = $request->input('image_url');
-        $service->save();
-        return redirect()->back();
+        //
     }
 
-    //Método Update:
-
-    public function update(Request $request, $id_service)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreServiceRequest $request)
     {
-        $service = Service::find($id_service);
-        $service->service_title = $request->input('service_title');
-        $service->description = $request->input('description');
-        $service->image_url = $request->input('image_url');
-        $service->update();
-        return redirect()->back();
+        //
     }
 
-    //metodo para borrar:
-    public function destroy($id_service)
+    /**
+     * Display the specified resource.
+     */
+    public function show(Service $service)
     {
-            $service = Service::findOrFail($id_service);
-            $service->delete();
-            return redirect()->back();
+        //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Service $service)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateServiceRequest $request, Service $service)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Service $service)
+    {
+        //
+    }
 }
