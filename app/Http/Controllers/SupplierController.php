@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SupplierStoreRequest;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
@@ -18,28 +19,21 @@ class SupplierController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(SupplierStoreRequest $request)
     {
 
-        // Validar la solicitud
-        $validatedData = $request->validate([
-            'provider_name' => 'required|string|max:255',
-            'contact_number' => 'required|string|max:20',
-            'email' => 'required|email|max:255',
-            'address' => 'required|string|max:255',
-        ]);
-
         try {
-            $suppliers = new Supplier;
+            // $suppliers = new Supplier;
+            // $suppliers->provider_name = $request->input('provider_name');
+            // $suppliers->contact_number = $request->input('contact_number');
+            // $suppliers->email = $request->input('email');
+            // $suppliers->address = $request->input('address');
 
-            $suppliers->provider_name = $request->input('provider_name');
-            $suppliers->contact_number = $request->input('contact_number');
-            $suppliers->email = $request->input('email');
-            $suppliers->address = $request->input('address');
+            // $suppliers->save();
 
-            $suppliers->save();
+            Supplier::create($request->validated());
 
-            return redirect()->back();
+            return redirect()->route('proveedores')->withInput();
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Hubo un problema al guardar los datos.');
         }

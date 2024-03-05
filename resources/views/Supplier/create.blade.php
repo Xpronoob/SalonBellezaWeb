@@ -19,29 +19,51 @@
                     <div class="mb-3">
                         <label for="provider_name" class="form-label">Nombre del Proveedor</label>
                         <input type="text" class="form-control" name="provider_name" id="provider_name"
-                            aria-describedby="providerNameHelp" placeholder="Ingrese el nombre del proveedor"
-                            required />
+                            aria-describedby="providerNameHelp" placeholder="Ingrese el nombre del proveedor" />
+                        @error('provider_name')
+                            hola
+                        @enderror
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <script>
+                            $(document).ready(function() {
+                                // Verifica si la URL contiene el identificador del modal
+                                if (window.location.hash === '#create') {
+                                    // Si se encuentra el identificador del modal, abre el modal
+                                    $('#create').modal('show');
+                                }
+                            });
+                        </script>
+
                     </div>
 
                     <!-- Input Número de Contacto -->
                     <div class="mb-3">
                         <label for="contact_number" class="form-label">Número de Contacto</label>
                         <input type="tel" class="form-control" name="contact_number" id="contact_number"
-                            aria-describedby="contactNumberHelp" placeholder="Ingrese el número de contacto" required />
+                            aria-describedby="contactNumberHelp" placeholder="Ingrese el número de contacto" />
                     </div>
 
                     <!-- Input Correo Electrónico -->
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo Electrónico</label>
                         <input type="email" class="form-control" name="email" id="email"
-                            aria-describedby="emailHelp" placeholder="Ingrese el correo electrónico" required />
+                            aria-describedby="emailHelp" placeholder="Ingrese el correo electrónico" />
                     </div>
 
                     <!-- Input Dirección -->
                     <div class="mb-3">
                         <label for="address" class="form-label">Dirección</label>
                         <input type="text" class="form-control" name="address" id="address"
-                            aria-describedby="addressHelp" placeholder="Ingrese la dirección" required />
+                            aria-describedby="addressHelp" placeholder="Ingrese la dirección" />
                     </div>
 
 
