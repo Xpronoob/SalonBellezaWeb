@@ -75,9 +75,8 @@ Route::get('/citas/editar', function () {
 
 
 Route::resource('home2', ClienteController::class);
-
 Route::resource('proveedores', SupplierController::class);
-
+Route::resource('servicios', ServiceController::class);
 
 
 Route::prefix('admin')->group(function () {
