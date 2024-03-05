@@ -22,16 +22,24 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('services.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(StoreServiceRequest $request)
+    // {
+    //     Service::created($request->validated());
+    //     return redirect()->route('servicios.index');
+    // }
+
     public function store(StoreServiceRequest $request)
     {
-        //
+        Service::create($request->validated());
+        return redirect()->route('servicios.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -46,7 +54,9 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        // $id = $service->id();
+        // $service = Service::find($service);
+        return view('services.edit', compact('service'));
     }
 
     /**
@@ -54,7 +64,8 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-        //
+        $service->update($request->validated());
+        return redirect()->route('servicios.index');
     }
 
     /**
@@ -62,6 +73,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->route('servicios.index')->with('success', 'Servicio eliminado correctamente');
     }
 }

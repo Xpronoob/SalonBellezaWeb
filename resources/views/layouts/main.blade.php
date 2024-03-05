@@ -20,12 +20,11 @@
                     <h1 class="m-0">Blank Page</h1>
                 </div>
 
-                <a href="" class="btn btn-success ml-1">Action</a>
+                {{-- <a href="" class="btn btn-success ml-1">Action</a> --}}
             </div>
         </div>
 
         <div class="container-fluid page__container">
-            // Content
             {{ $slot }} <!-- VISTA -->
         </div>
 

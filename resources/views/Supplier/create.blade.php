@@ -21,10 +21,10 @@
                         <input type="text" class="form-control" name="provider_name" id="provider_name"
                             aria-describedby="providerNameHelp" placeholder="Ingrese el nombre del proveedor" />
                         @error('provider_name')
-                            hola
+                            <div style="color: red;">{{ $message }}</div>
                         @enderror
 
-                        @if ($errors->any())
+                        {{-- @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->all() as $error)
@@ -32,7 +32,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        @endif
+                        @endif --}}
+
                         <script>
                             $(document).ready(function() {
                                 // Verifica si la URL contiene el identificador del modal
@@ -50,6 +51,9 @@
                         <label for="contact_number" class="form-label">Número de Contacto</label>
                         <input type="tel" class="form-control" name="contact_number" id="contact_number"
                             aria-describedby="contactNumberHelp" placeholder="Ingrese el número de contacto" />
+                        @error('contact_number')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Input Correo Electrónico -->
@@ -57,6 +61,9 @@
                         <label for="email" class="form-label">Correo Electrónico</label>
                         <input type="email" class="form-control" name="email" id="email"
                             aria-describedby="emailHelp" placeholder="Ingrese el correo electrónico" />
+                        @error('email')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Input Dirección -->
@@ -64,6 +71,9 @@
                         <label for="address" class="form-label">Dirección</label>
                         <input type="text" class="form-control" name="address" id="address"
                             aria-describedby="addressHelp" placeholder="Ingrese la dirección" />
+                        @error('address')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
 
 

@@ -20,89 +20,20 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/index', function () {
     return view('index');
 });
 
-// Route::resource('/servicios', ServiceController::class);
-
-Route::prefix('gestion')->group(function () {
-    Route::resource('servicios', ServiceController::class);
-});
-
-// Route::get('/iniciarsesion', function () {
-//     return view('users.auth.login');
-// });
-
-// Route::get('/registrarse', function () {
-//     return view('users.auth.register');
-// })->name('registrarse');
-
-// Route::get('iniciarsesion', [AuthenticatedSessionController::class, 'create'])
-//     ->name('iniciarsesion');
-
-// Route::post('iniciarsesion', [AuthenticatedSessionController::class, 'store']);
-
-
-Route::get('/recuperar', function () {
-    return view('users.auth.resetPassword');
-});
-
-// Route::get('/servicios', function () {
-//     return view('users.services');
-// });
-
-Route::get('/productos', function () {
-    return view('users.products');
-});
-
-
-Route::get('/citas', function () {
-    return view('users.appointments');
-});
-
-Route::get('/citas/editar', function () {
-    return view('users.appointmentEdit');
-});
-
-
-Route::resource('home2', ClienteController::class);
-
-Route::resource('proveedores', SupplierController::class);
-
-Route::resource('categorias', CategoryController::class);
-
 
 Route::prefix('admin')->group(function () {
+    Route::resource('servicios', ServiceController::class);
 
-    Route::get('/inventario', function () {
-        return view('admin.inventory');
-    });
-
-    Route::get('/inventario/editar', function () {
-        return view('admin.inventoryEdit');
-    });
-
-    Route::get('/productos', function () {
-        return view('admin.products');
-    });
-
-    Route::get('/productos/editar', function () {
-        return view('admin.productEdit');
-    });
-
-    Route::get('/citas', function () {
-        return view('admin.appointments');
-    });
+    Route::resource('categorias', CategoryController::class);
+    Route::resource('proveedores', SupplierController::class);
 });
+
+Route::resource('home2', ClienteController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

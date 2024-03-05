@@ -24,6 +24,9 @@
                         <input type="text" class="form-control" name="provider_name" id="provider_name"
                             aria-describedby="providerNameHelp" placeholder="Ingrese el nombre del proveedor"
                             value="{{ $supplier->provider_name }}">
+                        @error('provider_name')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Input Número de Contacto -->
@@ -32,6 +35,9 @@
                         <input type="tel" class="form-control" name="contact_number" id="contact_number"
                             aria-describedby="contactNumberHelp" placeholder="Ingrese el número de contacto"
                             value="{{ $supplier->contact_number }}">
+                        @error('contact_number')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Input Correo Electrónico -->
@@ -40,6 +46,9 @@
                         <input type="email" class="form-control" name="email" id="email"
                             aria-describedby="emailHelp" placeholder="Ingrese el correo electrónico"
                             value="{{ $supplier->email }}">
+                        @error('email')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Input Dirección -->
@@ -48,6 +57,9 @@
                         <input type="text" class="form-control" name="address" id="address"
                             aria-describedby="addressHelp" placeholder="Ingrese la dirección"
                             value="{{ $supplier->address }}">
+                        @error('address')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 

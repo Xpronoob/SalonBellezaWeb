@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Contracts\Support\Renderable;
 
 use App\Models\Category;
@@ -11,7 +13,7 @@ use Illuminate\Http\RedirectResponse;
 
 class CategoryController extends Controller
 {
-    
+
     public function index(): Renderable
     {
         $categories = Category::all();
@@ -19,14 +21,13 @@ class CategoryController extends Controller
     }
 
 
-    public function create(): Renderable
+    public function create()
     {
         $categories = new Category;
         $title = __('Nueva Categoria');
         $action = route('category.store');
         $buttonText = __('Nueva Categoria');
         return view('category.create', compact('categories', 'title', 'action', 'buttonText'));
-    
     }
 
     /*
@@ -47,20 +48,22 @@ class CategoryController extends Controller
 
             return redirect()->route('category.index');
         } catch (\Exception $e) {
-            
+
             return redirect()->back()->with('error', 'Hubo un problema al guardar los datos.');
         }
     }*/
 
-    public function store(Request $request): RedirectResponse
+    public function store(CategoryRequest $request): RedirectResponse
     {
-        $request->validate([
-            
-            'category_name' => 'required|string|max:255'
-        ]);
-        Category::create([
-            'category_name' => $request->string('category_name')
-        ]);
+        // $request->validate([
+
+        //     'category_name' => 'required|string|max:255'
+        // ]);
+        // Category::create([
+        //     'category_name' => $request->string('category_name')
+        // ]);
+
+        Category::created($request->validated());
         return redirect()->route('category.index');
     }
 
@@ -74,7 +77,7 @@ class CategoryController extends Controller
     }
 
 
-/*
+    /*
     public function edit(Category $category): Renderable
     {
         $title = __('Editar categoria');
@@ -86,10 +89,10 @@ class CategoryController extends Controller
 
     public function edit(Category $category): Renderable
     {
-        return view('category.edit',compact('category'));
+        return view('category.edit', compact('category'));
     }
 
-/*
+    /*
     public function update(Request $request, Category $category)
     {
         $request->validate([
@@ -102,18 +105,20 @@ class CategoryController extends Controller
         return redirect()->route('category.index');
     }*/
 
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
-        $request->validate([
-            'category_name' => 'required|string|max:255'
-        ]);
-        
-        $category->fill($request->post())->save();
+        // $request->validate([
+        //     'category_name' => 'required|string|max:255'
+        // ]);
 
-        return redirect()->route('category.index')->with('success','La categoria fue editada correctamente');
+        // $category->fill($request->post())->save();
+
+        $category->fill($request->validated())->save();
+
+        return redirect()->route('category.index')->with('success', 'La categoria fue editada correctamente');
     }
 
-    public function destroy($id_category): Renderable
+    public function destroy($id_category)
     {
         try {
             $categories = Category::findOrFail($id_category);
@@ -123,5 +128,4 @@ class CategoryController extends Controller
             return redirect()->back()->with('error', 'No se pudo eliminar el proveedor.');
         }
     }
-
 }

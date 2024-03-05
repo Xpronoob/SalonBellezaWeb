@@ -1,4 +1,5 @@
 <x-main-layout>
+    <a href="{{ route('servicios.create') }}" class="btn btn-success mb-1">Nuevo</a>
     <div class="card card-form">
         <div class="row no-gutters">
             <div class="col-lg-12 card-form__body">
@@ -20,8 +21,8 @@
                                 {{-- <th style="width: 37px;">Título</th> --}}
                                 <th style="width: 120px;">Descripción</th>
                                 <th style="width: 51px;">URL Imagen</th>
-                                <th style="width: 51px;">Activo</th>
-                                <th style="width: 24px;">Acciones</th>
+                                <th style="width: 24px;">Editar</th>
+                                <th style="width: 24px;">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody class="list" id="staff02">
@@ -36,8 +37,13 @@
 
                                     <td><span class="badge badge-warning">{{ $service->description }}</span></td>
                                     <td><small class="text-muted">{{ $service->image_url }}</small></td>
-                                    <td>✅</td>
-                                    <td><a href="" class="text-muted"><i class="material-icons">more_vert</i></a>
+                                    <td><a href="{{ route('servicios.edit', $service->id) }}">✏️</a></td>
+                                    <td>
+                                        <form method="POST" action="{{ route('servicios.destroy', $service->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">🗑️</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
