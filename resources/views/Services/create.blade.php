@@ -14,19 +14,19 @@
             <div class="modal-body">
                <!-- Input Título del Servicio -->
                <div class="mb-3">
-                  <label for="service_title" class="form-label">Título del Servicio</label>
+                  <label for="service_title" class="form-label">Título del Servicio<span class="text-danger">*</span></label>
                   <input type="text" class="form-control" name="service_title" id="service_title"
                      aria-describedby="serviceTitleHelp" placeholder="Ingrese el título del servicio" required />
                </div>
                <!-- Input Descripción -->
                <div class="mb-3">
-                  <label for="description" class="form-label">Descripción</label>
+                  <label for="description" class="form-label">Descripción<span class="text-danger">*</span></label>
                   <textarea class="form-control" name="description" id="description"
                      aria-describedby="descriptionHelp" placeholder="Ingrese la descripción del servicio" required></textarea>
                </div>
                <!-- Input URL de la Imagen -->
                <div class="mb-3">
-                  <label for="image_url" class="form-label">URL de la Imagen</label>
+                  <label for="image_url" class="form-label">URL de la Imagen<span class="text-danger">*</span></label>
                   <input type="text" class="form-control" name="image_url" id="image_url"
                      aria-describedby="imageUrlHelp" placeholder="Ingrese la URL de la imagen" required />
                </div>
