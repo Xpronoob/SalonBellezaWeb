@@ -62,7 +62,7 @@
                 <label class="text-label" for="email" name="email">Correo Electrónico:</label>
                 <div class="input-group input-group-merge">
                     <input id="email" for="email" name="email" type="email"
-                        class="form-control form-control-prepended" placeholder="Correo Electrónico" required>
+                        class="form-control form-control-prepended" placeholder="Correo Electrónico">
 
                     <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -76,7 +76,7 @@
             <div class="form-group">
                 <label class="text-label" for="password" name="password">Contraseña:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password" for="password" name="password" type="password" required
+                    <input id="password" for="password" name="password" type="password"
                         class="form-control form-control-prepended" placeholder="Ingresa la contraseña">
                     <div class="input-group-prepend">
                         <div class="input-group-text">

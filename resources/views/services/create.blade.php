@@ -1,48 +1,54 @@
-<x-main-layout>
-    <div class="card card-form">
-        <div class="row no-gutters">
-
-            <div class="col-lg-8 card-form__body card-body">
-                <form method="POST" action="{{ route('servicios.store') }}" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <label for="title">Título:</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Título">
-                        @error('title')
+<!-- Modal -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Servicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('servicios.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <!-- Cuerpo del Modal: -->
+                <div class="modal-body">
+                    <!-- Input Título del Servicio -->
+                    <div class="mb-3">
+                        <label for="service_title" class="form-label">Título del Servicio<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="service_title" id="service_title"
+                            aria-describedby="serviceTitleHelp" placeholder="Ingrese el título del servicio" />
+                        @error('service_title')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror
                     </div>
-
-
-                    <div class="form-group">
-                        <label for="description">Descripción:</label>
-                        <input type="text" class="form-control" id="description" name="description"
-                            placeholder="Descripción">
+                    <!-- Input Descripción -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción<span
+                                class="text-danger">*</span></label>
+                        <textarea class="form-control" name="description" id="description" aria-describedby="descriptionHelp"
+                            placeholder="Ingrese la descripción del servicio"></textarea>
                         @error('description')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror
                     </div>
-
-
-                    <div class="form-group">
-                        <label for="image">URL de la imagen:</label>
-                        <input type="text" class="form-control" id="image" name="image"
-                            placeholder="URL de la imagen">
-                        @error('image')
+                    <!-- Input URL de la Imagen -->
+                    <div class="mb-3">
+                        <label for="image_url" class="form-label">URL de la Imagen<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="image_url" id="image_url"
+                            aria-describedby="imageUrlHelp" placeholder="Ingrese la URL de la imagen" />
+                        @error('image_url')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
 
-                    <button type="submit" class="btn btn-primary">Crear</button>
-                </form>
-            </div>
-
-            <div class="col-lg-4 card-body">
-                <p><strong class="headings-color">Información sobre los servicios</strong></p>
-                <p class="text-muted"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum consectetur, rem,
-                    dolores esse recusandae provident soluta, inventore fugiat quibusdam nemo harum debitis natus culpa.
-                    Laborum provident cupiditate saepe maxime atque!.</p>
-            </div>
         </div>
     </div>
-</x-main-layout>
+</div>

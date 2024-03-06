@@ -1,5 +1,3 @@
-
-
 <!-- Modal de borrar -->
 <div class="modal fade" id="delete{{ $category->id_category }}" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -11,7 +9,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('categorias.destroy', $category->id_category) }}" method="post"
+            <form action="{{ route('category.destroy', $category->id_category) }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
                 @method('DELETE')

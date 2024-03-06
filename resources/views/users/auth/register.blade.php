@@ -62,8 +62,8 @@
             <div class="form-group">
                 <label class="text-label" for="name">Nombre Completo:</label>
                 <div class="input-group input-group-merge">
-                    <input id="name" type="text" for="name" name="name" required=""
-                        class="form-control form-control-prepended" placeholder="Nombre completo" required>
+                    <input id="name" type="text" for="name" name="name"
+                        class="form-control form-control-prepended" placeholder="Nombre completo">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             {{-- <span class="far fa-user"></span> --}}
@@ -78,7 +78,7 @@
                 <label class="text-label" for="email">Correo Electrónico:</label>
                 <div class="input-group input-group-merge">
                     <input id="email" for="email" name="email" type="email"
-                        class="form-control form-control-prepended" placeholder="Correo electrónico" required>
+                        class="form-control form-control-prepended" placeholder="Correo electrónico">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             {{-- <span class="far fa-envelope"></span> --}}
@@ -92,21 +92,21 @@
             <div class="form-group">
                 <label class="text-label" for="phone">Número de teléfono:</label>
                 <div class="input-group input-group-merge">
-                    <input id="phone" name="phone" for="phone" type="text" required
-                        class="form-control form-control-prepended" placeholder="Número de teléfono" required>
+                    <input id="phone" name="phone" for="phone" type="text"
+                        class="form-control form-control-prepended" placeholder="Número de teléfono">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                     </div>
                 </div>
+                <x-input-error :messages="$errors->get('phone')" class="mt-2" />
             </div>
             <div class="form-group">
                 <label class="text-label" for="password">Contraseña:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password" type="password" for="password" name="password" required
-                        autocomplete="new-password" class="form-control form-control-prepended"
-                        placeholder="Ingresa tu contraseña" required>
+                    <input id="password" type="password" for="password" name="password" autocomplete="new-password"
+                        class="form-control form-control-prepended" placeholder="Ingresa tu contraseña">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <i class="fa-solid fa-lock"></i>
@@ -120,7 +120,7 @@
                 <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
                 <div class="input-group input-group-merge">
                     <input id="password_confirmation" type="password" for="password_confirmation"
-                        name="password_confirmation" required autocomplete="new-password"
+                        name="password_confirmation" autocomplete="new-password"
                         class="form-control form-control-prepended" placeholder="Confirma tu contraseña">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -166,9 +166,11 @@
 
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" checked class="custom-control-input" id="terms" required />
-                    <label class="custom-control-label" style="padding-top: 2px;" for="terms">Acepto <a
-                            href="#" id="openPopup">Términos y Condiciones</a></label>
+                    <input type="checkbox" checked class="custom-control-input" for="terms" name="terms"
+                        id="terms" />
+                    <label class="custom-control-label" style="padding-top: 2px;" name="terms"
+                        for="terms">Acepto <a href="#" id="openPopup">Términos y Condiciones</a></label>
+                    <x-input-error :messages="$errors->get('terms')" class="mt-2" />
                 </div>
             </div>
 

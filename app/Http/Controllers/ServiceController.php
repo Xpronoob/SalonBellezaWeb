@@ -3,77 +3,56 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
-use App\Http\Requests\StoreServiceRequest;
-use App\Http\Requests\UpdateServiceRequest;
+use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $services = Service::all();
         return view('services.index', compact('services'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    //Metodo para crear:
+    public function store(Request $request)
     {
-        return view('services.create');
+        // Validación
+        $validatedData = $request->validate([
+            'service_title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image_url' => 'required|string',
+        ]);
+
+        // Creación del servicio
+        $service = new Service;
+        $service->service_title = $validatedData['service_title'];
+        $service->description = $validatedData['description'];
+        $service->image_url = $validatedData['image_url'] ?? null; // Uso del operador null coalescente por si acaso no se proporciona una URL
+        $service->save();
+
+        // Redirección
+        return redirect()->back()->with('success', 'Servicio creado con éxito.');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    // public function store(StoreServiceRequest $request)
-    // {
-    //     Service::created($request->validated());
-    //     return redirect()->route('servicios.index');
-    // }
 
-    public function store(StoreServiceRequest $request)
+    //Método Update:
+
+    public function update(Request $request, $id_service)
     {
-        Service::create($request->validated());
-        return redirect()->route('servicios.index');
+        $service = Service::find($id_service);
+        $service->service_title = $request->input('service_title');
+        $service->description = $request->input('description');
+        $service->image_url = $request->input('image_url');
+        $service->update();
+        return redirect()->back();
     }
 
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Service $service)
+    //metodo para borrar:
+    public function destroy($id_service)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Service $service)
-    {
-        // $id = $service->id();
-        // $service = Service::find($service);
-        return view('services.edit', compact('service'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateServiceRequest $request, Service $service)
-    {
-        $service->update($request->validated());
-        return redirect()->route('servicios.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Service $service)
-    {
+        $service = Service::findOrFail($id_service);
         $service->delete();
-        return redirect()->route('servicios.index')->with('success', 'Servicio eliminado correctamente');
+        return redirect()->back();
     }
 }

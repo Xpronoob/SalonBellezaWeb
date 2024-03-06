@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -25,13 +26,18 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
 
 Route::prefix('admin')->group(function () {
-    Route::resource('servicios', ServiceController::class);
-
-    Route::resource('categorias', CategoryController::class);
-    Route::resource('proveedores', SupplierController::class);
 });
+
+Route::resource('proveedores', SupplierController::class);
+
+Route::resource('category', CategoryController::class);
+Route::resource('servicios', ServiceController::class);
+Route::resource('productos', ProductoController::class);
 
 Route::resource('home2', ClienteController::class);
 
@@ -43,8 +49,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::resource('category', CategoryController::class);
 });
 
 require __DIR__ . '/auth.php';

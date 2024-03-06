@@ -22,20 +22,19 @@
                     class="navbar-toggler-icon"></span> </button>
             <div class=" collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto ">
-                    <li class="nav-item"> <a class="nav-link mx-2 active" aria-current="page" href="#">Inicio</a>
+                    <li class="nav-item"> <a class="nav-link mx-2 active" aria-current="page"
+                            href="{{ url('/') }}">Inicio</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link mx-2" href="#">Productos</a> </li>
+                    <li class="nav-item"> <a class="nav-link mx-2" href="{{ route('productos.index') }}">Productos</a>
+                    </li>
                     <li class="nav-item d-none d-lg-block"> <a class="nav-link mx-2" href="#"> <img
                                 src="{{ asset('assets/images/LogoSalon.png') }}" height="80" /> </a> </li>
-                    <li class="nav-item"> <a class="nav-link mx-2" href="#">Clientes</a> </li>
-                    <li class="nav-item dropdown"> <a class="nav-link mx-2 dropdown-toggle" href="#"
-                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Company </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Blog</a></li>
-                            <li><a class="dropdown-item" href="#">Acerca de nosotros</a></li>
-                            <li><a class="dropdown-item" href="#">Contacto</a></li>
-                        </ul>
+                    <li class="nav-item"> <a class="nav-link mx-2" href="{{ route('category.index') }}">Categorias</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link mx-2" href="{{ route('servicios.index') }}">Servicios</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link mx-2"
+                            href="{{ route('proveedores.index') }}">Proveedores</a>
                     </li>
                 </ul>
             </div>
@@ -53,86 +52,10 @@
     <!-- Remove the container if you want to extend the Footer to full width. -->
     <div class="my-5">
         <!-- Footer -->
+        <br><br><br>
         <footer class="text-center text-white fixed-bottom" style="background-color: #3f51b5">
             <!-- Grid container -->
-            <div class="container">
-                <!-- Section: Links -->
-                <section class="mt-5">
-                    <!-- Grid row-->
-                    <div class="row text-center d-flex justify-content-center pt-5">
-                        <!-- Grid column -->
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!" class="text-white">Sobre nosotros</a>
-                            </h6>
-                        </div>
-                        <!-- Grid column -->
 
-                        <!-- Grid column -->
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!" class="text-white">Productos</a>
-                            </h6>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!" class="text-white">Clientes</a>
-                            </h6>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!" class="text-white">Ayuda</a>
-                            </h6>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!" class="text-white">Contacto</a>
-                            </h6>
-                        </div>
-                        <!-- Grid column -->
-                    </div>
-                    <!-- Grid row-->
-                </section>
-                <!-- Section: Links -->
-
-                <hr class="my-5" />
-
-                <!-- Section: Text -->
-
-                <!-- Section: Text -->
-
-                <!-- Section: Social -->
-                <section class="text-center ">
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-google"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" class="text-white me-4">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </section>
-                <!-- Section: Social -->
-            </div>
             <!-- Grid container -->
 
             <!-- Copyright -->

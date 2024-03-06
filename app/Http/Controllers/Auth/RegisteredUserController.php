@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -35,6 +36,15 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'phone' => ['required', 'string', 'max:200'],
+            'terms' => [
+                'accepted', // Esta regla valida que el checkbox haya sido marcado
+                Rule::requiredIf(function () use ($request) {
+                    // La regla es requerida si el checkbox no está marcado
+                    return !$request->input('terms');
+                })
+            ],
+        ], [
+            'terms.accepted' => 'Debes aceptar los términos y condiciones.',
         ]);
 
         $user = User::create([

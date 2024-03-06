@@ -53,17 +53,17 @@ class CategoryController extends Controller
         }
     }*/
 
-    public function store(CategoryRequest $request): RedirectResponse
+    public function store(Request $request)
     {
-        // $request->validate([
+        $request->validate([
 
-        //     'category_name' => 'required|string|max:255'
-        // ]);
-        // Category::create([
-        //     'category_name' => $request->string('category_name')
-        // ]);
+            'category_name' => 'required|string|max:255'
+        ]);
+        Category::create([
+            'category_name' => $request->string('category_name')
+        ]);
 
-        Category::created($request->validated());
+        // Category::created($request->validated());
         return redirect()->route('category.index');
     }
 

@@ -34,15 +34,7 @@
                             </div>
                         @endif --}}
 
-                        <script>
-                            $(document).ready(function() {
-                                // Verifica si la URL contiene el identificador del modal
-                                if (window.location.hash === '#create') {
-                                    // Si se encuentra el identificador del modal, abre el modal
-                                    $('#create').modal('show');
-                                }
-                            });
-                        </script>
+
 
                     </div>
 

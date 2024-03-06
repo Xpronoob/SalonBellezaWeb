@@ -1,4 +1,4 @@
-<x-public-layout>
+<x-main-layout>
 
     <!-- VISTA -->
     <div class="card card-form">
@@ -8,4 +8,4 @@
     </div>
     <!-- FIN VISTA -->
 
-</x-public-layout>
+</x-main-layout>
