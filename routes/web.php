@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::resource('proveedores', SupplierController::class);
+Route::resource('providers', SupplierController::class);
 
 Route::resource('category', CategoryController::class);
 Route::resource('servicios', ServiceController::class);

@@ -47,7 +47,8 @@
     <!-- Vector Maps -->
     <link type="text/css" href="{{ asset('assets/vendor/jqvmap/jqvmap.min.css') }}" rel="stylesheet">
 
-
+    <!-- Toastr -->
+    <link type="text/css" href="{{ asset('assets/vendor/toastr.min.css') }}" rel="stylesheet">
 </head>
 
 <body class="layout-default">

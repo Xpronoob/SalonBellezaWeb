@@ -16,7 +16,7 @@ class SupplierController extends Controller
 
     public function create()
     {
-        //
+        return view('supplier.create');
     }
 
     public function store(SupplierStoreRequest $request)
@@ -33,9 +33,9 @@ class SupplierController extends Controller
 
             Supplier::create($request->validated());
 
-            return redirect()->route('proveedores')->withInput();
+            return redirect('/proveedores')->with('success', 'Proveedor creado correctamente.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('/proveedores')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
 
@@ -44,34 +44,38 @@ class SupplierController extends Controller
         //
     }
 
-    public function edit(Supplier $supplier)
+    public function edit(string $id)
     {
-        //
+        $supplier = Supplier::find($id);
+        return view('supplier.edit', compact('supplier'));
     }
 
-    public function update(Request $request, $id_supplier)
+    public function update(SupplierStoreRequest $request, $id_supplier)
     {
 
         // Validar la solicitud
-        $validatedData = $request->validate([
-            'provider_name' => 'required|string|max:255',
-            'contact_number' => 'required|string|max:20',
-            'email' => 'required|email|max:255',
-            'address' => 'required|string|max:255',
-        ]);
+        // $validatedData = $request->validate([
+        //     'provider_name' => 'required|string|max:255',
+        //     'contact_number' => 'required|string|max:20',
+        //     'email' => 'required|email|max:255',
+        //     'address' => 'required|string|max:255',
+        // ]);
 
         try {
-            $suppliers = Supplier::find($id_supplier);
 
-            $suppliers->provider_name = $request->input('provider_name');
-            $suppliers->contact_number = $request->input('contact_number');
-            $suppliers->email = $request->input('email');
-            $suppliers->address = $request->input('address');
-            $suppliers->update();
+            $supplier = Supplier::find($id_supplier);
+            $supplier->update($request->validated());
+            // $suppliers = Supplier::find($id_supplier);
 
-            return redirect()->back();
+            // $suppliers->provider_name = $request->input('provider_name');
+            // $suppliers->contact_number = $request->input('contact_number');
+            // $suppliers->email = $request->input('email');
+            // $suppliers->address = $request->input('address');
+            // $suppliers->update();
+
+            return redirect('/proveedores')->with('success', 'Proveedor actualizado correctamente.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('/proveedores')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
 
@@ -81,9 +85,9 @@ class SupplierController extends Controller
         try {
             $suppliers = Supplier::findOrFail($id_supplier);
             $suppliers->delete();
-            return redirect()->back();
+            return redirect('/proveedores')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'No se pudo eliminar el proveedor.');
+            return redirect('/proveedores')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 }
