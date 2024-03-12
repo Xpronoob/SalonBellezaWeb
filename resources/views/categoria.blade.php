@@ -29,7 +29,7 @@
                     </li>
                     <li class="nav-item d-none d-lg-block"> <a class="nav-link mx-2" href="#"> <img
                                 src="{{ asset('assets/images/LogoSalon.png') }}" height="80" /> </a> </li>
-                    <li class="nav-item"> <a class="nav-link mx-2" href="{{ route('category.index') }}">Categorias</a>
+                    <li class="nav-item"> <a class="nav-link mx-2" href="{{ route('categorias.index') }}">Categorias</a>
                     </li>
                     <li class="nav-item"> <a class="nav-link mx-2" href="{{ route('servicios.index') }}">Servicios</a>
                     </li>

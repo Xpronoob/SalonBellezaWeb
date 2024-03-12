@@ -1,33 +1,59 @@
-@extends('categoria')
-@section('content')
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <br><br>
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
-                Nuevo
-            </button><br><br>
+<x-main-layout>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nombre Producto</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Cantidad en Stock</th>
-                            <th scope="col">Precio de Compra</th>
-                            <th scope="col">Precio de Venta</th>
-                            <th scope="col">Categoría</th>
-                            <th scope="col">Proveedor</th>
-                            <th class="text-center" scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($products as $product)
-                            <tr class="">
-                                <td scope="row">{{ $product->id_product }}</td>
+    @if (session('deleted'))
+        <div class="alert alert-danger">
+            {{ session('deleted') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+<br>
+    <a href="{{ route('productos.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+            data-target="#create">
+            Nuevo </button></a>
+<br>
+    <div class="card card-form">
+        <div class="row no-gutters">
+
+            <div class="col-lg-12 card-form__body">
+
+                <div class="table-responsive border-bottom" data-toggle="lists"
+                    data-lists-values='["js-lists-values-employee-name"]'>
+
+
+    
+
+                    <table class="table mb-0 thead-border-top-0">
+                        <thead>
+                            <tr>
+
+                            
+                            <th>Nombre Producto</th>
+                            <th>Descripción</th>
+                            <th>Cantidad en Stock</th>
+                            <th>Precio de Compra</th>
+                            <th>Precio de Venta</th>
+                            <th>Categoría</th>
+                            <th>Proveedor</th>
+
+                                {{-- <th style="width: 24px;">Acciones</th> --}}
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="staff02">
+                            @foreach ($products as $product)
+                                <tr class="">
+                                    {{-- <td scope="row">{{ $product->id_product }}</td> --}}
+                        
                                 <td>{{ $product->product_name }}</td>
                                 <td>{{ $product->product_description }}</td>
                                 <td>{{ $product->stock_quantity }}</td>
@@ -36,20 +62,45 @@
                                 <td>{{ $product->categoria }}</td>
                                 <td>{{ $product->proveedor }}</td>
 
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-success" data-toggle="modal"
-                                        data-target="#edit{{ $product->id_product }}">Editar</button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#delete{{ $product->id_product }}">Eliminar</button>
-                                </td>
-                            </tr>
-                            @include('Product.info')
-                        @endforeach
-                    </tbody>
-                </table>
+                                    <td class="text-center">
+                                        <a href="{{ route('productos.edit', $product->id_product) }}"><button
+                                                type="button" class="btn btn-success">Editar</button></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <form id="deleteForm"
+                                            action="{{ route('productos.destroy', $product->id_product) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <!-- Botón de eliminación que abre el modal -->
+                                            <button type="button" class="btn btn-danger mt-3" data-toggle="modal"
+                                                data-target="#modal-danger">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <script>
+                                    $(document).ready(function() {
+                                        // Maneja el clic en el botón de confirmación del modal
+                                        $('#confirmDeleteButton').click(function() {
+                                            // Envía el formulario para ejecutar la solicitud DELETE
+                                            $('#deleteForm').submit();
+                                        });
+                                    });
+                                </script>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            @include('Product.create')
         </div>
-        <div class="col-md-1"></div> <!-- Columna vacía para espacio -->
     </div>
-@endsection
+
+</x-main-layout>
+
+
+
+
+
+

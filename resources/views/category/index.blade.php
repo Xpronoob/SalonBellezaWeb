@@ -1,59 +1,87 @@
-@extends('categoria')
-@section('content')
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8"> <br><br>
-
-            <!-- Button trigger modal -->
-
-
-            <button type="button" class="btn btn-primary">
-                <a href="{{ route('category.create') }}" class="text-white ">Nueva Categoria</a>
-
-            </button>
-
-
-            <br><br>
-
-
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class="table-dark">
-                        <tr>
-                            <th scope="col">Id</th>
-
-                            <th scope="col">Nombre Categoria</th>
-                            <th class="text-center" scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse  ($categories as $category)
-                            <tr class="">
-                                <td scope="row">{{ $category->id_category }}</td>
-                                <td>{{ $category->category_name }}</td>
-
-                                <td class="text-center">
-
-                                    <a class="btn btn-success"
-                                        href="{{ route('category.edit', $category->id_category) }}">Editar</a>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#delete{{ $category->id_category }}">Eliminar</button>
-                                </td>
-
-                            </tr>
-                            @include('category.delete')
-                        @empty
-                            <tr class="bg-red-400 text-white text-center">
-                                <td colspan="3" class="border px-4 py-2">{{ __('No hay categorias para mostrar') }}</td>
-                            </tr>
-                        @endforelse
-
-                    </tbody>
-
-                </table>
-            </div>
-
+<x-main-layout>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
         </div>
-        <div class="col-md-2"></div>
+    @endif
+
+    @if (session('deleted'))
+        <div class="alert alert-danger">
+            {{ session('deleted') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+            <br>
+            <a href="{{ route('categorias.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+            data-target="#create">
+            Nuevo </button></a>
+
+
+    <div class="card card-form">
+        <div class="row no-gutters">
+
+            <div class="col-lg-12 card-form__body">
+
+                <div class="table-responsive border-bottom" data-toggle="lists"
+                    data-lists-values='["js-lists-values-employee-name"]'>
+
+<br>
+
+                    <table class="table mb-0 thead-border-top-0">
+                        <thead>
+                            <tr>
+
+                                <th>Nombre Categoria</th>
+                                <th>Acciones</th>
+                                <th>Acciones</th>
+                                {{-- <th style="width: 24px;">Acciones</th> --}}
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="staff02">
+                            @foreach ($categories as $category)
+                                <tr class="">
+                                    {{-- <td scope="row">{{ $category->id_category }}</td> --}}
+                                    <td>{{ $category->category_name }}</td>
+
+                                    <td class="text-center">
+                                        <a href="{{ route('categorias.edit', $category->id_category) }}"><button
+                                                type="button" class="btn btn-success">Editar</button></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <form id="deleteForm"
+                                            action="{{ route('categorias.destroy', $category->id_category) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <!-- Botón de eliminación que abre el modal -->
+                                            <button type="button" class="btn btn-danger mt-3" data-toggle="modal"
+                                                data-target="#modal-danger">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <script>
+                                    $(document).ready(function() {
+                                        // Maneja el clic en el botón de confirmación del modal
+                                        $('#confirmDeleteButton').click(function() {
+                                            // Envía el formulario para ejecutar la solicitud DELETE
+                                            $('#deleteForm').submit();
+                                        });
+                                    });
+                                </script>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-@endsection
+
+</x-main-layout>

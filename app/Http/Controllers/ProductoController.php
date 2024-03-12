@@ -1,9 +1,12 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+
 
 class ProductoController extends Controller
 {
@@ -13,6 +16,64 @@ class ProductoController extends Controller
         return view('product.index', compact('products'));
     }
 
+    public function create()
+    {
+        return view('product.create');
+    }
+
+    public function store(ProductRequest $request)
+    {
+
+        try {
+
+            Producto::create($request->validated());
+
+            return redirect('/productos')->with('success', 'Producto creado correctamente.');
+        } catch (\Exception $e) {
+            return redirect('/productos')->with('error', 'Hubo un problema al guardar los datos.');
+        }
+    }
+
+
+    public function show(Producto $product)
+    {
+        //
+    }
+
+    public function edit(string $id)
+    {
+        $product = Producto::find($id);
+        return view('product.edit', compact('product'));
+    }
+
+    public function update(ProductRequest $request, $id_product)
+    {
+
+
+        try {
+
+            $product = Producto::find($id_product);
+            $product->update($request->validated());
+
+            return redirect('/productos')->with('success', 'Producto actualizado correctamente.');
+        } catch (\Exception $e) {
+            return redirect('/productos')->with('error', 'Hubo un problema al actualizar los datos.');
+        }
+    }
+
+
+    public function destroy($id_product)
+    {
+        try {
+            $products = Producto::findOrFail($id_product);
+            $products->delete();
+            return redirect('/productos')->with('deleted', 'Se eliminó correctamente.');
+        } catch (\Exception $e) {
+            return redirect('/productos')->with('deleted', 'Hubo un problema al eliminar los datos.');
+        }
+    }
+
+    /*
     public function store(Request $request)
     {
         // Validación de los datos del formulario
@@ -62,5 +123,5 @@ class ProductoController extends Controller
         $product = Producto::findOrFail($id_product);
         $product->delete();
         return redirect()->back();
-    }
+    }*/
 }
