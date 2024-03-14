@@ -155,7 +155,7 @@
                 }
 
                 .close {
-                    position: absolute;
+                    
                     top: 10px;
                     right: 10px;
                     cursor: pointer;
@@ -175,39 +175,46 @@
             </div>
 
             <div id="popup" class="popup">
-                <div class="popup-content">
-                    <span class="close" id="closePopup">&times;</span>
-                    <h2>Términos y Condiciones - Utopia Beauty Salon</h2>
-                    <!-- Contenido de los términos y condiciones aquí -->
-                    <p>
-                        Reservas y Cancelaciones:
-                        Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación
-                        pueden incurrir en cargos.
-                    </p>
+    <div class="popup-content">
 
-                    <p>
-                        Pagos:
-                        Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.
-                    </p>
-                    <p>
-                        Responsabilidad:
-                        No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o
-                        condiciones médicas.
-                    </p>
-                    <p>
-                        Comportamiento del Cliente:
-                        Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el
-                        derecho de negar el servicio por comportamiento inapropiado.</p>
-                    <p>
-                        Garantía:
-                        Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.
-                    </p>
-                    <p>
-                        Derechos de Autor:
-                        Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.
-                    </p>
-                </div>
-            </div>
+        <h2>Términos y Condiciones - Utopia Beauty Salon</h2>
+        <!-- Contenido de los términos y condiciones aquí -->
+        <p>
+            Reservas y Cancelaciones:
+            Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación
+            pueden incurrir en cargos.
+        </p>
+
+        <p>
+            Pagos:
+            Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.
+        </p>
+        <p>
+            Responsabilidad:
+            No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o
+            condiciones médicas.
+        </p>
+        <p>
+            Comportamiento del Cliente:
+            Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el
+            derecho de negar el servicio por comportamiento inapropiado.
+        </p>
+        <p>
+            Garantía:
+            Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.
+        </p>
+        <p>
+            Derechos de Autor:
+            Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.
+        </p>
+
+        <!-- Botón Aceptar -->
+            
+            <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton">Aceptar</button>
+
+    </div>
+</div>
+
 
             <script>
                 document.getElementById("openPopup").addEventListener("click", function(event) {

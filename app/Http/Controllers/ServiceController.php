@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -11,48 +12,63 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('services.index', compact('services'));
+        return view('service.index', compact('services'));
     }
 
-    //Metodo para crear:
-    public function store(Request $request)
+    public function create()
     {
-        // Validación
-        $validatedData = $request->validate([
-            'service_title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'image_url' => 'required|string',
-        ]);
+        return view('service.create');
+    }
 
-        // Creación del servicio
-        $service = new Service;
-        $service->service_title = $validatedData['service_title'];
-        $service->description = $validatedData['description'];
-        $service->image_url = $validatedData['image_url'] ?? null; // Uso del operador null coalescente por si acaso no se proporciona una URL
-        $service->save();
-
-        // Redirección
-        return redirect()->back()->with('success', 'Servicio creado con éxito.');
+    public function store(StoreServiceRequest $request)
+    {
+        try {
+            Service::create($request->validated());
+    
+        return redirect('/servicios')->with('success', 'Servicio creado correctamente.');
+    } catch (\Exception $e) {
+        return redirect('/servicios')->with('error', 'Hubo un problema al guardar los datos.');
+    }
+    
+    }
+    public function show(Service $service)
+    {
+        //
     }
 
 
-    //Método Update:
+    
+public function edit(string $id)
+{
+    $service = Service::find($id);
+    return view('service.edit', compact('service'));
+}
 
-    public function update(Request $request, $id_service)
-    {
+public function update(StoreServiceRequest $request, $id_service)
+{
+
+
+    try {
+
         $service = Service::find($id_service);
-        $service->service_title = $request->input('service_title');
-        $service->description = $request->input('description');
-        $service->image_url = $request->input('image_url');
-        $service->update();
-        return redirect()->back();
-    }
+        $service->update($request->validated());
+     
 
-    //metodo para borrar:
-    public function destroy($id_service)
-    {
-        $service = Service::findOrFail($id_service);
-        $service->delete();
-        return redirect()->back();
+        return redirect('/servicios')->with('success', 'Servicio actualizado correctamente.');
+    } catch (\Exception $e) {
+        return redirect('/servicios')->with('error', 'Hubo un problema al actualizar los datos.');
     }
+}
+
+public function destroy($id_service)
+{
+    try {
+        $services = Service::findOrFail($id_service);
+        $services->delete();
+        return redirect('/servicios')->with('deleted', 'Se eliminó correctamente.');
+    } catch (\Exception $e) {
+        return redirect('/servicios')->with('deleted', 'Hubo un problema al eliminar los datos.');
+    }
+}
+
 }

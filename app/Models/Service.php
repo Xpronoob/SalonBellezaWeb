@@ -9,5 +9,6 @@ class Service extends Model
     protected $table = 'services'; 
     protected $primaryKey = 'id_service'; 
     protected $fillable = ['service_title', 'description', 'image_url']; 
+    protected $guarded=[];
     public $timestamps = false; 
 }
