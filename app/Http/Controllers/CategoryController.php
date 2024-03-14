@@ -11,10 +11,15 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::all();
-        return view('category.index', compact('categories'));
+        $busqueda=$request -> busqueda;
+
+        $categories = Category::where('category_name','LIKE','%'.$busqueda.'%')
+        ->paginate(5);
+      
+
+        return view('category.index', compact('categories','busqueda'));
     }
 
 

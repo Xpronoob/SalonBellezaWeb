@@ -30,10 +30,11 @@
                     data-lists-values='["js-lists-values-employee-name"]'>
 
 
-                    <div class="search-form search-form--light m-3">
-                        <input type="text" class="form-control search" placeholder="Search">
-                        <button class="btn" type="button"><i class="material-icons">search</i></button>
-                    </div>
+                    <form class="d-flex" role="search">
+                     <input  name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+                   <button class="btn btn-success" type="submit">Buscar</button>
+                      </form>
+                    
 
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
@@ -90,6 +91,10 @@
                 </div>
             </div>
         </div>
+        <tr>
+                    <td colspan=4>{{$suppliers ->appends(['busqueda'=>$busqueda])}} </td>
+                                </tr>
+                  
     </div>
 
 </x-main-layout>

@@ -31,7 +31,10 @@
                 <div class="table-responsive border-bottom" data-toggle="lists"
                     data-lists-values='["js-lists-values-employee-name"]'>
 
-<br>
+<br> <form class="d-flex" role="search">
+                     <input  name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+                   <button class="btn btn-success" type="submit">Buscar</button>
+                      </form>
 
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
@@ -82,6 +85,8 @@
                 </div>
             </div>
         </div>
+        <td colspan=4>{{$categories ->appends(['busqueda'=>$busqueda])}} </td>
+                                </tr>
     </div>
 
 </x-main-layout>

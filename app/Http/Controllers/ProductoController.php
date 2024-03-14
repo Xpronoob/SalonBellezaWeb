@@ -10,10 +10,19 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $products = Producto::all();
-        return view('product.index', compact('products'));
+
+        //$products = Producto::all();
+
+        $busqueda=$request -> busqueda;
+
+        $products = Producto::where('product_name','LIKE','%'.$busqueda.'%')
+        ->orWhere('product_description','LIKE','%'.$busqueda.'%')
+        ->paginate(5);
+      
+
+        return view('product.index', compact('products','busqueda'));
     }
 
     public function create()

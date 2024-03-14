@@ -8,10 +8,14 @@ use Illuminate\Http\Request;
 
 class SupplierController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $busqueda=$request -> busqueda;
         $suppliers = Supplier::all();
-        return view('supplier.index', compact('suppliers'));
+        $suppliers = Supplier::where('provider_name','LIKE','%'.$busqueda.'%')
+        ->paginate(5);
+
+        return view('supplier.index', compact('suppliers','busqueda'));
     }
 
     public function create()

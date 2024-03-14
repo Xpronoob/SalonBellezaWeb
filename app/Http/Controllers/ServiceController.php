@@ -9,10 +9,15 @@ use Illuminate\Http\Request;
 class ServiceController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $services = Service::all();
-        return view('service.index', compact('services'));
+        $busqueda=$request -> busqueda;
+    
+        $services = Service::where('title','LIKE','%'.$busqueda.'%')
+        ->orWhere('description','LIKE','%'.$busqueda.'%')
+        ->paginate(5);
+
+        return view('service.index', compact('services','busqueda'));
     }
 
     public function create()
