@@ -74,10 +74,11 @@
                 <label class="text-label" for="email">{{ __('Correo Electrónico') }}</label>
                 <input placeholder="Correo Electrónico" id="email"
                     class="form-control @error('email') is-invalid @enderror" type="email" name="email"
-                    value="{{ old('email') }}" required autofocus />
+                    value="{{ old('email') }}"  />
+            
                 @error('email')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
 
             {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}

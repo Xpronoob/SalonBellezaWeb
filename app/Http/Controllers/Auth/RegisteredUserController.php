@@ -45,6 +45,11 @@ class RegisteredUserController extends Controller
             ],
         ], [
             'terms.accepted' => 'Debes aceptar los términos y condiciones.',
+            'name.required' => 'El nombre es requerido',
+            'email.required' => 'El correo es requerido',
+            'password.required' => 'La contraseña es requerida',
+            'phone.required' => 'El teléfono es requerido'
+
         ]);
 
         $user = User::create([

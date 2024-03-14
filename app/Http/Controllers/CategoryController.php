@@ -17,38 +17,7 @@ class CategoryController extends Controller
         return view('category.index', compact('categories'));
     }
 
-/*
-    public function create()
-    {
-        $categories = new Category;
-        $title = __('Nueva Categoria');
-        $action = route('category.store');
-        $buttonText = __('Nueva Categoria');
-        return view('category.create', compact('categories', 'title', 'action', 'buttonText'));
-    }
 
-  
-
-    public function store(Request $request)
-    {
-        $request->validate([
-
-            'category_name' => 'required|string|max:255'
-        ]);
-        Category::create([
-            'category_name' => $request->string('category_name')
-        ]);
-
-        // Category::created($request->validated());
-        return redirect()->route('category.index');
-    }
-
-    public function show(Category $category)
-    {
-        //
-    }
-
-*/
     //Metodo para crear:
 
     public function create()
@@ -95,28 +64,6 @@ public function update(CategoryRequest $request, $id_category)
     }
 }
     
-
- 
-    /*
-      public function edit(Category $category): Renderable
-    {
-        return view('category.edit', compact('category'));
-    }
-
-    public function update(CategoryRequest $request, Category $category)
-    {
-        // $request->validate([
-        //     'category_name' => 'required|string|max:255'
-        // ]);
-
-        // $category->fill($request->post())->save();
-
-        $category->fill($request->validated())->save();
-
-        return redirect()->route('category.index')->with('success', 'La categoria fue editada correctamente');
-    }
-
-}*/
 
     
 public function destroy($id_category)

@@ -70,9 +70,14 @@
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
+                  
                 </div>
+             
+                @error('name')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+           
 
             <div class="form-group">
                 <label class="text-label" for="email">Correo Electrónico:</label>
@@ -86,8 +91,11 @@
                         </div>
                     </div>
                 </div>
+                @error('email')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+          
 
             <div class="form-group">
                 <label class="text-label" for="phone">Número de teléfono:</label>
@@ -99,8 +107,11 @@
                             <i class="fa-solid fa-phone"></i>
                         </div>
                     </div>
+                    
                 </div>
-                <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+                @error('phone')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
             <div class="form-group">
                 <label class="text-label" for="password">Contraseña:</label>
@@ -113,8 +124,11 @@
                         </div>
                     </div>
                 </div>
+                @error('password')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+     
 
             <div class="form-group">
                 <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
@@ -209,9 +223,9 @@
         </p>
 
         <!-- Botón Aceptar -->
-            
+            <div  class="text-center">
             <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton">Aceptar</button>
-
+            </div>
     </div>
 </div>
 
