@@ -1,52 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 
-@extends('categoria')
-@section('content')
-
-    <body>
-        <div class="container mt-2">
-            <div class="row">
-                <div class="col-lg-12 margin-tb">
-                    <br>
-                    <div class="pull-left mb-2">
-                        <h2>Nueva categoria</h2>
-                    </div>
-
+<x-main-layout>
+    <form action="{{ route('categorias.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="card card-form">
+            <div class="row no-gutters">
+                <div class="col-lg-4 card-body">
+                    <p><strong class="headings-color">Nueva Categoria</strong></p>
+                    <p class="text-muted">Puedes agregar nuevas categorias</p>
                 </div>
-            </div>
-            @if (session('status'))
-                <div class="alert alert-success mb-1 mt-1">
-                    {{ session('status') }}
-                </div>
-            @endif
-            <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="row">
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-lg-8 card-form__body card-body">
+                    <form>
                         <div class="form-group">
-                            <br>
-                            <strong>Nombre de la categoria:</strong>
-                            <br>
-                            <input type="text" name="category_name" class="form-control"
+                            <label for="category_name">Nombre la categoria:</label>
+                            <input type="text" class="form-control" name="category_name" id="category_name"
                                 placeholder="Ingrese el nombre de la categoria">
                             @error('category_name')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="pull-right">
-                        <a class="btn btn-danger text-white" href="{{ route('category.index') }}"> Cancelar</a>
-                        <button type="submit" class="btn btn-info text-white ml-3">Confirmar</button>
-
-                    </div>
+                        <div class="modal-footer">
+                            <a href="{{ route('categorias.index') }}"><button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Volver</button></a>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-    </body>
-
-    </html>
-@endsection
+    </form>
+</x-main-layout>

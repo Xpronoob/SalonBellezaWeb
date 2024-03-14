@@ -70,8 +70,11 @@
                         </div>
                     </div>
                 </div>
+                @error('email')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+           
 
             <div class="form-group">
                 <label class="text-label" for="password" name="password">Contraseña:</label>
@@ -84,8 +87,10 @@
                         </div>
                     </div>
                 </div>
+                @error('password')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">

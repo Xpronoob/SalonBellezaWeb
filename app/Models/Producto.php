@@ -9,5 +9,6 @@ class Producto extends Model
     protected $table = 'products';
     protected $primaryKey = 'id_product';
     protected $fillable = ['product_name', 'product_description', 'stock_quantity', 'purchase_price', 'selling_price', 'categoria', 'proveedor'];
+    protected $guarded=[];
     public $timestamps = false;
 }

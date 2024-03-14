@@ -1,4 +1,3 @@
-
 <x-main-layout>
     @if (session('success'))
         <div class="alert alert-success">
@@ -17,11 +16,11 @@
             {{ session('error') }}
         </div>
     @endif
-<br>
-    <a href="{{ route('productos.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+
+    <a href="{{ route('servicios.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
             data-target="#create">
             Nuevo </button></a>
-<br>
+
     <div class="card card-form">
         <div class="row no-gutters">
 
@@ -30,49 +29,38 @@
                 <div class="table-responsive border-bottom" data-toggle="lists"
                     data-lists-values='["js-lists-values-employee-name"]'>
 
-              
+
                     <form class="d-flex" role="search">
                      <input  name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre o descripción" aria-label="Search">
                    <button class="btn btn-success" type="submit">Buscar</button>
                       </form>
-                    
 
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
                             <tr>
-
-                            
-                            <th>Nombre Producto</th>
-                            <th>Descripción</th>
-                            <th>Cantidad en Stock</th>
-                            <th>Precio de Compra</th>
-                            <th>Precio de Venta</th>
-                            <th>Categoría</th>
-                            <th>Proveedor</th>
-
+                            <th>Título del Servicio</th>
+                            <th >Descripción</th>
+                            <th>Imagen</th>
+                            <th>Acciones</th>
+                             <th>Acciones</th>
                                 {{-- <th style="width: 24px;">Acciones</th> --}}
                             </tr>
                         </thead>
                         <tbody class="list" id="staff02">
-                            @foreach ($products as $product)
+                            @foreach ($services as $service)
                                 <tr class="">
-                                    {{-- <td scope="row">{{ $product->id_product }}</td> --}}
-                        
-                                <td>{{ $product->product_name }}</td>
-                                <td>{{ $product->product_description }}</td>
-                                <td>{{ $product->stock_quantity }}</td>
-                                <td>{{ $product->purchase_price }}</td>
-                                <td>{{ $product->selling_price }}</td>
-                                <td>{{ $product->categoria }}</td>
-                                <td>{{ $product->proveedor }}</td>
-
-                                    <td class="text-center">
-                                        <a href="{{ route('productos.edit', $product->id_product) }}"><button
+                                {{--    <td scope="row">{{ $service->id_service}}</td> --}}
+                                <td>{{ $service->service_title }}</td>
+                                <td>{{ $service->description }}</td>
+                                <td><img src="{{ $service->image_url }}" alt="Imagen de servicio" style="max-width: 100px;">
+                                </td>
+                                <td class="text-center">
+                                        <a href="{{ route('servicios.edit', $service->id_service) }}"><button
                                                 type="button" class="btn btn-success">Editar</button></a>
                                     </td>
-                                    <td class="text-center">
+                                <td class="text-center">
                                         <form id="deleteForm"
-                                            action="{{ route('productos.destroy', $product->id_product) }}"
+                                            action="{{ route('servicios.destroy', $service->id_service) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -83,6 +71,7 @@
                                             </button>
                                         </form>
                                     </td>
+                                
                                 </tr>
                                 <script>
                                     $(document).ready(function() {
@@ -96,24 +85,12 @@
                             @endforeach
                         </tbody>
                     </table>
-                   
-                  
                 </div>
             </div>
         </div>
-        
-    </div>
-    
-                   <!-- {{$products->links()}} -->
-                   <tr>
-                    <td colspan=4>{{$products ->appends(['busqueda'=>$busqueda])}} </td>
+        <tr>
+                    <td colspan=4>{{$services ->appends(['busqueda'=>$busqueda])}} </td>
                                 </tr>
-                  
-                    </div>
+    </div>
+
 </x-main-layout>
-
-
-
-
-
-

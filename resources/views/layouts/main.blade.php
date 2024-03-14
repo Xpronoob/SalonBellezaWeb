@@ -1,29 +1,16 @@
 @vite(['resources/css/empty.css'])
 
+@include('modals.global')
+
 @include('layouts.mainHeader')
 
 <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
     <!-- CONTENT VIEW -->
     <div class="mdk-drawer-layout__content page">
 
-        <div class="container-fluid page__heading-container">
-            <div class="page__heading d-flex align-items-center">
-                <div class="flex">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="#"><i class="material-icons icon-20pt">home</i></a>
-                            </li>
-                            <li class="breadcrumb-item">Blank</li>
-                            <li class="breadcrumb-item active" aria-current="page">Page</li>
-                        </ol>
-                    </nav>
-                    <h1 class="m-0">Blank Page</h1>
-                </div>
 
-                {{-- <a href="" class="btn btn-success ml-1">Action</a> --}}
-            </div>
-        </div>
 
+        <div class="mt-2"></div>
         <div class="container-fluid page__container">
             {{ $slot }} <!-- VISTA -->
         </div>
@@ -32,7 +19,8 @@
     <!-- END CONTENT VIEW -->
     <!-- // END drawer-layout__content -->
 
-    <div class="mdk-drawer  js-mdk-drawer" id="default-drawer" data-align="start">
+    <div class="mdk-drawer
+            js-mdk-drawer" id="default-drawer" data-align="start">
         <div class="mdk-drawer__content">
             @include('layouts.mainNavbar')
         </div>
@@ -80,6 +68,10 @@
 <script src="{{ asset('assets/js/sidebar-mini.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
+<!-- Toastr -->
+<script src="{{ asset('assets/vendor/toastr.min.js') }}"></script>
+<script src="{{ asset('assets/js/toastr.js') }}"></script>
+
 <!-- App Settings (safe to remove) -->
 <script src="{{ asset('assets/js/app-settings.js') }}"></script>
 
@@ -94,7 +86,7 @@
 <script src="{{ asset('assets/vendor/moment.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/moment-range.js') }}"></script>
 
-<!-- Chart.js -->
+{{-- <!-- Chart.js -->
 <script src="{{ asset('assets/vendor/Chart.min.js') }}"></script>
 
 <!-- App Charts JS -->
@@ -103,7 +95,7 @@
 
 <!-- Chart Samples -->
 <script src="{{ asset('assets/js/page.dashboard.js') }}"></script>
-<script src="{{ asset('assets/js/progress-charts.js') }}"></script>
+<script src="{{ asset('assets/js/progress-charts.js') }}"></script> --}}
 
 <!-- Vector Maps -->
 <script src="{{ asset('assets/vendor/jqvmap/jquery.vmap.min.js') }}"></script>

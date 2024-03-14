@@ -38,18 +38,18 @@
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
             <ul class="sidebar-submenu collapse {{ Request::is('inventario*') ? 'show' : '' }}" id="apps_menu">
-                <li class="sidebar-menu-item {{ Request::is('inventario/productos*') ? 'active' : '' }}">
-                    <a class="sidebar-menu-button" href="">
+                <li class="sidebar-menu-item {{ Request::is('productos.index') ? 'active' : '' }}">
+                    <a class="sidebar-menu-button" href="{{ route('productos.index') }}">
                         <span class="sidebar-menu-text">Productos</span>
                     </a>
                 </li>
                 <li class="sidebar-menu-item {{ Request::is('inventario/categorias*') ? 'active' : '' }}">
-                    <a class="sidebar-menu-button" href="">
+                    <a class="sidebar-menu-button" href="{{ route('categorias.index') }}">
                         <span class="sidebar-menu-text">Categorías</span>
                     </a>
                 </li>
                 <li class="sidebar-menu-item {{ Request::is('inventario/proveedores*') ? 'active' : '' }}">
-                    <a class="sidebar-menu-button" href="">
+                    <a class="sidebar-menu-button" href="{{ route('proveedores.index') }}">
                         <span class="sidebar-menu-text">Proveedores</span>
                     </a>
                 </li>

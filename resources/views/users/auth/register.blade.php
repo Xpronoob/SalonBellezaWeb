@@ -70,9 +70,14 @@
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
+                  
                 </div>
+             
+                @error('name')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+           
 
             <div class="form-group">
                 <label class="text-label" for="email">Correo Electrónico:</label>
@@ -86,8 +91,11 @@
                         </div>
                     </div>
                 </div>
+                @error('email')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+          
 
             <div class="form-group">
                 <label class="text-label" for="phone">Número de teléfono:</label>
@@ -99,8 +107,11 @@
                             <i class="fa-solid fa-phone"></i>
                         </div>
                     </div>
+                    
                 </div>
-                <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+                @error('phone')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
             <div class="form-group">
                 <label class="text-label" for="password">Contraseña:</label>
@@ -113,8 +124,11 @@
                         </div>
                     </div>
                 </div>
+                @error('password')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
             </div>
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+     
 
             <div class="form-group">
                 <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
@@ -155,7 +169,7 @@
                 }
 
                 .close {
-                    position: absolute;
+                    
                     top: 10px;
                     right: 10px;
                     cursor: pointer;
@@ -175,39 +189,46 @@
             </div>
 
             <div id="popup" class="popup">
-                <div class="popup-content">
-                    <span class="close" id="closePopup">&times;</span>
-                    <h2>Términos y Condiciones - Utopia Beauty Salon</h2>
-                    <!-- Contenido de los términos y condiciones aquí -->
-                    <p>
-                        Reservas y Cancelaciones:
-                        Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación
-                        pueden incurrir en cargos.
-                    </p>
+    <div class="popup-content">
 
-                    <p>
-                        Pagos:
-                        Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.
-                    </p>
-                    <p>
-                        Responsabilidad:
-                        No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o
-                        condiciones médicas.
-                    </p>
-                    <p>
-                        Comportamiento del Cliente:
-                        Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el
-                        derecho de negar el servicio por comportamiento inapropiado.</p>
-                    <p>
-                        Garantía:
-                        Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.
-                    </p>
-                    <p>
-                        Derechos de Autor:
-                        Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.
-                    </p>
-                </div>
+        <h2>Términos y Condiciones - Utopia Beauty Salon</h2>
+        <!-- Contenido de los términos y condiciones aquí -->
+        <p>
+            Reservas y Cancelaciones:
+            Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación
+            pueden incurrir en cargos.
+        </p>
+
+        <p>
+            Pagos:
+            Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.
+        </p>
+        <p>
+            Responsabilidad:
+            No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o
+            condiciones médicas.
+        </p>
+        <p>
+            Comportamiento del Cliente:
+            Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el
+            derecho de negar el servicio por comportamiento inapropiado.
+        </p>
+        <p>
+            Garantía:
+            Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.
+        </p>
+        <p>
+            Derechos de Autor:
+            Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.
+        </p>
+
+        <!-- Botón Aceptar -->
+            <div  class="text-center">
+            <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton">Aceptar</button>
             </div>
+    </div>
+</div>
+
 
             <script>
                 document.getElementById("openPopup").addEventListener("click", function(event) {
