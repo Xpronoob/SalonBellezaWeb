@@ -1,4 +1,3 @@
-
 <x-main-layout>
     <form action="{{ route('categorias.store') }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -11,10 +10,10 @@
                 <div class="col-lg-8 card-form__body card-body">
                     <form>
                         <div class="form-group">
-                            <label for="category_name">Nombre la categoria:</label>
-                            <input type="text" class="form-control" name="category_name" id="category_name"
+                            <label for="name">Nombre la categoria:</label>
+                            <input type="text" class="form-control" name="name" id="name"
                                 placeholder="Ingrese el nombre de la categoria">
-                            @error('category_name')
+                            @error('name')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>

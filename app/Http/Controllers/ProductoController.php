@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
-use App\Models\Producto;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 
@@ -15,14 +15,14 @@ class ProductoController extends Controller
 
         //$products = Producto::all();
 
-        $busqueda=$request -> busqueda;
+        $busqueda = $request->busqueda;
 
-        $products = Producto::where('product_name','LIKE','%'.$busqueda.'%')
-        ->orWhere('product_description','LIKE','%'.$busqueda.'%')
-        ->paginate(5);
-      
+        $products = Product::where('name', 'LIKE', '%' . $busqueda . '%')
+            ->orWhere('description', 'LIKE', '%' . $busqueda . '%')
+            ->paginate(5);
 
-        return view('product.index', compact('products','busqueda'));
+
+        return view('product.index', compact('products', 'busqueda'));
     }
 
     public function create()
@@ -35,7 +35,7 @@ class ProductoController extends Controller
 
         try {
 
-            Producto::create($request->validated());
+            Product::create($request->validated());
 
             return redirect('/productos')->with('success', 'Producto creado correctamente.');
         } catch (\Exception $e) {
@@ -44,14 +44,14 @@ class ProductoController extends Controller
     }
 
 
-    public function show(Producto $product)
+    public function show(Product $product)
     {
         //
     }
 
     public function edit(string $id)
     {
-        $product = Producto::find($id);
+        $product = Product::find($id);
         return view('product.edit', compact('product'));
     }
 
@@ -61,7 +61,7 @@ class ProductoController extends Controller
 
         try {
 
-            $product = Producto::find($id_product);
+            $product = Product::find($id_product);
             $product->update($request->validated());
 
             return redirect('/productos')->with('success', 'Producto actualizado correctamente.');
@@ -74,7 +74,7 @@ class ProductoController extends Controller
     public function destroy($id_product)
     {
         try {
-            $products = Producto::findOrFail($id_product);
+            $products = Product::findOrFail($id_product);
             $products->delete();
             return redirect('/productos')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {

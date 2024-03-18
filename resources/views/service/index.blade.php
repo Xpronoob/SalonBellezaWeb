@@ -29,38 +29,38 @@
                 <div class="table-responsive border-bottom" data-toggle="lists"
                     data-lists-values='["js-lists-values-employee-name"]'>
 
-
                     <form class="d-flex" role="search">
-                     <input  name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre o descripción" aria-label="Search">
-                   <button class="btn btn-success" type="submit">Buscar</button>
-                      </form>
+                        <input name="busqueda" class="form-control me-2" type="search"
+                            placeholder="Buscar por nombre o descripción" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </form>
 
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
                             <tr>
-                            <th>Título del Servicio</th>
-                            <th >Descripción</th>
-                            <th>Imagen</th>
-                            <th>Acciones</th>
-                             <th>Acciones</th>
+                                <th>Título del Servicio</th>
+                                <th>Descripción</th>
+                                <th>Imagen</th>
+                                <th>Acciones</th>
+                                <th>Acciones</th>
                                 {{-- <th style="width: 24px;">Acciones</th> --}}
                             </tr>
                         </thead>
                         <tbody class="list" id="staff02">
                             @foreach ($services as $service)
                                 <tr class="">
-                                {{--    <td scope="row">{{ $service->id_service}}</td> --}}
-                                <td>{{ $service->service_title }}</td>
-                                <td>{{ $service->description }}</td>
-                                <td><img src="{{ $service->image_url }}" alt="Imagen de servicio" style="max-width: 100px;">
-                                </td>
-                                <td class="text-center">
-                                        <a href="{{ route('servicios.edit', $service->id_service) }}"><button
-                                                type="button" class="btn btn-success">Editar</button></a>
+                                    {{--    <td scope="row">{{ $service->id_service}}</td> --}}
+                                    <td>{{ $service->title }}</td>
+                                    <td>{{ $service->description }}</td>
+                                    <td><img src="{{ $service->image }}" alt="Imagen de servicio"
+                                            style="max-width: 100px;">
                                     </td>
-                                <td class="text-center">
-                                        <form id="deleteForm"
-                                            action="{{ route('servicios.destroy', $service->id_service) }}"
+                                    <td class="text-center">
+                                        <a href="{{ route('servicios.edit', $service->id) }}"><button type="button"
+                                                class="btn btn-success">Editar</button></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <form id="deleteForm" action="{{ route('servicios.destroy', $service->id) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -71,7 +71,7 @@
                                             </button>
                                         </form>
                                     </td>
-                                
+
                                 </tr>
                                 <script>
                                     $(document).ready(function() {
@@ -89,8 +89,8 @@
             </div>
         </div>
         <tr>
-                    <td colspan=4>{{$services ->appends(['busqueda'=>$busqueda])}} </td>
-                                </tr>
+            <td colspan=4>{{ $services->appends(['busqueda' => $busqueda]) }} </td>
+        </tr>
     </div>
 
 </x-main-layout>

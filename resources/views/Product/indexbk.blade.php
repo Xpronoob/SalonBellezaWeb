@@ -104,4 +104,5 @@
         <td colspan=4>{{ $products->appends(['busqueda' => $busqueda]) }} </td>
     </tr>
 
+    </div>
 </x-main-layout>

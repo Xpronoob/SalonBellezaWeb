@@ -6,7 +6,6 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CategoryController;
 
@@ -37,11 +36,8 @@ Route::resource('proveedores', SupplierController::class);
 Route::resource('providers', SupplierController::class);
 Route::resource('categorias', CategoryController::class);
 
-//Route::resource('category', CategoryController::class);
 Route::resource('servicios', ServiceController::class);
 Route::resource('productos', ProductoController::class);
-
-Route::resource('home2', ClienteController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

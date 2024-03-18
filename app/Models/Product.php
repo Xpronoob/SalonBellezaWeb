@@ -1,17 +1,16 @@
 <?php
 
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Product extends Model
 {
     use HasFactory;
-    protected $tabla = 'categories';
+    protected $table = 'products';
     protected $primaryKey = 'id';
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'description', 'stock', 'purchase_price', 'selling_price', 'category', 'supplier'];
     protected $guarded = [];
     public $timestamps = false;
 }

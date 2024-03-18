@@ -31,10 +31,11 @@
 
 
                     <form class="d-flex" role="search">
-                     <input  name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
-                   <button class="btn btn-success" type="submit">Buscar</button>
-                      </form>
-                    
+                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre"
+                            aria-label="Search">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </form>
+
 
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
@@ -52,19 +53,18 @@
                         <tbody class="list" id="staff02">
                             @foreach ($suppliers as $supplier)
                                 <tr class="">
-                                    {{-- <td scope="row">{{ $supplier->id_supplier }}</td> --}}
-                                    <td>{{ $supplier->provider_name }}</td>
-                                    <td>{{ $supplier->contact_number }}</td>
+                                    {{-- <td scope="row">{{ $supplier->id }}</td> --}}
+                                    <td>{{ $supplier->name }}</td>
+                                    <td>{{ $supplier->number }}</td>
                                     <td>{{ $supplier->email }}</td>
                                     <td>{{ $supplier->address }}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ route('proveedores.edit', $supplier->id_supplier) }}"><button
-                                                type="button" class="btn btn-success">Editar</button></a>
+                                        <a href="{{ route('proveedores.edit', $supplier->id) }}"><button type="button"
+                                                class="btn btn-success">Editar</button></a>
                                     </td>
                                     <td class="text-center">
-                                        <form id="deleteForm"
-                                            action="{{ route('proveedores.destroy', $supplier->id_supplier) }}"
+                                        <form id="deleteForm" action="{{ route('proveedores.destroy', $supplier->id) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -92,9 +92,9 @@
             </div>
         </div>
         <tr>
-                    <td colspan=4>{{$suppliers ->appends(['busqueda'=>$busqueda])}} </td>
-                                </tr>
-                  
+            <td colspan=4>{{ $suppliers->appends(['busqueda' => $busqueda]) }} </td>
+        </tr>
+
     </div>
 
 </x-main-layout>

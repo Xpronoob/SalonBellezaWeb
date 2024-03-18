@@ -12,24 +12,24 @@
                 <div class="col-lg-8 card-form__body card-body">
                     <form>
                         <div class="form-group">
-                            <label for="provider_name">Nombre del proveedor:</label>
-                            <input type="text" class="form-control" name="provider_name" id="provider_name"
+                            <label for="name">Nombre del proveedor:</label>
+                            <input type="text" class="form-control" for="name" name="name" id="name"
                                 placeholder="Ingrese el nombre del proveedor">
-                            @error('provider_name')
+                            @error('name')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="contact_number">Número de contacto:</label>
-                            <input type="text" class="form-control" name="contact_number" id="contact_number"
+                            <label for="number">Número de contacto:</label>
+                            <input type="text" class="form-control" for="number" name="number" id="number"
                                 placeholder="Ingrese el número de contacto">
-                            @error('contact_number')
+                            @error('number')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico:</label>
-                            <input type="text" class="form-control" name="email" id="email"
+                            <input type="text" class="form-control" for="email" name="email" id="email"
                                 placeholder="Ingrese el correo electrónico">
                             @error('email')
                                 <div style="color: red;">{{ $message }}</div>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="address">Dirección:</label>
-                            <input type="text" class="form-control" name="address" id="address"
+                            <input type="text" class="form-control" for="address" name="address" id="address"
                                 placeholder="Ingrese la dirección">
                             @error('address')
                                 <div style="color: red;">{{ $message }}</div>

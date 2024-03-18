@@ -22,14 +22,14 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_name' => 'required|string|max:255'
+            'name' => 'required|string|max:255'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'category_name.required' => 'El nombre de la categoría es requerido'
+            'name.required' => 'El nombre de la categoría es requerido'
         ];
     }
 }

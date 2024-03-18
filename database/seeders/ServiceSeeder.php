@@ -17,12 +17,12 @@ class ServiceSeeder extends Seeder
             [
                 'title' => 'Servicio 1',
                 'description' => 'Descripción del Servicio 1',
-                'image_url' => 'url_de_la_imagen_1.jpg',
+                'image' => 'url_de_la_imagen_1.jpg',
             ],
             [
                 'title' => 'Servicio 2',
                 'description' => 'Descripción del Servicio 2',
-                'image_url' => 'url_de_la_imagen_2.jpg',
+                'image' => 'url_de_la_imagen_2.jpg',
             ],
             // Agrega más datos según sea necesario
         ];

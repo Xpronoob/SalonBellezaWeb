@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SupplierStoreRequest extends FormRequest
+class SupplierRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,8 @@ class SupplierStoreRequest extends FormRequest
     {
         return [
 
-            'provider_name' => 'required|string|max:255',
-            'contact_number' => 'required|string|max:20',
+            'name' => 'required|string|max:255',
+            'number' => 'required|string|max:20',
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:255',
             //
@@ -33,12 +33,12 @@ class SupplierStoreRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'provider_name.required' => 'El nombre del proveedor es requerido',
-            'contact_number.required' => 'El número de contacto es requerido',
+            'name.required' => 'El nombre del proveedor es requerido',
+            'number.required' => 'El número de contacto es requerido',
             'email.required' => 'El correo electrónico es requerido',
             'address.required' => 'La dirección es requerida',
 
-            'email.email' => 'El correo necesita un @'
+            'email.email' => 'El correo electrónico debe ser válido'
         ];
     }
 }

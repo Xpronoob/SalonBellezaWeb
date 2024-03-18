@@ -17,8 +17,8 @@
         </div>
     @endif
 
-            <br>
-            <a href="{{ route('categorias.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+    <br>
+    <a href="{{ route('categorias.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
             data-target="#create">
             Nuevo </button></a>
 
@@ -31,10 +31,12 @@
                 <div class="table-responsive border-bottom" data-toggle="lists"
                     data-lists-values='["js-lists-values-employee-name"]'>
 
-<br> <form class="d-flex" role="search">
-                     <input  name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
-                   <button class="btn btn-success" type="submit">Buscar</button>
-                      </form>
+                    <br>
+                    <form class="d-flex" role="search">
+                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre"
+                            aria-label="Search">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </form>
 
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
@@ -50,15 +52,14 @@
                             @foreach ($categories as $category)
                                 <tr class="">
                                     {{-- <td scope="row">{{ $category->id_category }}</td> --}}
-                                    <td>{{ $category->category_name }}</td>
+                                    <td>{{ $category->name }}</td>
 
                                     <td class="text-center">
-                                        <a href="{{ route('categorias.edit', $category->id_category) }}"><button
-                                                type="button" class="btn btn-success">Editar</button></a>
+                                        <a href="{{ route('categorias.edit', $category->id) }}"><button type="button"
+                                                class="btn btn-success">Editar</button></a>
                                     </td>
                                     <td class="text-center">
-                                        <form id="deleteForm"
-                                            action="{{ route('categorias.destroy', $category->id_category) }}"
+                                        <form id="deleteForm" action="{{ route('categorias.destroy', $category->id) }}"
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -85,8 +86,8 @@
                 </div>
             </div>
         </div>
-        <td colspan=4>{{$categories ->appends(['busqueda'=>$busqueda])}} </td>
-                                </tr>
+        <td colspan=4>{{ $categories->appends(['busqueda' => $busqueda]) }} </td>
+        </tr>
     </div>
 
 </x-main-layout>
