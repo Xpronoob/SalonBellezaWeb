@@ -13,8 +13,8 @@
         "APP_NAME": "Laravel",
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://salon-utopia.vercel.app",
-        "ASSET_URL": "https://salon-utopia.vercel.app/public",
+        "APP_URL": "https://laraveldeploy.vercel.app/",
+        "ASSET_URL": "https://laraveldeploy.vercel.app/public/",
 
         "VITE_HTTPS": "true",
 
@@ -29,7 +29,7 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
 
-        "APP_KEY": "base64:eOPvfafigTIsQHStHZ8veRKhckNd1EbEMGqDEhCad10=",
+        "APP_KEY": "base64:88rQ9BIVqVLQ1z4ZAOnghvuwWZ+hsDRgI+a0A7SiIRM=",
 
         "DB_CONNECTION": "pgsql",
         "DB_HOST": "aws-0-us-west-1.pooler.supabase.com",

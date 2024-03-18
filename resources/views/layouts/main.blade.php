@@ -1,4 +1,7 @@
-@vite(['resources/css/empty.css'])
+{{-- @vite(['resources/css/empty.css']) --}}
+<style>
+    {!! Vite::content('resources/css/app.css') !!}
+</style>
 
 @include('modals.global')
 
