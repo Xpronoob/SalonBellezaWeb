@@ -11,10 +11,10 @@
     ],
     "env": {
         "APP_NAME": "Laravel",
-        "APP_ENV": "production",
+        "APP_ENV": "local",
         "APP_DEBUG": "true",
-        "APP_URL": "https://laraveldeploy.vercel.app/",
-        "ASSET_URL": "https://laraveldeploy.vercel.app/public/",
+        "APP_URL": "https://salon-test.vercel.app",
+        "ASSET_URL": "https://salon-test.vercel.app/public",
 
         "VITE_HTTPS": "true",
 

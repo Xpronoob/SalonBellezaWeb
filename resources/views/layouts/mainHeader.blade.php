@@ -10,20 +10,27 @@
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
 
-    <!-- Perfect Scrollbar -->
-    <link type="text/css" href="{{ asset('assets/vendor/perfect-scrollbar.css') }}" rel="stylesheet">
+    {{-- <!-- Perfect Scrollbar -->
+    <link type="text/css" href="./assets/vendor/perfect-scrollbar.css" rel="stylesheet">
 
     <!-- App CSS -->
-    <link type="text/css" href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
-    {{-- <link type="text/css" href="{{ asset('assets/css/app.rtl.css') }}" rel="stylesheet"> --}}
+    <link type="text/css" href="./assets/css/app.css" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="{{ asset('assets/css/vendor-material-icons.css') }}" rel="stylesheet">
-    {{-- <link type="text/css" href="{{ asset('assets/css/vendor-material-icons.rtl.css') }}" rel="stylesheet"> --}}
+    <link type="text/css" href="./assets/css/vendor-material-icons.css" rel="stylesheet">
 
     <!-- Font Awesome FREE Icons -->
-    <link type="text/css" href="{{ asset('assets/css/vendor-fontawesome-free.css') }}" rel="stylesheet">
-    {{-- <link type="text/css" href="{{ asset('assets/css/vendor-fontawesome-free.rtl.css') }}" rel="stylesheet"> --}}
+    <link type="text/css" href="./assets/css/vendor-fontawesome-free.css" rel="stylesheet">
+
+    <!-- Flatpickr -->
+    <link type="text/css" href="./assets/css/vendor-flatpickr.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/vendor-flatpickr-airbnb.css" rel="stylesheet">
+
+    <!-- Vector Maps -->
+    <link type="text/css" href="./assets/vendor/jqvmap/jqvmap.min.css" rel="stylesheet">
+
+    <!-- Toastr -->
+    <link type="text/css" href="./assets/vendor/toastr.min.css" rel="stylesheet"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133433427-1"></script>
@@ -38,17 +45,6 @@
         gtag('config', 'UA-133433427-1');
     </script>
 
-    <!-- Flatpickr -->
-    <link type="text/css" href="{{ asset('assets/css/vendor-flatpickr.css') }}" rel="stylesheet">
-    {{-- <link type="text/css" href="{{ asset('assets/css/vendor-flatpickr.rtl.css') }}" rel="stylesheet"> --}}
-    <link type="text/css" href="{{ asset('assets/css/vendor-flatpickr-airbnb.css') }}" rel="stylesheet">
-    {{-- <link type="text/css" href="{{ asset('assets/css/vendor-flatpickr-airbnb.rtl.css') }}" rel="stylesheet"> --}}
-
-    <!-- Vector Maps -->
-    <link type="text/css" href="{{ asset('assets/vendor/jqvmap/jqvmap.min.css') }}" rel="stylesheet">
-
-    <!-- Toastr -->
-    <link type="text/css" href="{{ asset('assets/vendor/toastr.min.css') }}" rel="stylesheet">
 </head>
 
 <body class="layout-default">
@@ -175,8 +171,7 @@
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
                                                     <a href="#">
-                                                        <div class="avatar avatar-xs"
-                                                            style="width: 32px; height: 32px">
+                                                        <div class="avatar avatar-xs" style="width: 32px; height: 32px">
                                                             <span class="avatar-title bg-purple rounded-circle"><i
                                                                     class="material-icons icon-16pt">person_add</i></span>
                                                         </div>
