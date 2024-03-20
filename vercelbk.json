@@ -1,16 +1,9 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.6.1"
-        }
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
-
     "routes": [
-        {
-            "src": "/(css|js)/(.*)",
-            "dest": "public/$1/$2"
-        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
@@ -18,10 +11,11 @@
     ],
     "env": {
         "APP_NAME": "Laravel",
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_ENV": "local",
+        "APP_DEBUG": "true",
         "APP_URL": "https://salon-test.vercel.app",
-        "VERCEL_DEMO_MODE": "true",
+        "ASSET_URL": "https://salon-test.vercel.app/public",
+
         "VITE_HTTPS": "true",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",

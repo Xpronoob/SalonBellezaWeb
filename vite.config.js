@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
-
+//"ASSET_URL": "https://salon-test.vercel.app/public",
 export default defineConfig({
     plugins: [
         laravel({

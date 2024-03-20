@@ -30,6 +30,7 @@
     {!! Vite::content('resources/assets/vendor/toastr.min.css') !!}
 </style>
 
+
 @include('modals.global')
 
 @include('layouts.mainHeader')
@@ -76,6 +77,12 @@
 {{-- <script>
     {!! Vite::content('resources/js/app.js') !!}
 </script> --}}
+
+<script src="https://salon-test.vercel.app/public/assets/vendor/jquery.min.js"></script>
+<script src="https://salon-test.vercel.app/public/assets/vendor/popper.min.js"></script>
+<script src="https://salon-test.vercel.app/public/assets/vendor/bootstrap.min.js"></script>
+<script src="https://salon-test.vercel.app/public/assets/vendor/perfect-scrollbar.min.js"></script>
+<script src="https://salon-test.vercel.app/public/assets/vendor/toastr.min.js"></script>
 
 <script src="{{ asset('assets/vendor/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/popper.min.js') }}"></script>
