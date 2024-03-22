@@ -1,78 +1,66 @@
-version: "3.9"
-
-networks:
-    laravel:
-        name: laravel
-
+version: "3.8"
 services:
-    nginx:
+    main:
+        container_name: Serve
         build:
             context: .
-            dockerfile: nginx.dockerfile
-        depends_on:
-            - php
-            - mysql
-        container_name: nginx
+            dockerfile: Dockerfile
+        command: "php artisan serve --host=0.0.0.0"
+        volumes:
+            - .:/app
         ports:
-            - 80:80
-            - 443:443
-        volumes:
-            - ./src:/var/www/html
-        networks:
-            - laravel
+            - 8000:8000
 
-    php:
+    queue:
+        container_name: Queue
         build:
             context: .
-            dockerfile: php.dockerfile
-        container_name: php
-        volumes:
-            - ./src:/var/www/html
-        networks:
-            - laravel
+            dockerfile: Dockerfile
+        command: "php artisan queue:work"
+        depends_on:
+            - db
 
-    mysql:
-        image: mysql:8.0.27
-        container_name: mysql
+    db:
+        platform: linux/x86_64
+        image: mysql:8.0
+        container_name: Database
+        environment:
+            MYSQL_DATABASE: "${DB_DATABASE}"
+            MYSQL_USER: "${DB_USERNAME}"
+            MYSQL_ROOT: "root"
+            MYSQL_PASSWORD: "${DB_PASSWORD}"
+            MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+        volumes:
+            - db:/var/lib/mysql
         ports:
             - 3306:3306
-        volumes:
-            - ./mysql:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: PhpMyAdmin
+        links:
+            - db
         environment:
-            MYSQL_DATABASE: laraveldb
-            MYSQL_USER: laravel
-            MYSQL_PASSWORD: secret
-            MYSQL_ROOT_PASSWORD: secret
-        networks:
-            - laravel
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8081:80
 
-    composer:
-        image: composer:latest
-        container_name: composer
-        volumes:
-            - ./src:/var/www/html
-        working_dir: /var/www/html
+    mailpit:
+        image: axllent/mailpit
+        container_name: MailPit
+        ports:
+            - "1025:1025"
+            - "8025:8025"
         networks:
-            - laravel
+            - laravel-exa
 
-    artisan:
-        build:
-            context: .
-            dockerfile: php.dockerfile
-        container_name: artisan
-        volumes:
-            - ./src:/var/www/html
-        working_dir: /var/www/html
-        entrypoint: ["php", "artisan"]
-        networks:
-            - laravel
+networks:
+    laravel-exa:
+        driver: bridge
 
-    npm:
-        image: node:current-alpine
-        container_name: npm
-        volumes:
-            - ./src:/var/www/html
-        working_dir: /var/www/html
-        entrypoint: ["npm"]
-        networks:
-            - laravel
+volumes:
+    db:
+        driver: local

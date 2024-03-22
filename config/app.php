@@ -5,7 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
-    'public_path' => __DIR__ . '/../public',
+
 
 
     /*

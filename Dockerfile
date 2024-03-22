@@ -1,13 +1,11 @@
-FROM php:8.0-fpm-alpine
+FROM php:8.1-fpm-alpine
 
-ADD ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
+RUN docker-php-ext-install pdo pdo_mysql sockets
+RUN curl -sS https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/local/bin --filename=composer
 
-RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN mkdir -p /var/www/html
-
-ADD ./src/ /var/www/html
-
-RUN docker-php-ext-install pdo pdo_mysql
-
-RUN chown -R laravel:laravel /var/www/html
+WORKDIR /app
+COPY . .
+RUN composer install
