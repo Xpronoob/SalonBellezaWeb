@@ -416,6 +416,7 @@ h1, h2, h3, h4, h5, h6,
   color: rgba(17, 43, 74, 0.84);
 }
 
+
 [dir] h1, [dir] h2, [dir] h3, [dir] h4, [dir] h5, [dir] h6, [dir] .h1, [dir] .h2, [dir] .h3, [dir] .h4, [dir] .h5, [dir] .h6 {
   margin-bottom: 0.5rem;
 }
