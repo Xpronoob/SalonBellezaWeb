@@ -15,14 +15,15 @@ class ProductoController extends Controller
 
         //$products = Producto::all();
 
-        $busqueda = $request->busqueda;
+        //$busqueda = $request->busqueda;
 
-        $products = Product::where('name', 'LIKE', '%' . $busqueda . '%')
-            ->orWhere('description', 'LIKE', '%' . $busqueda . '%')
-            ->paginate(5);
+        //$products = Product::where('name', 'LIKE', '%' . $busqueda . '%')
+          //  ->orWhere('description', 'LIKE', '%' . $busqueda . '%')
+           // ->paginate(5);
 
 
-        return view('product.index', compact('products', 'busqueda'));
+        //return view('product.index', compact('products', 'busqueda'));
+return view('product.index');
     }
 
     public function create()
