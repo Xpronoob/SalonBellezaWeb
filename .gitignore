@@ -1,12 +1,10 @@
 node_modules
 vendor
 /vendor
-#
+###
 vps.env
 pgsql.env
-#
+###
 public/build
 api
 dist
-#
-storage/*

@@ -33,10 +33,11 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::resource('proveedores', SupplierController::class);
+Route::resource('providers', SupplierController::class);
 Route::resource('categorias', CategoryController::class);
+
 Route::resource('servicios', ServiceController::class);
-//Route::resource('productos', ProductoController::class);
-Route::resource('product', ProductoController:class);
+Route::resource('productos', ProductoController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

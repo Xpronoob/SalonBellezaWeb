@@ -6,9 +6,9 @@ export default defineConfig({
         laravel({
             input: [
                 // //TAILWIND
-                 "resources/css/app.css",
+                // "resources/css/app.css",
                 // "resources/css/empty.css",
-                 "resources/js/app.js",
+                // "resources/js/app.js",
                 // PLANTILLA
                 // CSS
                 // "resources/assets/vendor/perfect-scrollbar.css",
