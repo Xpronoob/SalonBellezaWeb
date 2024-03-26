@@ -11,14 +11,14 @@ export default defineConfig({
                 // "resources/js/app.js",
                 // PLANTILLA
                 // CSS
-                "resources/assets/vendor/perfect-scrollbar.css",
-                "resources/assets/css/app.css",
-                "resources/assets/css/vendor-material-icons.css",
-                "resources/assets/css/vendor-fontawesome-free.css",
-                "resources/assets/css/vendor-flatpickr.css",
-                "resources/assets/css/vendor-flatpickr-airbnb.css",
-                "resources/assets/vendor/jqvmap/jqvmap.min.css",
-                "resources/assets/vendor/toastr.min.css",
+                // "resources/assets/vendor/perfect-scrollbar.css",
+                // "resources/assets/css/app.css",
+                // "resources/assets/css/vendor-material-icons.css",
+                // "resources/assets/css/vendor-fontawesome-free.css",
+                // "resources/assets/css/vendor-flatpickr.css",
+                // "resources/assets/css/vendor-flatpickr-airbnb.css",
+                // "resources/assets/vendor/jqvmap/jqvmap.min.css",
+                // "resources/assets/vendor/toastr.min.css",
                 // // JS
                 // "resources/assets/vendor/jquery.min.js",
                 // "resources/assets/vendor/popper.min.js",

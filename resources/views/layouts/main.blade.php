@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     {!! Vite::content('resources/assets/vendor/perfect-scrollbar.css') !!}
 </style>
 
@@ -28,7 +28,7 @@
 
 <style>
     {!! Vite::content('resources/assets/vendor/toastr.min.css') !!}
-</style>
+</style> --}}
 
 
 @include('modals.global')
