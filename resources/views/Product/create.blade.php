@@ -59,21 +59,33 @@
 
                             <div class="form-group">
                                 <label for="categoria">Categoría</label>
-                                <input type="text" class="form-control"  name="categoria" id="categoria"
-                                   placeholder="Ingrese la categoría" />
+                                <select name="id_category" id="categoria" class="form-control">
+                               <option value=""> --Escoga una categoria--</option>
+
+                                   @foreach ($categories as $categories)
+                                    <option value="{{$categories ->id }}">{{$categories ->category_name }}</option>
+                                    @endforeach
+                                </select>
                                 @error('categoria')
                                     <div style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label for="producto">Proveedor</label>
-                                <input type="text" class="form-control" name="producto" id="producto"
-                                 placeholder="Ingrese el producto" />
-                                @error('producto')
+                                <label for="proveedor">Proveedor</label>
+                                <select name="id_supplier" id="proveedor" class="form-control">
+                               <option value=""> --Escoga un proveedor--</option>
+
+                                   @foreach ($suppliers as $suppliers)
+                                    <option value="{{$suppliers ->id }}">{{$suppliers ->provider_name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('proveedor')
                                     <div style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
+
+
                             <div class="modal-footer">
                             <a href="{{ route('productos.index') }}"><button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Volver</button></a>

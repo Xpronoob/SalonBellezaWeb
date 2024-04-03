@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Producto;
+use App\Models\Supplier;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 
@@ -27,7 +30,9 @@ class ProductoController extends Controller
 
     public function create()
     {
-        return view('product.create');
+        $categories =Category::all();
+        $suppliers = Supplier::all();
+        return view('product.create',compact('categories'),compact('suppliers'));
     }
 
     public function store(ProductRequest $request)
