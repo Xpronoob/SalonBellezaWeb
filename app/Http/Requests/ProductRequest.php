@@ -27,10 +27,10 @@ class ProductRequest extends FormRequest
             'name' => 'required|max:255',
             'description' => 'required',
             'stock' => 'required|integer|min:0',
-            'purchase_price' => 'required|numeric|min:0',
-            'selling_price' => 'required|numeric|min:0|gte:purchase_price',
-            'category' => 'required|integer',
-            'supplier' => 'required|integer',
+            'purchase_price' => 'numeric|min:0',
+            'selling_price' => 'numeric|min:0|gte:purchase_price',
+            'id_category' => 'required|integer',
+            'id_supplier' => 'required|integer',
         ];
     }
     public function messages(): array
@@ -41,8 +41,8 @@ class ProductRequest extends FormRequest
             'stock.required' => 'La cantidad en stock es requerida',
             'purchase_price.required' => 'El precio de compra es requerido',
             'selling_price.required' => 'El precio de venta es requerido',
-            'category.required' => 'La categoría es requerida',
-            'supplier.required' => 'El proveedor es requerido'
+            'id_category.required' => 'La categoría es requerida',
+            'id_supplier.required' => 'El proveedor es requerido'
         ];
     }
 }

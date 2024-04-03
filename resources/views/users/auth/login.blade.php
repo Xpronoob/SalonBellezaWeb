@@ -38,6 +38,7 @@
     </script>
 
 </head>
+
 <body class="layout-login">
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -61,7 +62,7 @@
                 <div class="form-group">
                     <label class="text-label" for="email" name="email">Correo Electrónico:</label>
                     <div class="input-group input-group-merge">
-                        <input id="email" for="email" name="email" type="text"
+                        <input id="email" for="email" name="email" type="text" value="{{ old('email') }}"
                             class="form-control form-control-prepended" placeholder="Correo Electrónico">
 
                         <div class="input-group-prepend">
@@ -80,7 +81,8 @@
                     <label class="text-label" for="password" name="password">Contraseña:</label>
                     <div class="input-group input-group-merge">
                         <input id="password" for="password" name="password" type="password"
-                            class="form-control form-control-prepended" placeholder="Ingresa la contraseña">
+                            value="{{ old('password') }}" class="form-control form-control-prepended"
+                            placeholder="Ingresa la contraseña">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-key"></span>

@@ -39,7 +39,7 @@ class ProductoController extends Controller
     {
 
         try {
-
+            dump($request->all());
             Product::create($request->validated());
 
             return redirect('/productos')->with('success', 'Producto creado correctamente.');

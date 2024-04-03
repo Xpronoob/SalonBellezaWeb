@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'phone' => ['required', 'string', 'max:200'],
+            'phone' => ['required', 'numeric'],
             'terms' => [
                 'accepted', // Esta regla valida que el checkbox haya sido marcado
                 Rule::requiredIf(function () use ($request) {
@@ -47,8 +47,11 @@ class RegisteredUserController extends Controller
             'terms.accepted' => 'Debes aceptar los términos y condiciones.',
             'name.required' => 'El nombre es requerido',
             'email.required' => 'El correo es requerido',
+            'email.email' => 'El formato del correo electrónico no es válido',
             'password.required' => 'La contraseña es requerida',
-            'phone.required' => 'El teléfono es requerido'
+            'password.min' => 'La contraseña debe tener al menos 8 caracteres',
+            'phone.required' => 'El teléfono es requerido',
+            'phone.numeric' => 'El número de teléfono solo puede contener números'
 
         ]);
 

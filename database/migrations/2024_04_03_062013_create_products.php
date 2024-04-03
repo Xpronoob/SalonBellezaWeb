@@ -18,8 +18,10 @@ return new class extends Migration
             $table->integer('stock');
             $table->decimal('purchase_price', 10, 2)->nullable();
             $table->decimal('selling_price', 10, 2)->nullable();
-            $table->integer('category');
-            $table->integer('supplier');
+            $table->unsignedBigInteger('id_category');
+            $table->foreign('id_category')->references('id')->on('categories');
+            $table->unsignedBigInteger('id_supplier');
+            $table->foreign('id_supplier')->references('id')->on('suppliers');
             $table->timestamps();
         });
     }
