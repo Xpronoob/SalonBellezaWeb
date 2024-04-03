@@ -19859,7 +19859,7 @@ a .avater-title:hover {
 
 [dir] .layout-login {
   background-size: cover;
-  background-image: url("../images/login/alexandre-godreau-431553-unsplash.jpg");
+  background-image: url("../images/login/fondo.jpg");
   background-repeat: no-repeat;
 }
 .layout-login__overlay {
@@ -19900,9 +19900,11 @@ a .avater-title:hover {
 
 .layout-login-centered-boxed {
   height: initial;
+  background-image: url("../images/login/fondo.jpg");
 }
 .layout-login-centered-boxed__form {
   position: relative;
+
   max-width: 26rem;
 }
 [dir] .layout-login-centered-boxed__form {

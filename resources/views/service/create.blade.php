@@ -28,13 +28,16 @@
                         @enderror
                     </div>
                     <div class="form-group">
+
                         <label for="image_url">URL de la Imagen</label>
-                        <input type="text" class="form-control" name="image_url" id="image_url"
+                        <input type="file" class="form-control" name="image_url" id="image_url"
                             placeholder="Ingrese la URL de la imagen">
                         @error('image')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror
                     </div>
+
+                  
 
 
                         <div class="modal-footer">
