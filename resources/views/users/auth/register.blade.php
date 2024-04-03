@@ -41,10 +41,10 @@
 
 </head>
 
-<body class="layout-login-centered-boxed">
+<body class="layout-login">
 
-    <div class="layout-login-centered-boxed__form card">
-        <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 navbar-light">
+    <div class="layout-login__form card">
+        <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
             <a href="../index.html" class="navbar-brand flex-column mb-2 align-items-center mr-0" style="min-width: 0">
                 <img class="navbar-brand-icon mr-0 mb-2" src="../assets/images/LogoSalon.png" width="150"
                     alt="FlowDash">
@@ -82,7 +82,7 @@
             <div class="form-group">
                 <label class="text-label" for="email">Correo Electrónico:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email" for="email" name="email" type="email"
+                    <input id="email" for="email" name="email" type="text"
                         class="form-control form-control-prepended" placeholder="Correo electrónico">
                     <div class="input-group-prepend">
                         <div class="input-group-text">

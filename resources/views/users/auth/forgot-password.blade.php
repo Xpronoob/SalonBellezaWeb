@@ -73,7 +73,7 @@
             <div class="form-group">
                 <label class="text-label" for="email">{{ __('Correo Electrónico') }}</label>
                 <input placeholder="Correo Electrónico" id="email"
-                    class="form-control @error('email') is-invalid @enderror" type="email" name="email"
+                    class="form-control @error('email') is-invalid @enderror" type="text" name="email"
                     value="{{ old('email') }}"  />
             
                 @error('email')

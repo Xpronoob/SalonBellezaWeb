@@ -416,6 +416,7 @@ h1, h2, h3, h4, h5, h6,
   color: rgba(17, 43, 74, 0.84);
 }
 
+
 [dir] h1, [dir] h2, [dir] h3, [dir] h4, [dir] h5, [dir] h6, [dir] .h1, [dir] .h2, [dir] .h3, [dir] .h4, [dir] .h5, [dir] .h6 {
   margin-bottom: 0.5rem;
 }
@@ -19858,7 +19859,7 @@ a .avater-title:hover {
 
 [dir] .layout-login {
   background-size: cover;
-  background-image: url("../images/login/alexandre-godreau-431553-unsplash.jpg");
+  background-image: url("../images/login/fondo.jpg");
   background-repeat: no-repeat;
 }
 .layout-login__overlay {
@@ -19899,9 +19900,11 @@ a .avater-title:hover {
 
 .layout-login-centered-boxed {
   height: initial;
+  background-image: url("../images/login/fondo.jpg");
 }
 .layout-login-centered-boxed__form {
   position: relative;
+
   max-width: 26rem;
 }
 [dir] .layout-login-centered-boxed__form {

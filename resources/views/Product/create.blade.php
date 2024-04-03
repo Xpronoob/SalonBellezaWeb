@@ -38,8 +38,8 @@
                             @enderror
                         </div>
 
-
-                        <div class="form-group">
+                        <!--  -->
+                        {{-- <div class="form-group">
                             <label for="purchase_price">Precio de Compra</label>
                             <input type="text" class="form-control" for="purchase_price" name="purchase_price"
                                 id="purchase_price" placeholder="Ingrese el precio de compra" />
@@ -74,7 +74,41 @@
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="modal-footer"> --}}
+                        <!--  -->
+                        <div class="form-group">
+                            <label for="categoria">Categoría</label>
+                            <select name="id_category" id="categoria" class="form-control">
+                                <option value=""> --Escoga una categoria--</option>
+
+                                @foreach ($categories as $categories)
+                                    <option value="{{ $categories->id }}">{{ $categories->category_name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('categoria')
+                                <div style="color: red;">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proveedor">Proveedor</label>
+                            <select name="id_supplier" id="proveedor" class="form-control">
+                                <option value=""> --Escoga un proveedor--</option>
+
+                                @foreach ($suppliers as $suppliers)
+                                    <option value="{{ $suppliers->id }}">{{ $suppliers->provider_name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('proveedor')
+                                <div style="color: red;">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+
                         <div class="modal-footer">
+                            <!--  -->
                             <a href="{{ route('productos.index') }}"><button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Volver</button></a>
                             <button type="submit" class="btn btn-primary">Guardar</button>
