@@ -25,10 +25,10 @@ class ProductRequest extends FormRequest
 
             //
             'name' => 'required|max:255',
-            'description' => 'required',
+            'description' => 'required|max:255',
             'stock' => 'required|integer|min:0',
-            'purchase_price' => 'numeric|min:0',
-            'selling_price' => 'numeric|min:0|gte:purchase_price',
+            'purchase_price' => 'required|numeric|min:0',
+            'selling_price' => 'required|numeric|min:0|gte:purchase_price',
             'id_category' => 'required|integer',
             'id_supplier' => 'required|integer',
         ];
@@ -37,12 +37,16 @@ class ProductRequest extends FormRequest
     {
         return [
             'name.required' => 'El nombre del producto es requerido',
+            'name.max' => 'El nombre del producto no puede tener más de :max caracteres.',
             'description.required' => 'La descripción es requerida',
+            'description.max' => 'La descripción no puede tener más de :max caracteres.',
             'stock.required' => 'La cantidad en stock es requerida',
             'purchase_price.required' => 'El precio de compra es requerido',
             'selling_price.required' => 'El precio de venta es requerido',
+            'purchase_price.numeric' => 'El campo precio de compra debe ser un número.',
+            'selling_price.numeric' => 'El campo precio de venta debe ser un número.',
             'id_category.required' => 'La categoría es requerida',
-            'id_supplier.required' => 'El proveedor es requerido'
+            'id_supplier.required' => 'El proveedor es requerido',
         ];
     }
 }
