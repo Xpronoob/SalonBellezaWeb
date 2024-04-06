@@ -41,52 +41,40 @@
 
 </head>
 
-<body class="layout-login">
-
-    <div class="layout-login__form card">
-        <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
-            <a href="/" class="navbar-brand flex-column mb-2 align-items-center mr-0" style="min-width: 0">
-                <img class="navbar-brand-icon mr-0 mb-2" src="{{ asset('assets/images/LogoSalon.png') }}" width="150"
-                    alt="Logo Salon">
-                <span style="padding-top: 20px;">Utopía Beauty Salon</span>
-            </a>
-            <p class="m-0">Crea una cuenta en nuesto Sitio Web</p>
+<body class="layout-login d-flex align-items-center justify-content-center">
+    <div class="layout-login__form card p-4">
+        <div class="text-center mb-4">
+            <img src="{{ asset('assets/images/LogoSalon.png') }}" width="150" alt="Logo Salon">
+            <h5 class="mt-2">Utopía Beauty Salon</h5>
+            <p class="m-0">Crea una cuenta en nuestro Sitio Web</p>
         </div>
-
-        <div class="page-separator">
+        <div class="page-separator mb-4">
             <div class="page-separator__text">Ingresar Credenciales</div>
         </div>
-
-        <form style="padding-top: 20px;" method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form-group">
                 <label class="text-label" for="name">Nombre Completo:</label>
                 <div class="input-group input-group-merge">
-                    <input id="name" type="text" for="name" name="name" value="{{ old('name') }}"
+                    <input id="name" type="text" name="name" value="{{ old('name') }}"
                         class="form-control form-control-prepended" placeholder="Nombre completo">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
-                            {{-- <span class="far fa-user"></span> --}}
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
-
                 </div>
-
                 @error('name')
                     <div style="color: red; padding: 1px;">{{ $message }}</div>
                 @enderror
             </div>
-
-
             <div class="form-group">
                 <label class="text-label" for="email">Correo Electrónico:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email" for="email" name="email" type="text" value="{{ old('email') }}"
+                    <input id="email" type="text" name="email" value="{{ old('email') }}"
                         class="form-control form-control-prepended" placeholder="Correo electrónico">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
-                            {{-- <span class="far fa-envelope"></span> --}}
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                     </div>
@@ -95,19 +83,16 @@
                     <div style="color: red; padding: 1px;">{{ $message }}</div>
                 @enderror
             </div>
-
-
             <div class="form-group">
                 <label class="text-label" for="phone">Número de teléfono:</label>
                 <div class="input-group input-group-merge">
-                    <input id="phone" name="phone" for="phone" type="text" value="{{ old('phone') }}"
+                    <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
                         class="form-control form-control-prepended" placeholder="Número de teléfono">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                     </div>
-
                 </div>
                 @error('phone')
                     <div style="color: red; padding: 1px;">{{ $message }}</div>
@@ -116,8 +101,7 @@
             <div class="form-group">
                 <label class="text-label" for="password">Contraseña:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password" type="password" for="password" name="password" autocomplete="new-password"
-                        value="{{ old('password') }}" class="form-control form-control-prepended"
+                    <input id="password" type="password" name="password" class="form-control form-control-prepended"
                         placeholder="Ingresa tu contraseña">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -129,15 +113,11 @@
                     <div style="color: red; padding: 1px;">{{ $message }}</div>
                 @enderror
             </div>
-
-
             <div class="form-group">
                 <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password_confirmation" type="password" for="password_confirmation"
-                        value="{{ old('password_confirmation') }}" name="password_confirmation"
-                        autocomplete="new-password" class="form-control form-control-prepended"
-                        placeholder="Confirma tu contraseña">
+                    <input id="password_confirmation" type="password" name="password_confirmation"
+                        class="form-control form-control-prepended" placeholder="Confirma tu contraseña">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <i class="fa-solid fa-lock"></i>
@@ -145,8 +125,6 @@
                     </div>
                 </div>
             </div>
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-
             <style>
                 /* Estilos para la ventana emergente */
                 .popup {
@@ -171,14 +149,11 @@
                 }
 
                 .close {
-
                     top: 10px;
                     right: 10px;
                     cursor: pointer;
                 }
             </style>
-
-
 
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">
@@ -191,42 +166,29 @@
             </div>
 
             <div id="popup" class="popup">
-                <div class="popup-content">
-
-                    <h2>Términos y Condiciones - Utopia Beauty Salon</h2>
-                    <!-- Contenido de los términos y condiciones aquí -->
-                    <p>
-                        Reservas y Cancelaciones:
-                        Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación
-                        pueden incurrir en cargos.
-                    </p>
-
-                    <p>
-                        Pagos:
-                        Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.
-                    </p>
-                    <p>
-                        Responsabilidad:
-                        No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o
-                        condiciones médicas.
-                    </p>
-                    <p>
-                        Comportamiento del Cliente:
-                        Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el
-                        derecho de negar el servicio por comportamiento inapropiado.
-                    </p>
-                    <p>
-                        Garantía:
-                        Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.
-                    </p>
-                    <p>
-                        Derechos de Autor:
-                        Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.
-                    </p>
-
-                    <!-- Botón Aceptar -->
-                    <div class="text-center">
-                        <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton">Aceptar</button>
+                <div class="popup-content bg-white p-4 rounded">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title text-center text-success mb-4">Términos y Condiciones</h2>
+                            <p class="mb-4">Reservas y Cancelaciones: Se recomienda reservar con anticipación.
+                                Cancelaciones con menos de 24 horas de anticipación pueden incurrir en cargos.</p>
+                            <p class="mb-4">Pagos: Se aceptan efectivo, tarjetas de crédito/débito y otros métodos
+                                electrónicos.</p>
+                            <p class="mb-4">Responsabilidad: No nos hacemos responsables por pérdidas o daños
+                                personales. Infórmanos sobre alergias o condiciones médicas.</p>
+                            <p class="mb-4">Comportamiento del Cliente: Se espera comportamiento respetuoso hacia el
+                                personal y otros clientes. Nos reservamos el derecho de negar el servicio por
+                                comportamiento inapropiado.</p>
+                            <p class="mb-4">Garantía: Si no estás satisfecho, comunícanoslo dentro de las 48 horas
+                                posteriores al servicio.</p>
+                            <p class="mb-4">Derechos de Autor: Todo contenido asociado con Utopia Beauty Salon es
+                                propiedad exclusiva nuestra.</p>
+                            <!-- Botón Cerrar -->
+                            <div class="text-center">
+                                <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton"
+                                    type="button">Cerrar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,7 +200,7 @@
                     document.getElementById("popup").style.display = "block";
                 });
 
-                document.getElementById("closePopup").addEventListener("click", function() {
+                document.getElementById("acceptButton").addEventListener("click", function() {
                     document.getElementById("popup").style.display = "none";
                 });
 
@@ -250,11 +212,9 @@
                     }
                 });
             </script>
-
             <div class="form-group text-center">
-                <button class="btn btn-primary mb-2" type="submit">Crear Cuenta</button><br>
-                <a class="text-body text-underline" href="{{ route('login') }}">Tienes una cuenta? ¡Inicia
-                    Sesión!</a>
+                <button class="btn btn-primary" type="submit">Crear Cuenta</button>
+                <p class="mt-3 mb-0"><a href="{{ route('login') }}">¿Ya tienes una cuenta? Inicia Sesión</a></p>
             </div>
         </form>
     </div>
@@ -278,7 +238,6 @@
     <script src="../assets/js/app.js"></script>
     <!-- App Settings (safe to remove) -->
     {{-- <script src="../assets/js/app-settings.js"></script> --}}
-
 
 </body>
 

@@ -60,22 +60,36 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="category">Categoría</label>
-                            <input type="text" class="form-control" name="category" id="category"
-                                placeholder="Ingrese la categoría" value="{{ $product->category }}" />
-                            @error('category')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
+    <label for="category">Categoría</label>
+    <select name="id_category" id="id_category" class="form-control">
+        <option value=""> --Seleccione una categoría--</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}" {{ $product->category->id == $category->id ? 'selected' : '' }}>
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('id_category')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
 
-                        <div class="form-group">
-                            <label for="supplier">Proveedor</label>
-                            <input type="text" class="form-control" name="supplier" id="supplier"
-                                placeholder="Ingrese el producto" value="{{ $product->supplier }}" />
-                            @error('supplier')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
+<div class="form-group">
+    <label for="supplier">Proveedor</label>
+    <select name="id_supplier" id="id_supplier" class="form-control">
+        <option value=""> --Seleccione un proveedor--</option>
+        @foreach ($suppliers as $supplier)
+            <option value="{{ $supplier->id }}" {{ $product->supplier->id == $supplier->id ? 'selected' : '' }}>
+                {{ $supplier->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('id_supplier')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+
 
 
                         <div class="modal-footer">

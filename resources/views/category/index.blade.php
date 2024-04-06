@@ -18,76 +18,75 @@
     @endif
 
     <br>
-    <a href="{{ route('categorias.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+    <div class="text-center">
+    <h1 class="display-3 fw-bold mb-4 p-3 rounded" style="background-color: #6C63FF; color: #ffffff; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Módulo Categorías</h1>
+</div>
+
+
+
+
+    <a href="{{ route('categorias.create') }}"><button type="button" class="btn btn-success mb-2" data-toggle="modal"
             data-target="#create">
-            Nuevo </button></a>
+            Agregar una nueva categoría </button></a>
 
 
-    <div class="card card-form">
-        <div class="row no-gutters">
+<div class="card card-form">
+    <div class="row no-gutters">
+        <div class="col-lg-12 card-form__body">
+            <div class="table-responsive border-bottom" data-toggle="lists"
+                data-lists-values='["js-lists-values-employee-name"]'>
 
-            <div class="col-lg-12 card-form__body">
+                <br>
+                <form class="d-flex" role="search">
+                    <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre"
+                        aria-label="Search">
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </form>
 
-                <div class="table-responsive border-bottom" data-toggle="lists"
-                    data-lists-values='["js-lists-values-employee-name"]'>
+                <table class="table mb-0 thead-border-top-0">
+                    <thead>
+                        <tr>
+                            <th>Nombre Categoria</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="list" id="staff02">
+                        @foreach ($categories as $category)
+                        <tr class="">
+                            {{-- <td scope="row">{{ $category->id_category }}</td> --}}
+                            <td>{{ $category->name }}</td>
 
-                    <br>
-                    <form class="d-flex" role="search">
-                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre"
-                            aria-label="Search">
-                        <button class="btn btn-success" type="submit">Buscar</button>
-                    </form>
-
-                    <table class="table mb-0 thead-border-top-0">
-                        <thead>
-                            <tr>
-
-                                <th>Nombre Categoria</th>
-                                <th>Acciones</th>
-                                <th>Acciones</th>
-                                {{-- <th style="width: 24px;">Acciones</th> --}}
-                            </tr>
-                        </thead>
-                        <tbody class="list" id="staff02">
-                            @foreach ($categories as $category)
-                                <tr class="">
-                                    {{-- <td scope="row">{{ $category->id_category }}</td> --}}
-                                    <td>{{ $category->name }}</td>
-
-                                    <td class="text-center">
-                                        <a href="{{ route('categorias.edit', $category->id) }}"><button type="button"
-                                                class="btn btn-success">Editar</button></a>
-                                    </td>
-                                    <td class="text-center">
-                                        <form id="deleteForm" action="{{ route('categorias.destroy', $category->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <!-- Botón de eliminación que abre el modal -->
-                                            <button type="button" class="btn btn-danger mt-3" data-toggle="modal"
-                                                data-target="#modal-danger">
-                                                Eliminar
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <script>
-                                    $(document).ready(function() {
-                                        // Maneja el clic en el botón de confirmación del modal
-                                        $('#confirmDeleteButton').click(function() {
-                                            // Envía el formulario para ejecutar la solicitud DELETE
-                                            $('#deleteForm').submit();
-                                        });
-                                    });
-                                </script>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                            <td class="text-center">
+                                <div class="">
+                                    <a href="{{ route('categorias.edit', $category->id) }}" class="btn btn-success">Editar</a>
+                                    <form id="deleteForm" action="{{ route('categorias.destroy', $category->id) }}"
+                                        method="POST" style="display: inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <!-- Botón de eliminación que abre el modal -->
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                            data-target="#modal-danger">Eliminar</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        <script>
+                            $(document).ready(function() {
+                                // Maneja el clic en el botón de confirmación del modal
+                                $('#confirmDeleteButton').click(function() {
+                                    // Envía el formulario para ejecutar la solicitud DELETE
+                                    $('#deleteForm').submit();
+                                });
+                            });
+                        </script>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-        <td colspan=4>{{ $categories->appends(['busqueda' => $busqueda]) }} </td>
-        </tr>
     </div>
+    <td colspan=4>{{ $categories->appends(['busqueda' => $busqueda]) }} </td>
+</div>
+
 
 </x-main-layout>

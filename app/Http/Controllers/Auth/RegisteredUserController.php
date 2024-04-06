@@ -29,11 +29,12 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'phone' => ['required', 'numeric'],
             'terms' => [
@@ -48,16 +49,17 @@ class RegisteredUserController extends Controller
             'name.required' => 'El nombre es requerido',
             'email.required' => 'El correo es requerido',
             'email.email' => 'El formato del correo electrónico no es válido',
+            'email.unique' => 'El correo ya ha sido tomado.',
             'password.required' => 'La contraseña es requerida',
+            'password.confirmed' => 'La confirmación de contraseña no coincide',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres',
             'phone.required' => 'El teléfono es requerido',
             'phone.numeric' => 'El número de teléfono solo puede contener números'
-
         ]);
 
         $user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'email' => strtolower($request->email), // Convertir a minúsculas
             'password' => Hash::make($request->password),
             'phone' => $request->phone
         ]);

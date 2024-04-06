@@ -57,9 +57,11 @@ class ProductoController extends Controller
     public function edit(string $id)
     {
         $product = Product::find($id);
-        return view('product.edit', compact('product'));
+        $categories = Category::all();
+        $suppliers = Supplier::all();
+        return view('product.edit', compact('product', 'categories', 'suppliers'));
     }
-
+    
     public function update(ProductRequest $request, $id_product)
     {
 

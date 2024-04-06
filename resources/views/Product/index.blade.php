@@ -59,8 +59,8 @@
                                     <td>{{ $product->stock }}</td>
                                     <td>{{ $product->purchase_price }}</td>
                                     <td>{{ $product->selling_price }}</td>
-                                    <td>{{ $product->category }}</td>
-                                    <td>{{ $product->supplier }}</td>
+                                    <td>{{ $product->category->name }}</td>
+                                    <td>{{ $product->supplier->name }}</td>
 
                                     <td class="text-center">
                                         <a href="{{ route('productos.edit', $product->id) }}"><button type="button"

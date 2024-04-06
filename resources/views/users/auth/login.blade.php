@@ -54,8 +54,9 @@
                 </a>
             </div>
 
-            <h4 class="m-0">Utopía Beauty Salón</h4> <br>
-            <p class="mb-5">Ingresa las credenciales para iniciar sesión:</p>
+            <h4 class="m-0 text-center">Utopía Beauty Salón</h4> <br>
+            <p class="mb-5 text-center">Ingresa las credenciales para iniciar sesión:</p>
+
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
