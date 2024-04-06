@@ -53,65 +53,77 @@
         </div>
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="form-group">
-                <label class="text-label" for="name">Nombre Completo:</label>
-                <div class="input-group input-group-merge">
-                    <input id="name" type="text" name="name" value="{{ old('name') }}"
-                        class="form-control form-control-prepended" placeholder="Nombre completo">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fa-solid fa-user"></i>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-label" for="name">Nombre Completo:</label>
+                        <div class="input-group input-group-merge">
+                            <input id="name" type="text" name="name" value="{{ old('name') }}"
+                                class="form-control form-control-prepended" placeholder="Nombre completo">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </div>
                         </div>
+                        @error('name')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
-                @error('name')
-                    <div style="color: red; padding: 1px;">{{ $message }}</div>
-                @enderror
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-label" for="email">Correo Electrónico:</label>
+                        <div class="input-group input-group-merge">
+                            <input id="email" type="text" name="email" value="{{ old('email') }}"
+                                class="form-control form-control-prepended" placeholder="Correo electrónico">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                        @error('email')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label class="text-label" for="email">Correo Electrónico:</label>
-                <div class="input-group input-group-merge">
-                    <input id="email" type="text" name="email" value="{{ old('email') }}"
-                        class="form-control form-control-prepended" placeholder="Correo electrónico">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fa-solid fa-envelope"></i>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-label" for="phone">Número de teléfono:</label>
+                        <div class="input-group input-group-merge">
+                            <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
+                                class="form-control form-control-prepended" placeholder="Número de teléfono">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                            </div>
                         </div>
+                        @error('phone')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
-                @error('email')
-                    <div style="color: red; padding: 1px;">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="text-label" for="phone">Número de teléfono:</label>
-                <div class="input-group input-group-merge">
-                    <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
-                        class="form-control form-control-prepended" placeholder="Número de teléfono">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fa-solid fa-phone"></i>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-label" for="password">Contraseña:</label>
+                        <div class="input-group input-group-merge">
+                            <input id="password" type="password" name="password"
+                                class="form-control form-control-prepended" placeholder="Ingresa tu contraseña">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                            </div>
                         </div>
+                        @error('password')
+                            <div style="color: red; padding: 1px;">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
-                @error('phone')
-                    <div style="color: red; padding: 1px;">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label class="text-label" for="password">Contraseña:</label>
-                <div class="input-group input-group-merge">
-                    <input id="password" type="password" name="password" class="form-control form-control-prepended"
-                        placeholder="Ingresa tu contraseña">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fa-solid fa-lock"></i>
-                        </div>
-                    </div>
-                </div>
-                @error('password')
-                    <div style="color: red; padding: 1px;">{{ $message }}</div>
-                @enderror
             </div>
             <div class="form-group">
                 <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
@@ -154,6 +166,7 @@
                     cursor: pointer;
                 }
             </style>
+
 
             <div class="form-group mb-5">
                 <div class="custom-control custom-checkbox">
