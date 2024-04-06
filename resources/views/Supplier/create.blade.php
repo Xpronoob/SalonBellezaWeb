@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <label for="name">Nombre del proveedor:</label>
                             <input type="text" class="form-control" for="name" name="name" id="name"
-                                placeholder="Ingrese el nombre del proveedor">
+                                placeholder="Ingrese el nombre del proveedor" value="{{ old('name') }}">
                             @error('name')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label for="number">Número de contacto:</label>
                             <input type="text" class="form-control" for="number" name="number" id="number"
-                                placeholder="Ingrese el número de contacto">
+                                placeholder="Ingrese el número de contacto" value="{{ old('number') }}">
                             @error('number')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label for="email">Correo electrónico:</label>
                             <input type="text" class="form-control" for="email" name="email" id="email"
-                                placeholder="Ingrese el correo electrónico">
+                                placeholder="Ingrese el correo electrónico" value="{{ old('email') }}">
                             @error('email')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label for="address">Dirección:</label>
                             <input type="text" class="form-control" for="address" name="address" id="address"
-                                placeholder="Ingrese la dirección">
+                                placeholder="Ingrese la dirección" value="{{ old('address') }}">
                             @error('address')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
