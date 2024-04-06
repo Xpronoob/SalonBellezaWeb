@@ -13,10 +13,8 @@
 
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-6">
-                <h2 class="mb-3">Listado de Productos</h2>
-            </div>
-            <div class="col-md-6 text-md-end">
+            <div class="col-12 text-center">
+                <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo Productos</h1>
                 <a href="{{ route('productos.create') }}" class="btn btn-primary mb-2">Nuevo Producto</a>
             </div>
         </div>

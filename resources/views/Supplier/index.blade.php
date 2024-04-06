@@ -21,9 +21,9 @@
         <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo Proveedores</h1>
     </div>
 
-    <a href="{{ route('proveedores.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+    <a href="{{ route('proveedores.create') }}"><button type="button" class="btn btn-success mb-2" data-toggle="modal"
             data-target="#create">
-            Nuevo </button></a>
+            Nuevo Proveedor</button></a>
 
     <div class="card card-form">
         <div class="row no-gutters">

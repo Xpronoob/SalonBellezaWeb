@@ -5,14 +5,14 @@
             <div class="row no-gutters">
                 <div class="col-lg-4 card-body">
                     <p><strong class="headings-color">Nueva Categoria</strong></p>
-                    <p class="text-muted">Puedes agregar nuevas categorias</p>
+                    <p class="text-muted">Puedes agregar nuevas categorías</p>
                 </div>
                 <div class="col-lg-8 card-form__body card-body">
                     <form>
                         <div class="form-group">
                             <label for="name">Nombre la categoria:</label>
                             <input type="text" class="form-control" name="name" id="name"
-                                placeholder="Ingrese el nombre de la categoria">
+                                placeholder="Ingrese el nombre de la categoría" value="{{ old('name') }}">
                             @error('name')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror

@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('categorias.create') }}" class="btn btn-success mb-2">Agregar una nueva categoría</a>
+                <a href="{{ route('categorias.create') }}" class="btn btn-success mb-2">Nueva Categoría</a>
             </div>
         </div>
 
