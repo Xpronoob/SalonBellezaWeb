@@ -17,74 +17,50 @@
         </div>
     @endif
 
+    <div class="col-12 text-center">
+        <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo Proveedores</h1>
+    </div>
+
     <a href="{{ route('proveedores.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
             data-target="#create">
             Nuevo </button></a>
 
     <div class="card card-form">
         <div class="row no-gutters">
-
             <div class="col-lg-12 card-form__body">
-
-                <div class="table-responsive border-bottom" data-toggle="lists"
-                    data-lists-values='["js-lists-values-employee-name"]'>
-
-
+                <div class="table-responsive border-bottom" data-toggle="lists" data-lists-values='["js-lists-values-employee-name"]'>
                     <form class="d-flex" role="search">
-                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre"
-                            aria-label="Search">
+                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
                         <button class="btn btn-success" type="submit">Buscar</button>
                     </form>
-
-
                     <table class="table mb-0 thead-border-top-0">
                         <thead>
                             <tr>
-
                                 <th>Nombre Proveedor</th>
                                 <th>Número Contacto</th>
                                 <th>Correo</th>
                                 <th>Dirección</th>
-                                <th>Acciones</th>
-                                <th>Acciones</th>
-                                {{-- <th style="width: 24px;">Acciones</th> --}}
+                                <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="list" id="staff02">
                             @foreach ($suppliers as $supplier)
                                 <tr class="">
-                                    {{-- <td scope="row">{{ $supplier->id }}</td> --}}
                                     <td>{{ $supplier->name }}</td>
                                     <td>{{ $supplier->number }}</td>
                                     <td>{{ $supplier->email }}</td>
                                     <td>{{ $supplier->address }}</td>
-
                                     <td class="text-center">
-                                        <a href="{{ route('proveedores.edit', $supplier->id) }}"><button type="button"
-                                                class="btn btn-success">Editar</button></a>
-                                    </td>
-                                    <td class="text-center">
-                                        <form id="deleteForm" action="{{ route('proveedores.destroy', $supplier->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <!-- Botón de eliminación que abre el modal -->
-                                            <button type="button" class="btn btn-danger mt-3" data-toggle="modal"
-                                                data-target="#modal-danger">
-                                                Eliminar
-                                            </button>
-                                        </form>
+                                        <div class="btn-group" role="group">
+                                            <a href="{{ route('proveedores.edit', $supplier->id) }}"><button type="button" class="btn btn-success btn-action">Editar</button></a>
+                                            <form class="delete-form" action="{{ route('proveedores.destroy', $supplier->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-action">Eliminar</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
-                                <script>
-                                    $(document).ready(function() {
-                                        // Maneja el clic en el botón de confirmación del modal
-                                        $('#confirmDeleteButton').click(function() {
-                                            // Envía el formulario para ejecutar la solicitud DELETE
-                                            $('#deleteForm').submit();
-                                        });
-                                    });
-                                </script>
                             @endforeach
                         </tbody>
                     </table>
@@ -94,7 +70,5 @@
         <tr>
             <td colspan=4>{{ $suppliers->appends(['busqueda' => $busqueda]) }} </td>
         </tr>
-
     </div>
-
 </x-main-layout>
