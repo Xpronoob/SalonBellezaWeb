@@ -16,10 +16,14 @@
             {{ session('error') }}
         </div>
     @endif
+    <div class="col-12 text-center">
+        <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo de Servicios</h1>
+    </div>
 
-    <a href="{{ route('servicios.create') }}"><button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+
+    <a href="{{ route('servicios.create') }}"><button type="button" class="btn btn-success mb-2" data-toggle="modal"
             data-target="#create">
-            Nuevo </button></a>
+            Nuevo Servicio</button></a>
 
     <div class="card card-form">
         <div class="row no-gutters">
@@ -41,10 +45,7 @@
                                 <th>Título del Servicio</th>
                                 <th>Descripción</th>
                                 <th>Imagen</th>
-                                <th>Acciones</th>
-                                <th>Acciones</th>
-                                {{-- <th style="width: 24px;">Acciones</th> --}}
-                            </tr>
+                                <th class="text-center">Acciones</th> </tr>
                         </thead>
                         <tbody class="list" id="staff02">
                             @foreach ($services as $service)
@@ -55,21 +56,18 @@
                                     <td><img src="{{ $service->image }}" alt="Imagen de servicio"
                                             style="max-width: 100px;">
                                     </td>
-                                    <td class="text-center">
-                                        <a href="{{ route('servicios.edit', $service->id) }}"><button type="button"
-                                                class="btn btn-success">Editar</button></a>
+
+                                        <td class="text-center">
+                                        <div class="btn-group" role="group">
+                                            <a href="{{ route('servicios.edit', $service->id) }}"><button type="button" class="btn btn-success btn-action">Editar</button></a>
+                                            <form class="delete-form" action="{{ route('servicios.destroy', $service->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-action">Eliminar</button>
+                                            </form>
+                                        </div>
                                     </td>
-                                    <td class="text-center">
-                                        <form id="deleteForm" action="{{ route('servicios.destroy', $service->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <!-- Botón de eliminación que abre el modal -->
-                                            <button type="button" class="btn btn-danger mt-3" data-toggle="modal"
-                                                data-target="#modal-danger">
-                                                Eliminar
-                                            </button>
-                                        </form>
+
                                     </td>
 
                                 </tr>

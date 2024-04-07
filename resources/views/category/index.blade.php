@@ -53,14 +53,16 @@
                                                 <td class="text-center">
                                                     <div class="">
                                                         <a href="{{ route('categorias.edit', $category->id) }}"
-                                                            class="btn btn-success">Editar</a>
+                                                            class="btn btn-success">Editar
+                                                        </a>
                                                         <form id="deleteForm" action="{{ route('categorias.destroy', $category->id) }}"
                                                             method="POST" style="display: inline;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <!-- Botón de eliminación que abre el modal -->
                                                             <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                                data-target="#modal-danger">Eliminar</button>
+                                                                data-target="#modal-danger">Eliminar
+                                                            </button>
                                                         </form>
                                                     </div>
                                                 </td>

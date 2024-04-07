@@ -53,14 +53,25 @@
                                     <td class="text-center">
                                         <div class="btn-group" role="group">
                                             <a href="{{ route('proveedores.edit', $supplier->id) }}"><button type="button" class="btn btn-success btn-action">Editar</button></a>
-                                            <form class="delete-form" action="{{ route('proveedores.destroy', $supplier->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-action">Eliminar</button>
-                                            </form>
+                                            <form id="deleteForm" action="{{ route('proveedores.destroy', $supplier->id) }}" method="POST" style="display: inline;">
+    @csrf
+    @method('DELETE')
+    <!-- Botón de eliminación que abre el modal -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">Eliminar</button>
+</form>
+    
                                         </div>
                                     </td>
                                 </tr>
+                                <script>
+                                    $(document).ready(function() {
+                                        // Maneja el clic en el botón de confirmación del modal
+                                        $('#confirmDeleteButton').click(function() {
+                                            // Envía el formulario para ejecutar la solicitud DELETE
+                                            $('#deleteForm').submit();
+                                        });
+                                    });
+                                </script>
                             @endforeach
                         </tbody>
                     </table>
