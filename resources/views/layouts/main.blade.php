@@ -1,36 +1,3 @@
-<style>
-    {!! Vite::content('resources/assets/vendor/perfect-scrollbar.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/css/app.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/css/vendor-material-icons.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/css/vendor-fontawesome-free.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/css/vendor-flatpickr.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/css/vendor-flatpickr-airbnb.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/vendor/jqvmap/jqvmap.min.css') !!}
-</style>
-
-<style>
-    {!! Vite::content('resources/assets/vendor/toastr.min.css') !!}
-</style>
-
-
 @include('modals.global')
 
 @include('layouts.mainHeader')
@@ -74,16 +41,6 @@
         }"></app-settings>
 </div>
 
-{{-- <script>
-    {!! Vite::content('resources/js/app.js') !!}
-</script> --}}
-
-{{-- <script src="https://salon-test.vercel.app/public/assets/vendor/jquery.min.js"></script>
-<script src="https://salon-test.vercel.app/public/assets/vendor/popper.min.js"></script>
-<script src="https://salon-test.vercel.app/public/assets/vendor/bootstrap.min.js"></script>
-<script src="https://salon-test.vercel.app/public/assets/vendor/perfect-scrollbar.min.js"></script>
-<script src="https://salon-test.vercel.app/public/assets/vendor/toastr.min.js"></script> --}}
-
 <script src="{{ asset('assets/vendor/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/popper.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap.min.js') }}"></script>
@@ -125,6 +82,40 @@
 <!-- Chart Samples -->
 <script src="{{ asset('assets/js/page.dashboard.js') }}"></script>
 <script src="{{ asset('assets/js/progress-charts.js') }}"></script> --}}
+
+{{-- <script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fjquery.min.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fpopper.min.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fbootstrap.min.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fperfect-scrollbar.min.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fdom-factory.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fmaterial-design-kit.js"></script>
+
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Ftoggle-check-all.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fcheck-selected-row.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fdropdown.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fsidebar-mini.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fapp.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fapp-settings.js"></script>
+
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Ftoastr.min.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Ftoastr.js"></script>
+
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fflatpickr%2Fflatpickr.min.js">
+</script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fflatpickr.js"></script>
+
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fsettings.js"></script>
+
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fmoment.min.js"></script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fmoment-range.js"></script>
+
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fjqvmap%2Fjquery.vmap.min.js">
+</script>
+<script
+    src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fvendor%2Fjqvmap%2Fmaps%2Fjquery.vmap.world.js">
+</script>
+<script src="https://pub-e7a7b78fff274532b7722d45de186f22.r2.dev/assets%2Fjs%2Fvector-maps.js"></script> --}}
+
 
 </body>
 

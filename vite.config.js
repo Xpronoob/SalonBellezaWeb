@@ -1,14 +1,14 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
-//"ASSET_URL": "https://salon-test.vercel.app/public",
+
 export default defineConfig({
     plugins: [
         laravel({
             input: [
                 // //TAILWIND
-                // "resources/css/app.css",
+                "resources/css/app.css",
                 // "resources/css/empty.css",
-                // "resources/js/app.js",
+                "resources/js/app.js",
                 // PLANTILLA
                 // CSS
                 "resources/assets/vendor/perfect-scrollbar.css",
@@ -46,6 +46,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            "@": "/resources/js",
+        },
+    },
     // build: {
     //     format: "es",
     // },

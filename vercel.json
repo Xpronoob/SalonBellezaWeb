@@ -1,12 +1,33 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.6.1"
-        }
+        "api/index.php": { "runtime": "vercel-php@0.6.1" }
     },
-
     "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/"
+        },
+        {
+            "src": "/resources/(.*)",
+            "dest": "/public/resources/"
+        },
+        {
+            "src": "/favicon/(.*)",
+            "dest": "/public/favicon/"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/public/images/"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "/public/build/"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
@@ -14,10 +35,8 @@
     ],
     "env": {
         "APP_NAME": "Laravel",
-        "APP_ENV": "local",
+        "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://salon-test.vercel.app",
-        "ASSET_URL": "https://salon-test.vercel.app/public",
         "VITE_HTTPS": "true",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
@@ -31,14 +50,13 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
 
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node",
+
         "APP_KEY": "base64:88rQ9BIVqVLQ1z4ZAOnghvuwWZ+hsDRgI+a0A7SiIRM=",
 
         "DB_CONNECTION": "pgsql",
-        "DB_HOST": "aws-0-us-west-1.pooler.supabase.com",
-        "DB_PORT": "5432",
-        "DB_DATABASE": "postgres",
-        "DB_USERNAME": "postgres.otetgziqcnhmuciyewjz",
-        "DB_PASSWORD": "Fidelitas2024$",
+        "DATABASE_URL": "postgres://postgres.gitiflvxbhzatwpqfjji:Ifn0Y7aQ14jVQ75r@aws-0-us-west-1.pooler.supabase.com:5432/postgres",
 
         "MYSQL_ATTR_SSL_CA": "/etc/ssl/certs/ca-bundle.crt"
     }

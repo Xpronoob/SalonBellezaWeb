@@ -10,6 +10,38 @@
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
 
+    <style>
+        {!! Vite::content('resources/assets/vendor/perfect-scrollbar.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/css/app.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/css/vendor-material-icons.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/css/vendor-fontawesome-free.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/css/vendor-flatpickr.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/css/vendor-flatpickr-airbnb.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/vendor/jqvmap/jqvmap.min.css') !!}
+    </style>
+
+    <style>
+        {!! Vite::content('resources/assets/vendor/toastr.min.css') !!}
+    </style>
+
     {{-- <!-- Perfect Scrollbar -->
     <link type="text/css" href="./assets/vendor/perfect-scrollbar.css" rel="stylesheet">
 
