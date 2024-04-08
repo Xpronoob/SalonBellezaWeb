@@ -149,7 +149,7 @@
                         <div class="col p-4 d-flex flex-column position-static">
                             <h5 class="card-header d-inline-block mb-2 text-success-emphasis">Inventario</h5>
                             <br>
-                            <h3 class="mb-0">Gestiona tus productos</h3>
+                            <h3 class="mb-0">Gestiona tus productos ahora</h3>
                             <br>
                             <p class="card-text mb-auto"> Aquí puedes administrar todos los productos disponibles en
                                 nuestro salón de belleza de manera eficiente y conveniente.</p>
