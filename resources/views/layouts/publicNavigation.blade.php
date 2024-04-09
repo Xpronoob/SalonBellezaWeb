@@ -360,6 +360,9 @@
                             <li class="nav-item  {{ request()->is('inventario*') ? 'active' : '' }}">
                                 <a class="dropdown-item" href="{{ url('categorias') }}">Categorias</a>
                             </li>
+                            <li class="nav-item  {{ request()->is('inventario*') ? 'active' : '' }}">
+                                <a class="dropdown-item" href="{{ url('contabilidad') }}">Contabilidad</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

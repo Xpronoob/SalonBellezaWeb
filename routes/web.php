@@ -8,6 +8,8 @@ use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AccountingController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,7 @@ Route::prefix('admin')->group(function () {
 Route::resource('proveedores', SupplierController::class);
 Route::resource('providers', SupplierController::class);
 Route::resource('categorias', CategoryController::class);
+Route::resource('contabilidad', AccountingController::class);
 
 Route::resource('servicios', ServiceController::class);
 Route::resource('productos', ProductoController::class);
