@@ -19,12 +19,15 @@
 
     <div class="col-12 text-center">
         <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo Contabilidad</h1>
+     
     </div>
+    
 
     <a href="{{ route('contabilidad.create') }}"><button type="button" class="btn btn-success mb-2" data-toggle="modal"
             data-target="#create">
             Nuevo Registro</button></a>
 
+            
     <div class="card card-form">
         <div class="row no-gutters">
             <div class="col-lg-12 card-form__body">
@@ -86,4 +89,9 @@
             <td colspan=4>{{ $accountings->appends(['busqueda' => $busqueda]) }} </td>
         </tr>
     </div>
+
+    <div class="alert alert-info" role="alert">
+    Total de Saldo Pendiente: <strong>{{ $totalPendingBalance }}</strong>
+</div>
+
 </x-main-layout>

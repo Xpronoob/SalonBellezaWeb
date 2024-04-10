@@ -52,7 +52,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="stock">Cantidad en Stock</label>
-                                    <input type="number" class="form-control" id="stock" name="stock" placeholder="Ingrese la cantidad en stock" value="{{ old('stock') }}">
+                                    <input type="text" class="form-control" id="stock" name="stock" placeholder="Ingrese la cantidad en stock" value="{{ old('stock') }}">
                                     @error('stock')
                                         <div style="color: red;">{{ $message }}</div>
                                     @enderror

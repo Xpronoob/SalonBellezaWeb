@@ -14,12 +14,12 @@ class AccountingController extends Controller
     {
         $busqueda = $request->busqueda;
         $accountings = Accounting::all();
-
+        $totalPendingBalance = Accounting::sum('pending_balance');
         $accountings = Accounting::where('movement_description', 'LIKE', '%' . $busqueda . '%')
             ->orWhere('movement_type', 'LIKE', '%' . $busqueda . '%')
             ->paginate(5);
 
-        return view('accounting.index', compact('accountings', 'busqueda'));
+        return view('accounting.index', compact('accountings', 'busqueda', 'totalPendingBalance'));
     }
 
 

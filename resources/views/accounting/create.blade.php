@@ -19,20 +19,21 @@
                         </div>
                         <div class="form-group">
                             <label for="amount">Cantidad:</label>
-                            <input type="number" class="form-control" for="amount" name="amount" id="amount"
+                            <input type="text" class="form-control" for="amount" name="amount" id="amount"
                                 placeholder="Ingrese la cantidad" value="{{ old('amount') }}">
                             @error('amount')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="movement_date">Fecha</label>
-                            <input type="date" class="form-control" for="movement_date" name="movement_date" id="movement_date"
-                                placeholder="Ingrese la fecha" value="{{ old('movement_date') }}">
-                            @error('movement_date')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
+    <label for="movement_date">Fecha y hora</label>
+    <input type="datetime-local" class="form-control" for="movement_date" name="movement_date" id="movement_date"
+           placeholder="Ingrese la fecha y la hora" value="{{ old('movement_date') }}">
+    @error('movement_date')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
 
                         <div class="form-group">
                             <label for="movement_type">Tipo de movimiento:</label>
@@ -52,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pending_balance">Saldo pendiente:</label>
-                            <input type="number" class="form-control" for="pending_balance" name="pending_balance" id="pending_balance"
+                            <input type="text" class="form-control" for="pending_balance" name="pending_balance" id="pending_balance"
                                 placeholder="Ingrese el saldo pendiente" value="{{ old('pending_balance') }}">
                             @error('pending_balance')
                                 <div style="color: red;">{{ $message }}</div>
