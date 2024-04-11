@@ -39,6 +39,10 @@ Route::resource('categorias', CategoryController::class);
 Route::resource('servicios', ServiceController::class);
 Route::resource('productos', ProductoController::class);
 
+Route::get('/vistaUsuario', function () {
+    return view('vistaUsuario');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
