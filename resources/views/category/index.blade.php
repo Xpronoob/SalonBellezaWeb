@@ -46,37 +46,45 @@
                                         </tr>
                                     </thead>
                                     <tbody class="list" id="staff02">
-                                        @foreach ($categories as $category)
-                                            <tr class="">
-                                                {{-- <td scope="row">{{ $category->id_category }}</td> --}}
-                                                <td>{{ $category->name }}</td>
-                                                <td class="text-center">
-                                                    <div class="">
-                                                        <a href="{{ route('categorias.edit', $category->id) }}"
-                                                            class="btn btn-success">Editar
-                                                        </a>
-                                                        <form id="deleteForm" action="{{ route('categorias.destroy', $category->id) }}"
-                                                            method="POST" style="display: inline;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <!-- Botón de eliminación que abre el modal -->
-                                                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                                data-target="#modal-danger">Eliminar
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <script>
-                                                $(document).ready(function() {
-                                                    // Maneja el clic en el botón de confirmación del modal
-                                                    $('#confirmDeleteButton').click(function() {
-                                                        // Envía el formulario para ejecutar la solicitud DELETE
-                                                        $('#deleteForm').submit();
-                                                    });
-                                                });
-                                            </script>
-                                        @endforeach
+                                    @foreach ($categories as $category)
+    <tr class="">
+        {{-- <td scope="row">{{ $category->id_category }}</td> --}}
+        <td>{{ $category->name }}</td>
+        <td class="text-center">
+            <div class="">
+                <a href="{{ route('categorias.edit', $category->id) }}"
+                    class="btn btn-success">Editar
+                </a>
+                <form id="deleteForm_{{ $category->id }}" action="{{ route('categorias.destroy', $category->id) }}"
+                    method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <!-- Botón de eliminación que abre el modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#modal-danger" onclick="confirmDelete({{ $category->id }})">Eliminar
+                    </button>
+                </form>
+            </div>
+        </td>
+    </tr>
+@endforeach
+
+<script>
+    function confirmDelete(categoryId) {
+        // Configura el formulario con el ID correspondiente a la categoría
+        var formId = 'deleteForm_' + categoryId;
+        var form = document.getElementById(formId);
+
+        // Configura el modal para mostrar el mensaje de confirmación
+        $('#modal-danger').modal('show');
+
+        // Maneja el clic en el botón de confirmación del modal
+        $('#confirmDeleteButton').click(function() {
+            // Envía el formulario para ejecutar la solicitud DELETE
+            form.submit();
+        });
+    }
+</script>
                                     </tbody>
                                 </table>
                             </div>

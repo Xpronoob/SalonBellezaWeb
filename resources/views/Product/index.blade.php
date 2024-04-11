@@ -44,25 +44,50 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($products as $product)
-                                        <tr>
-                                            <td>{{ $product->name }}</td>
-                                            <td>{{ $product->description }}</td>
-                                            <td>{{ $product->stock }}</td>
-                                            <td>{{ $product->purchase_price }}</td>
-                                            <td>{{ $product->selling_price }}</td>
-                                            <td>{{ $product->category->name }}</td>
-                                            <td>{{ $product->supplier->name }}</td>
-                                            <td class="text-center">
-                                                <div class="btn-group" role="group">
-                                                    <a href="{{ route('productos.edit', $product->id) }}"
-                                                        class="btn btn-success">Editar</a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modal-danger">Eliminar</button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                @foreach ($products as $product)
+    <tr>
+        <td>{{ $product->name }}</td>
+        <td>{{ $product->description }}</td>
+        <td>{{ $product->stock }}</td>
+        <td>{{ $product->purchase_price }}</td>
+        <td>{{ $product->selling_price }}</td>
+        <td>{{ $product->category->name }}</td>
+        <td>{{ $product->supplier->name }}</td>
+        <td class="text-center">
+             <style>
+                                                    .btn-group .btn {
+                                                        max-height: 30px; /* Cambia el valor según lo necesites */
+                                                    }
+                                                </style>
+            <div class="btn-group" role="group">
+                <a href="{{ route('productos.edit', $product->id) }}" class="btn btn-success">Editar</a>
+                <form id="deleteForm_{{ $product->id }}" action="{{ route('productos.destroy', $product->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <!-- Botón de eliminación que abre el modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="confirmDelete({{ $product->id }})">Eliminar</button>
+                </form>
+            </div>
+        </td>
+    </tr>
+@endforeach
+
+<script>
+    function confirmDelete(productId) {
+        // Configura el formulario con el ID correspondiente al producto
+        var formId = 'deleteForm_' + productId;
+        var form = document.getElementById(formId);
+
+        // Configura el modal para mostrar el mensaje de confirmación
+        $('#modal-danger').modal('show');
+
+        // Maneja el clic en el botón de confirmación del modal
+        $('#confirmDeleteButton').click(function() {
+            // Envía el formulario para ejecutar la solicitud DELETE
+            form.submit();
+        });
+    }
+</script>
                                 </tbody>
                             </table>
                         </div>

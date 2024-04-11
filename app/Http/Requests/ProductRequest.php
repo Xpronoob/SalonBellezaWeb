@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductRequest extends FormRequest
 {
@@ -22,17 +23,24 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-
-            //
             'name' => 'required|max:255',
             'description' => 'required|max:255',
             'stock' => 'required|integer|min:0',
             'purchase_price' => 'required|numeric|min:0',
-            'selling_price' => 'required|numeric|min:0|gte:purchase_price',
+            'selling_price' => [
+                'required',
+                'numeric',
+                function ($attribute, $value, $fail) {
+                    if ($value <= $this->input('purchase_price')) {
+                        $fail('El precio de venta debe ser mayor que el precio de compra.');
+                    }
+                },
+            ],
             'id_category' => 'required|integer',
             'id_supplier' => 'required|integer',
         ];
     }
+
     public function messages(): array
     {
         return [

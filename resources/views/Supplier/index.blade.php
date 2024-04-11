@@ -44,35 +44,43 @@
                             </tr>
                         </thead>
                         <tbody class="list" id="staff02">
-                            @foreach ($suppliers as $supplier)
-                                <tr class="">
-                                    <td>{{ $supplier->name }}</td>
-                                    <td>{{ $supplier->number }}</td>
-                                    <td>{{ $supplier->email }}</td>
-                                    <td>{{ $supplier->address }}</td>
-                                    <td class="text-center">
-                                        <div class="btn-group" role="group">
-                                            <a href="{{ route('proveedores.edit', $supplier->id) }}"><button type="button" class="btn btn-success btn-action">Editar</button></a>
-                                            <form id="deleteForm" action="{{ route('proveedores.destroy', $supplier->id) }}" method="POST" style="display: inline;">
-    @csrf
-    @method('DELETE')
-    <!-- Botón de eliminación que abre el modal -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">Eliminar</button>
-</form>
-    
-                                        </div>
-                                    </td>
-                                </tr>
-                                <script>
-                                    $(document).ready(function() {
-                                        // Maneja el clic en el botón de confirmación del modal
-                                        $('#confirmDeleteButton').click(function() {
-                                            // Envía el formulario para ejecutar la solicitud DELETE
-                                            $('#deleteForm').submit();
-                                        });
-                                    });
-                                </script>
-                            @endforeach
+                        @foreach ($suppliers as $supplier)
+    <tr class="">
+        <td>{{ $supplier->name }}</td>
+        <td>{{ $supplier->number }}</td>
+        <td>{{ $supplier->email }}</td>
+        <td>{{ $supplier->address }}</td>
+        <td class="text-center">
+            <div class="btn-group" role="group">
+                <a href="{{ route('proveedores.edit', $supplier->id) }}">
+                    <button type="button" class="btn btn-success btn-action">Editar</button>
+                </a>
+                <form id="deleteForm_{{ $supplier->id }}" action="{{ route('proveedores.destroy', $supplier->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <!-- Botón de eliminación que abre el modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="confirmDelete({{ $supplier->id }})">Eliminar</button>
+                </form>
+            </div>
+        </td>
+    </tr>
+@endforeach
+<script>
+    function confirmDelete(supplierId) {
+        // Configura el formulario con el ID correspondiente al proveedor
+        var formId = 'deleteForm_' + supplierId;
+        var form = document.getElementById(formId);
+
+        // Configura el modal para mostrar el mensaje de confirmación
+        $('#modal-danger').modal('show');
+
+        // Maneja el clic en el botón de confirmación del modal
+        $('#confirmDeleteButton').click(function() {
+            // Envía el formulario para ejecutar la solicitud DELETE
+            form.submit();
+        });
+    }
+</script>
                         </tbody>
                     </table>
                 </div>
