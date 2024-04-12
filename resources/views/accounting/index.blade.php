@@ -33,7 +33,7 @@
             <div class="col-lg-12 card-form__body">
                 <div class="table-responsive border-bottom" data-toggle="lists" data-lists-values='["js-lists-values-employee-name"]'>
                     <form class="d-flex" role="search">
-                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+                        <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar por la descripcion" aria-label="Search">
                         <button class="btn btn-success" type="submit">Buscar</button>
                     </form>
                     <table class="table mb-0 thead-border-top-0">

@@ -69,8 +69,9 @@
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
             <ul class="sidebar-submenu collapse {{ Request::is('gestion*') ? 'show' : '' }}" id="pages_menu">
-                <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button" href="companies.html">
+                
+            <li class="sidebar-menu-item {{ Request::is('gestion/citas*') ? 'active' : '' }}">
+                    <a class="sidebar-menu-button" href="{{ route('citas.index') }}">
                         <span class="sidebar-menu-text">Citas</span>
                     </a>
                 </li>
