@@ -119,11 +119,7 @@
 
                                                 <div class="dropdown-item d-flex">
                                                     <div class="mr-3">
-                                                        <div class="avatar avatar-sm"
-                                                            style="width: 32px; height: 32px;">
-                                                            <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                alt="Avatar" class="avatar-img rounded-circle">
-                                                        </div>
+                                                      
                                                     </div>
                                                     <div class="flex">
                                                         <a href="">A.Demian</a> left a comment on <a
@@ -165,11 +161,7 @@
 
                                                 <div class="dropdown-item d-flex">
                                                     <div class="mr-3">
-                                                        <div class="avatar avatar-sm"
-                                                            style="width: 32px; height: 32px;">
-                                                            <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                alt="Avatar" class="avatar-img rounded-circle">
-                                                        </div>
+                                                       
                                                     </div>
                                                     <div class="flex">
                                                         <a href="">A.Demian</a> left a comment on <a
@@ -211,11 +203,7 @@
 
                                                 <div class="dropdown-item d-flex">
                                                     <div class="mr-3">
-                                                        <div class="avatar avatar-sm"
-                                                            style="width: 32px; height: 32px;">
-                                                            <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                alt="Avatar" class="avatar-img rounded-circle">
-                                                        </div>
+                                                       
                                                     </div>
                                                     <div class="flex">
                                                         <a href="">A.Demian</a> left a comment on <a
@@ -442,20 +430,7 @@
 
                                                         <td>
 
-                                                            <div class="media align-items-center">
-
-                                                                <div class="avatar avatar-xs mr-2">
-                                                                    <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                                        alt="Avatar"
-                                                                        class="avatar-img rounded-circle">
-                                                                </div>
-                                                                <div class="media-body">
-
-                                                                    <span class="js-lists-values-employee-name">John
-                                                                        Connor</span>
-
-                                                                </div>
-                                                            </div>
+                                                           
 
                                                         </td>
 

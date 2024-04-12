@@ -58,10 +58,8 @@
                                         <div class="py-2">
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
-                                                    <div class="avatar avatar-sm" style="width: 32px; height: 32px">
-                                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                            alt="Avatar" class="avatar-img rounded-circle" />
-                                                    </div>
+                                                   
+                                            
                                                 </div>
                                                 <div class="flex">
                                                     <a href="">A.Demian</a> left a comment on
@@ -104,8 +102,7 @@
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
                                                     <div class="avatar avatar-sm" style="width: 32px; height: 32px">
-                                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                            alt="Avatar" class="avatar-img rounded-circle" />
+                                                      
                                                     </div>
                                                 </div>
                                                 <div class="flex">
@@ -150,8 +147,7 @@
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
                                                     <div class="avatar avatar-sm" style="width: 32px; height: 32px">
-                                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
-                                                            alt="Avatar" class="avatar-img rounded-circle" />
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="flex">
