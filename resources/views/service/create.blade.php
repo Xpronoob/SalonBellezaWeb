@@ -1,16 +1,16 @@
 <x-main-layout>
-    <form action="{{ route('servicios.store') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="card card-form">
-            <div class="row no-gutters">
-                <div class="col-lg-4 card-body">
-                    <p><strong class="headings-color">Nuevo Servicio</strong></p>
-                    <p class="text-muted">Puedes agregar nuevos servicios.</p>
-                </div>
-                <div class="col-lg-8 card-form__body card-body">
-                    <form>
-                        {{-- comment --}}
-                        {{-- <div class="form-group">
+
+    <div class="card card-form">
+        <div class="row no-gutters">
+            <div class="col-lg-4 card-body">
+                <p><strong class="headings-color">Nuevo Servicio</strong></p>
+                <p class="text-muted">Puedes agregar nuevos servicios.</p>
+            </div>
+            <div class="col-lg-8 card-form__body card-body">
+                <form action="{{ route('servicios.store') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    {{-- comment --}}
+                    {{-- <div class="form-group">
 
                             <label for="title">Título del Servicio</label>
                             <input for="title" type="text" class="form-control" name="title" id="title"
@@ -29,51 +29,52 @@
                         </div>
                         <div class="form-group">
                             <label for="image">URL de la Imagen</label>
-                            <input type="text" class="form-control" for="image" name="image" id="image_url"
+                            <input type="text" class="form-control" for="image" name="image" id="image"
                                 placeholder="Ingrese la URL de la imagen">
                             @error('image')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div> --}}
-                        {{-- comment --}}
-                        <div class="form-group">
+                    {{-- comment --}}
+                    <div class="form-group">
 
-                            <label for="service_title">Título del Servicio</label>
-                            <input type="text" class="form-control" name="service_title" id="service_title"
-                                placeholder="Ingrese el título del servicio">
-                            @error('title')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Descripción</label>
-                            <input type="text" class="form-control" name="description" id="description"
-                                placeholder="Ingrese la descripción del servicio">
-                            @error('description')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
+                        <label for="title">Título del Servicio</label>
+                        <input type="text" class="form-control" name="title" id="title"
+                            placeholder="Ingrese el título del servicio">
+                        @error('title')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <textarea class="form-control" name="description" id="description" rows="4"
+                            placeholder="Ingrese la descripción del servicio"></textarea>
+                        @error('description')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                            <label for="image_url">URL de la Imagen</label>
-                            <input type="file" class="form-control" name="image_url" id="image_url"
-                                placeholder="Ingrese la URL de la imagen">
-                            @error('image')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        {{-- comment --}}
+                    <div class="form-group">
+
+                        <label for="image">URL de la Imagen</label>
+                        <input type="file" class="form-control" name="image" id="image"
+                            placeholder="Ingrese la URL de la imagen">
+                        @error('image')
+                            <div style="color: red;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    {{-- comment --}}
 
 
 
-                        <div class="modal-footer">
-                            <a href="{{ route('servicios.index') }}"><button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Volver</button></a>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="modal-footer">
+                        <a href="{{ route('servicios.index') }}"><button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Volver</button></a>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
+
 </x-main-layout>

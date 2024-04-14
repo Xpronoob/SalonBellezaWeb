@@ -24,7 +24,7 @@ class ServiceRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'image' => 'required|string|max:255',
+            //'image' => 'required|string|max:255',
         ];
     }
 
@@ -33,7 +33,7 @@ class ServiceRequest extends FormRequest
         return [
             'title.required' => 'El título del servicio es requerido',
             'description.required' => 'La descripción del servicio es requerido',
-            'image.required' => 'La URL de la imagen es requerido',
+            //'image.required' => 'La URL de la imagen es requerido',
         ];
     }
 }

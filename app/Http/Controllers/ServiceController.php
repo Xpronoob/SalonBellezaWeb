@@ -26,18 +26,26 @@ class ServiceController extends Controller
 
     public function store(ServiceRequest $request)
     {
-       
+
         try {
 
-            $input = $request->all();
-  
-            if ($image_url = $request->file('image_url')) {
-                $destinationPath = 'image_url/';
-                $profileImage = date('YmdHis') . "." . $image_url->getClientOriginalExtension();
-                $image_url->move($destinationPath, $profileImage);
-                $input['image_url'] = "$profileImage";
-            }
-            Service::create($request->validated());
+            // $input = $request->all();
+
+            // if ($image_url = $request->file('image_url')) {
+            //     $destinationPath = 'image_url/';
+            //     $profileImage = date('YmdHis') . "." . $image_url->getClientOriginalExtension();
+            //     $image_url->move($destinationPath, $profileImage);
+            //     $input['image_url'] = "$profileImage";
+            // }
+            // Service::create($request->validated());
+
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $service = new Service();
+            $service->title = $request->title;
+            $service->description = $request->description;
+            $service->image = 'images/' . $imageName;
+            $service->save();
 
             return redirect('/servicios')->with('success', 'Servicio creado correctamente.');
         } catch (\Exception $e) {
