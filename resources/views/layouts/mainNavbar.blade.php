@@ -13,6 +13,7 @@
                         <span class="sidebar-menu-text">Usuarios</span>
                     </a>
                 </li>
+              
                 <li class="sidebar-menu-item {{ Request::is('admin/roles*') ? 'active' : '' }}">
                     <a class="sidebar-menu-button" href="">
                         <span class="sidebar-menu-text">Roles</span>
@@ -37,12 +38,17 @@
                 <span class="sidebar-menu-text">Inventario</span>
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
+
             <ul class="sidebar-submenu collapse {{ Request::is('inventario*') ? 'show' : '' }}" id="apps_menu">
-                <li class="sidebar-menu-item {{ Request::is('productos.index') ? 'active' : '' }}">
+                
+            <li class="sidebar-menu-item {{ Request::is('productos.index') ? 'active' : '' }}">
                     <a class="sidebar-menu-button" href="{{ route('productos.index') }}">
                         <span class="sidebar-menu-text">Productos</span>
                     </a>
                 </li>
+                
+           
+
                 <li class="sidebar-menu-item {{ Request::is('inventario/categorias*') ? 'active' : '' }}">
                     <a class="sidebar-menu-button" href="{{ route('categorias.index') }}">
                         <span class="sidebar-menu-text">Categorías</span>
@@ -63,14 +69,20 @@
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
             <ul class="sidebar-submenu collapse {{ Request::is('gestion*') ? 'show' : '' }}" id="pages_menu">
-                <li class="sidebar-menu-item">
-                    <a class="sidebar-menu-button" href="companies.html">
+                
+            <li class="sidebar-menu-item {{ Request::is('gestion/citas*') ? 'active' : '' }}">
+                    <a class="sidebar-menu-button" href="{{ route('citas.index') }}">
                         <span class="sidebar-menu-text">Citas</span>
                     </a>
                 </li>
                 <li class="sidebar-menu-item {{ Request::is('gestion/servicios*') ? 'active' : '' }}">
                     <a class="sidebar-menu-button" href="{{ route('servicios.index') }}">
                         <span class="sidebar-menu-text">Servicios</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item {{ Request::is('contabilidad.index') ? 'active' : '' }}">
+                <a class="sidebar-menu-button" href="{{ route('contabilidad.index') }}">
+                        <span class="sidebar-menu-text">Contabilidad</span>
                     </a>
                 </li>
             </ul>
