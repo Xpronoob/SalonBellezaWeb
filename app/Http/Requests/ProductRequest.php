@@ -23,8 +23,8 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|max:255',
-            'description' => 'required|max:255',
+            'name' => 'required|max:255|alpha_num',
+            'description' => 'required|max:255|alpha_num',
             'stock' => 'required|integer|min:0',
             'purchase_price' => 'required|numeric|min:0',
             'selling_price' => [
@@ -46,8 +46,10 @@ class ProductRequest extends FormRequest
         return [
             'name.required' => 'El nombre del producto es requerido',
             'name.max' => 'El nombre del producto no puede tener más de :max caracteres.',
+            'name.alpha_num' => 'El nombre del producto no puede contener unicamente caracteres especiales.',
             'description.required' => 'La descripción es requerida',
             'description.max' => 'La descripción no puede tener más de :max caracteres.',
+            'description.alpha_num' => 'La description del producto no puede contener unicamente caracteres especiales.',
             'stock.required' => 'La cantidad en stock es requerida',
             'purchase_price.required' => 'El precio de compra es requerido',
             'selling_price.required' => 'El precio de venta es requerido',

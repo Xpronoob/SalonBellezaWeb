@@ -24,7 +24,7 @@ class SupplierRequest extends FormRequest
         return [
 
             'name' => 'required|string|max:255',
-            'number' => 'required|string|max:20',
+            'number' => 'required|integer|max:12',
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:255',
             //
@@ -37,8 +37,9 @@ class SupplierRequest extends FormRequest
             'number.required' => 'El número de contacto es requerido',
             'email.required' => 'El correo electrónico es requerido',
             'address.required' => 'La dirección es requerida',
-
-            'email.email' => 'El correo electrónico debe ser válido'
+            'number.max' => 'El número de contacto no puede contener más de 12 dígitos',
+            'email.email' => 'El correo electrónico debe ser válido',
+            'number.integer' => 'El número de contacto no puede contener letras ni simbolos',
         ];
     }
 }

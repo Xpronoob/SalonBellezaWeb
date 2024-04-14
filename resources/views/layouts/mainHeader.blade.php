@@ -9,7 +9,6 @@
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
-
     <style>
         {!! Vite::content('resources/assets/vendor/perfect-scrollbar.css') !!}
     </style>
@@ -99,7 +98,7 @@
                         </button>
 
                         <!-- Navbar Brand -->
-                        {{-- <img src="{{ asset('assets/images/LogoSalon.png') }}" alt="Logo Salon de Belleza"
+                        {{-- <img src="{{asset('{{ asset('assets/images/LogoSalon.png')}}') }}" alt="Logo Salon de Belleza"
                             style="max-width: 75px"> --}}
 
                         <h5>Utopía Salon</h5>
@@ -145,7 +144,7 @@
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
                                                     <div class="avatar avatar-sm" style="width: 32px; height: 32px">
-                                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
+                                                        <img src="{{ asset('assets/images/256_daniel-gaffey-1060698-unsplash.jpg') }}"
                                                             alt="Avatar" class="avatar-img rounded-circle" />
                                                     </div>
                                                 </div>
@@ -190,7 +189,7 @@
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
                                                     <div class="avatar avatar-sm" style="width: 32px; height: 32px">
-                                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
+                                                        <img src="{{ asset('assets/images/256_daniel-gaffey-1060698-unsplash.jpg') }}"
                                                             alt="Avatar" class="avatar-img rounded-circle" />
                                                     </div>
                                                 </div>
@@ -236,7 +235,7 @@
                                             <div class="dropdown-item d-flex">
                                                 <div class="mr-3">
                                                     <div class="avatar avatar-sm" style="width: 32px; height: 32px">
-                                                        <img src="assets/images/256_daniel-gaffey-1060698-unsplash.jpg"
+                                                        <img src="{{ asset('assets/images/256_daniel-gaffey-1060698-unsplash.jpg') }}"
                                                             alt="Avatar" class="avatar-img rounded-circle" />
                                                     </div>
                                                 </div>
@@ -299,7 +298,7 @@
                                             <span class="mr-2 d-flex-inline">
                                                 <span class="text-light">{{ Auth::user()->name }}</span>
                                             </span>
-                                            {{-- <img src="{{ asset('/ext/images/user.png') }}" class="rounded-circle"
+                                            {{-- <img src="{{asset('{{ asset('/ext/images/user.png')}}') }}" class="rounded-circle"
                 width="25" alt="Frontted" /> --}}
                                         </a>
                                         <div id="account_menu" class="dropdown-menu dropdown-menu-right">

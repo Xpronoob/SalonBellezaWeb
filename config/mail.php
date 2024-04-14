@@ -39,9 +39,11 @@ return [
             'host' => env('MAIL_HOST', 'smtp.office365.com'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME', 'xpronoobdev@hotmail.com'),
-            'password' => env('MAIL_PASSWORD', 'dEvpAssword9'),
+            'username' => env('MAIL_USERNAME', '@hotmail.com'),
+            'password' => env('MAIL_PASSWORD', ''),
             'timeout' => null,
+
+            'verify_peer' => false,
         ],
 
         'ses' => [

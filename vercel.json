@@ -34,10 +34,19 @@
         }
     ],
     "env": {
-        "APP_NAME": "Laravel",
+        "APP_NAME": "Utopia-Salon",
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "VITE_HTTPS": "true",
+
+        "MAIL_MAILER": "smtp",
+        "MAIL_HOST": "smtp.resend.com",
+        "MAIL_PORT": "587",
+        "MAIL_USERNAME": "resend",
+        "MAIL_PASSWORD": "re_LThLaiaQ_AzdZA6WZpHq227c3ezrHJUV8",
+        "MAIL_ENCRYPTION": "tls",
+        "MAIL_FROM_ADDRESS": "utopia-salon.com",
+        "MAIL_FROM_NAME": "${APP_NAME}",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
