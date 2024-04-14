@@ -20,9 +20,9 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="number">Número de contacto:</label>
-                            <input type="text" class="form-control" for="number" name="number" id="number"
-                                placeholder="Ingrese el número de contacto" value="{{ old('number') }}">
+                            <label for="number">Número de contacto: (Costa Rica)</label>
+                            <input type="number" class="form-control" for="number" name="number" id="number"
+                                placeholder="+506 Ingrese el número de contacto " value="{{ old('number') }}">
                             @error('number')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
