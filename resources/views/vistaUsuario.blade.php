@@ -77,7 +77,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                    <li><a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">Cotiza un trabajo</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -86,105 +86,87 @@
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+<section id="hero" class="d-flex align-items-center" style="background-color: black; color: white;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+				<h1>Utopía Beauty Salón</h1>
+				<h2>Plataforma Web Oficial del Salón de Belleza | Costa Rica</h2>
+				<div class="d-flex justify-content-center justify-content-lg-start">
+					<a href="#contact" class="btn-get-started scrollto">Ubicación | Contacto</a>
+					<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+				</div>
+			</div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <h1>Better Solutions For Your Business</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                <img src="{{ asset('assets/assetsUser/img/hero-img.png') }}" class="img-fluid animated" alt="">
-                </div>
-            </div>
-        </div>
+			<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+            <img src="{{ asset('assets/assetsUser/img/123.png') }}" class="img-fluid animated" alt="" style="width: 400px; height: auto;">
+			</div>
+		</div>
+	</div>
+</section><!-- End Hero -->
 
-    </section><!-- End Hero -->
-
-    <main id="main">
+    <main id="main"> 
 
         <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients section-bg">
-            <div class="container">
+<section id="clients" class="clients section-bg">
+    <div class="container">
+        <div class="row" data-aos="zoom-in">
 
-                <div class="row" data-aos="zoom-in">
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/assetsUser/img/clients/client-1.png') }}" class="img-fluid" alt="">
-</div>
-
-<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/assetsUser/img/clients/client-2.png') }}" class="img-fluid" alt="">
-</div>
-
-<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/assetsUser/img/clients/client-3.png') }}" class="img-fluid" alt="">
-</div>
-
-<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/assetsUser/img/clients/client-4.png') }}" class="img-fluid" alt="">
-</div>
-
-<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/assetsUser/img/clients/client-5.png') }}" class="img-fluid" alt="">
-</div>
-
-<div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-    <img src="{{ asset('assets/assetsUser/img/clients/client-6.png') }}" class="img-fluid" alt="">
-</div>
-
-                </div>
-
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/assetsUser/img/clients/Cliente7.jpg') }}" class="img-fluid" alt="">
             </div>
-        </section><!-- End Cliens Section -->
 
-        <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>About Us</h2>
-                </div>
-
-                <div class="row content">
-                    <div class="col-lg-6">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat</li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0">
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
-                    </div>
-                </div>
-
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/assetsUser/img/clients/Cliente10.png') }}" class="img-fluid" alt="">
             </div>
-        </section><!-- End About Us Section -->
 
-        <!-- ======= Why Us Section ======= -->
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/assetsUser/img/clients/Cliente3.jpg') }}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/assetsUser/img/clients/Cliente4.png') }}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/assetsUser/img/clients/Cliente5.png') }}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/assetsUser/img/clients/Cliente6.png') }}" class="img-fluid" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Cliens Section -->
+
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Nosotros:</h2>
+        </div>
+        <div class="row content">
+            <div class="col-lg-6">
+                <p>
+                    <strong>Visión:</strong>
+                    "Ser reconocidos como el principal destino de belleza en Costa Rica, destacando por nuestro compromiso con la excelencia, la innovación y la satisfacción del cliente. Nos esforzamos por seguir siendo líderes en la industria de la belleza, ofreciendo servicios vanguardistas y utilizando productos de alta calidad. Buscamos expandir nuestra presencia en la comunidad, fortaleciendo las relaciones con nuestros clientes y siendo un referente de integridad y profesionalismo en el mundo de la belleza."
+                </p>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                <p>
+                    <strong>Misión:</strong>
+                    "En Utopía Beauty Salón, nuestra misión es resaltar la belleza única de cada persona, ofreciendo servicios de alta calidad y personalizados que reflejen la esencia y estilo de nuestros clientes. Nos comprometemos a proporcionar un ambiente acogedor y profesional, donde la experiencia de belleza sea más que un simple servicio, sino un momento de auténtico cuidado personal."
+                </p>
+                <a href="#" class="btn-learn-more">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+</section><!-- End About Us Section -->
+
+
+        <!-- =======  pasar a español: Why Us Section ======= -->
         <section id="why-us" class="why-us section-bg">
             <div class="container-fluid" data-aos="fade-up">
 
@@ -194,7 +176,7 @@
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
                         <div class="content">
-                            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                            <h3>AAAAAEum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
@@ -320,58 +302,7 @@
             </div>
         </section><!-- End Skills Section -->
 
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Services</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href="">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4><a href="">Sed ut perspici</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Magni Dolores</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
-                        data-aos-delay="400">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-layer"></i></div>
-                            <h4><a href="">Nemo Enim</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Services Section -->
-
+       
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
