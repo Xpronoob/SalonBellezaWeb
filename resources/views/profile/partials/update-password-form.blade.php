@@ -38,9 +38,32 @@
             <x-primary-button>{{ __('Actualizar') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
-                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600">{{ __('Contraseña Actualizada.') }}</p>
-            @endif
+            <div x-data="{ show: true }" x-show="show" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform translate-y-2"
+        x-transition:enter-end="opacity-100 transform translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 transform translate-y-0"
+        x-transition:leave-end="opacity-0 transform translate-y-2"
+        x-init="setTimeout(() => show = false, 10000)"
+        class="rounded-md bg-green-50 p-4 mt-4">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <!-- Heroicon name: check-circle -->
+                <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                    fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.293-9.293a1 1 0 011.414-1.414l2 2a1 1 0 01-1.414 1.414L9 11.414l-1.293-1.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm font-medium text-green-800">
+                    {{ __('Contraseña Actualizada.') }}
+                </p>
+            </div>
+        </div>
+    </div>
+ @endif
         </div>
     </form>
 </section>
