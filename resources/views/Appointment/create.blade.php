@@ -8,7 +8,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="location">Locación de la cita</label>
+                                    <label for="location">Localización de la cita</label>
                                     <input type="text" class="form-control" id="location" name="location" placeholder="Ingrese la locación de la cita" value="{{ old('location') }}">
                                     @error('location')
                                         <div style="color: red;">{{ $message }}</div>
