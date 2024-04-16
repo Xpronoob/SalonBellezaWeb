@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Arsha Bootstrap Template - Index</title>
+    <title>Utopía Beauty Salón | Web Site</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/assetsUser/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assets/assetsUser/img/123.png') }}" rel="icon">
     <link href="{{ asset('assets/assetsUser/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
 
@@ -19,7 +19,6 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
    <!-- Vendor CSS Files -->
 <link href="{{ asset('assets/assetsUser/vendor/aos/aos.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/assetsUser/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -29,17 +28,9 @@
 <link href="{{ asset('assets/assetsUser/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/assetsUser/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/assetsUser/css/style.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: Arsha
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -48,35 +39,22 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
+            <h1 class="logo me-auto"><a href="index.html">Utopía Beauty Salón</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                    <li><a class="nav-link scrollto active" href="#hero">Principal</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Estilistas</a></li>
+                    <li class="dropdown"><a href="#footer-top"><span>Redes Sociales</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#footer-newsletter">Trabaja con nosotros</a></li>
+                            <li><a href="#why-us">¿Por qué nosotros?</a></li>
+                            <li><a href="#contact">Correo Electrónico</a></li>
+                            <li><a href="#contact">Telefono WhatsApp</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Ubicación</a></li>
+                    <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
                     <li><a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">Cotiza un trabajo</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -105,7 +83,7 @@
 	</div>
 </section><!-- End Hero -->
 
-    <main id="main"> 
+    <main id="main">
 
         <!-- ======= Clients Section ======= -->
 <section id="clients" class="clients section-bg">
@@ -176,10 +154,9 @@
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
                         <div class="content">
-                            <h3>AAAAAEum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                            <h3>¿Por qué nosotros <strong>somos tu mejor opción?</strong></h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                                Nosotros tenemos productos de calidad y trabajamos solo con marcas orginales. Además, ofrecemos horarios y trabajamos en fechas que normalmente no trabajan los demás salones.
                             </p>
                         </div>
 
@@ -187,45 +164,37 @@
                             <ul>
                                 <li>
                                     <a data-bs-toggle="collapse" class="collapse"
-                                        data-bs-target="#accordion-list-1"><span>01</span> Non consectetur a erat nam at
-                                        lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i
+                                        data-bs-target="#accordion-list-1"><span>01</span> Cuál es el horario de Utopía Beauty Salón?<i class="bx bx-chevron-down icon-show"></i><i
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                                         <p>
-                                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus
-                                            laoreet non curabitur gravida. Venenatis lectus magna fringilla urna
-                                            porttitor rhoncus dolor purus non.
+                                            El horario de Utopía Beauty Salón es de lunes a Sábado, de 9:00 am a 5:00 pm, y los domingos 10:00 am a 3:00 pm.
                                         </p>
                                     </div>
                                 </li>
 
                                 <li>
                                     <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
-                                        class="collapsed"><span>02</span> Feugiat scelerisque varius morbi enim nunc? <i
+                                        class="collapsed"><span>02</span> Como puedo sacar una cita para un servicio? <i
                                             class="bx bx-chevron-down icon-show"></i><i
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                                        <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id
-                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper
-                                            dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                                        </p>
+                                    <p>
+                                        Para sacar una cita para un servicio, todo se realiza mediante <strong><a href="https://wa.link/u0zt1v" target="_blank" rel="noopener noreferrer">WhatsApp</a></strong>Contáctanos a través de WhatsApp y el salón asignará una cita y un horario para ti.
+                                    </p>
                                     </div>
                                 </li>
 
                                 <li>
                                     <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
-                                        class="collapsed"><span>03</span> Dolor sit amet consectetur adipiscing elit? <i
+                                        class="collapsed"><span>03</span> Qué experiencia puedo esperar en Utopía Beauty Salón? <i
                                             class="bx bx-chevron-down icon-show"></i><i
                                             class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                                         <p>
-                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci.
-                                            Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet
-                                            nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis
-                                            convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio
-                                            morbi quis
+                                            En Utopía Beauty Salón, te ofrecemos una experiencia excepcionalmente relajante y rejuvenecedora.
+                                            Nuestro equipo de profesionales altamente capacitados se dedica a proporcionarte servicios de la más
+                                            alta calidad, diseñados para realzar tu belleza natural y mejorar tu bienestar.
                                         </p>
                                     </div>
                                 </li>
@@ -236,7 +205,7 @@
                     </div>
 
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-    style='background-image: url("{{ asset('assets/assetsUser/img/why-us.png') }}");'
+    style='background-image: url("{{ asset('assets/assetsUser/img/trabajo4.jpg') }}");'
     data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
 
                 </div>
@@ -245,486 +214,410 @@
         </section><!-- End Why Us Section -->
 
         <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills">
-            <div class="container" data-aos="fade-up">
+<section id="skills" class="skills">
+    <div class="container" data-aos="fade-up">
 
-                <div class="row">
-                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                    <img src="{{ asset('assets/assetsUser/img/skills.png') }}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
+        <div class="row">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+                <img src="{{ asset('assets/assetsUser/img/trabajo1.jpg') }}" class="img-fluid" alt="Servicios del Salón">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                <h3 class="text-center" style="color:black" >Nuestros Servicios Más Cotizados</h3>
+                <p class="fst-italic">
+                    En Utopía Beauty Salón, nos especializamos en una variedad de servicios diseñados para realzar tu belleza y mejorar tu bienestar.
+                </p>
 
-                        <div class="skills-content">
+                <div class="skills-content">
 
-                            <div class="progress">
-                                <span class="skill">HTML <i class="val">100%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">CSS <i class="val">90%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">JavaScript <i class="val">75%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Photoshop <i class="val">55%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
+                    <div class="progress">
+                        <span class="skill">Coloración de Cabello / Balayage / Keratina <i class="val">45%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-
                     </div>
+
+                    <div class="progress">
+                        <span class="skill">Manicure / Pedicure / Masajes<i class="val">20%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <span class="skill">Maquillaje / Capacitaciones<i class="val">15%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="15"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress">
+                        <span class="skill">Corte de Pelo<i class="val">20%</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-        </section><!-- End Skills Section -->
+        </div>
 
-       
+    </div>
+</section><!-- End Skills Section -->
+
+
+
+
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
             <div class="container" data-aos="zoom-in">
 
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-start">
-                        <h3>Call To Action</h3>
-                        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.</p>
+                        <h3>¡Nuestras Redes Sociales!</h3>
+                        <p>En nuestras redes sociales podrás encontrar más información acerca de los servicios, eventos, capacitaciones
+                            y todas las actividades que realizamos, somos uno de los pocos salones que trabajan con las marcas más reconocidas a nivel nacional.
+                        </p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Call To Action</a>
+                        <a class="cta-btn align-middle" href="#footer">Visitar</a>
                     </div>
                 </div>
 
             </div>
         </section><!-- End Cta Section -->
 
-        
 
-        <!-- ======= Team Section ======= -->
-        <section id="team" class="team section-bg">
-            <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Team</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
+       <!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+	<div class="container" data-aos="fade-up">
 
-                <div class="row">
+		<div class="section-title">
+			<h2>Profesionales Utopía Beauty Salón</h2>
+            <p>Nuestro equipo en Utopía Beauty Salón está compuesto por profesionales altamente capacitados y dedicados a brindarte la mejor experiencia de belleza y bienestar. Con un enfoque en la excelencia y el liderazgo, estamos comprometidos a proporcionarte un servicio de calidad y satisfacción en cada visita.</p>
+		</div>
 
-                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-1.jpg') }}" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+		<div class="row">
+			<div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+				<div class="member d-flex align-items-start">
+                <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-1.jpg') }}" class="img-fluid" alt=""></div>
+					<div class="member-info">
+						<h4>Kaleth Rojas Sánchez</h4>
+						<span>Administrador General</span>
+						<p>Encargado de la gestión general con enfoque en eficiencia y liderazgo. Siendo excelente en proceso asignado.</p>
+						<div class="social">
+							<a href=""><i class="ri-twitter-fill"></i></a>
+							<a href=""><i class="ri-facebook-fill"></i></a>
+							<a href=""><i class="ri-instagram-fill"></i></a>
+							<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-2.jpg') }}" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+			<div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+				<div class="member d-flex align-items-start">
+                <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-2.jpg') }}" class="img-fluid" alt=""></div>
+					<div class="member-info">
+						<h4>Alejandra Sánchez Arias</h4>
+						<span>Master en Color | CEO</span>
+						<p>Experta en coloración. Su pasión es crear experiencias únicas con colores asombrosos.</p>
+						<div class="social">
+							<a href=""><i class="ri-twitter-fill"></i></a>
+							<a href=""><i class="ri-facebook-fill"></i></a>
+							<a href=""><i class="ri-instagram-fill"></i></a>
+							<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-3.jpg') }}" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+			<div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+				<div class="member d-flex align-items-start">
+                <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-3.jpg') }}" class="img-fluid" alt=""></div>
+					<div class="member-info">
+						<h4>Anthonny Rojas Sánchez</h4>
+						<span>Técnico de Informática | Publicidad RRSS</span>
+						<p>Apasionado técnico de informática y experto en publicidad en redes sociales</p>
+						<div class="social">
+							<a href=""><i class="ri-twitter-fill"></i></a>
+							<a href=""><i class="ri-facebook-fill"></i></a>
+							<a href=""><i class="ri-instagram-fill"></i></a>
+							<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-4.jpg') }}" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
-                                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+			<div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+				<div class="member d-flex align-items-start">
+                <div class="pic"><img src="{{ asset('assets/assetsUser/img/team/team-4.jpg') }}" class="img-fluid" alt=""></div>
+					<div class="member-info">
+						<h4>Maria José Sánchez</h4>
+						<span>Encargada Peinados, Maquillaje y Masajes</span>
+						<p>Con más de 5 la industria de la belleza, Maria es una apasionada experta en peinados, maquillaje y masajes.</p>
+						<div class="social">
+							<a href=""><i class="ri-twitter-fill"></i></a>
+							<a href=""><i class="ri-facebook-fill"></i></a>
+							<a href=""><i class="ri-instagram-fill"></i></a>
+							<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                </div>
+		</div>
 
-            </div>
-        </section><!-- End Team Section -->
+	</div>
+</section><!-- End Team Section -->
 
-        <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Pricing</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="box">
-                            <h3>Free Plan</h3>
-                            <h4><sup>$</sup>0<span>per month</span></h4>
-                            <ul>
-                                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                                <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                                <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span>
-                                </li>
-                            </ul>
-                            <a href="#" class="buy-btn">Get Started</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="box featured">
-                            <h3>Business Plan</h3>
-                            <h4><sup>$</sup>29<span>per month</span></h4>
-                            <ul>
-                                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-                            </ul>
-                            <a href="#" class="buy-btn">Get Started</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                        <div class="box">
-                            <h3>Developer Plan</h3>
-                            <h4><sup>$</sup>49<span>per month</span></h4>
-                            <ul>
-                                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-                            </ul>
-                            <a href="#" class="buy-btn">Get Started</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Pricing Section -->
 
         <!-- ======= Frequently Asked Questions Section ======= -->
-        <section id="faq" class="faq section-bg">
-            <div class="container" data-aos="fade-up">
+<section id="faq" class="faq section-bg">
+	<div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
+		<div class="section-title">
+			<h2>Preguntas Frecuentes</h2>
+			<p>
+				Gracias por elegir Utopía Beauty Salón. Queremos hacer tu experiencia lo más fácil y placentera posible, y nuestras Preguntas Frecuentes son una herramienta útil para lograrlo.
+				Si no encuentras la información que necesitas, no dudes en contactarnos directamente a través de nuestra sección de Contacto. Estamos aquí para ayudarte y proporcionarte la asistencia que necesitas.
+			</p>
+		</div>
 
-                <div class="faq-list">
-                    <ul>
-                        <li data-aos="fade-up" data-aos-delay="100">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                                    class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                                <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                    non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
-                                    purus non.
-                                </p>
-                            </div>
-                        </li>
+		<div class="faq-list">
+			<ul>
+				<li data-aos="fade-up" data-aos-delay="100">
+					<i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">
+						¿Cuáles son los servicios que ofrecen en el salón de belleza?
+						<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+					</a>
+					<div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+						<p>
+							Ofrecemos una amplia gama de servicios de belleza, desde cortes de pelo y peinados, hasta coloración, tratamientos faciales, manicuras, pedicuras y mucho más. Nuestro objetivo es realzar tu belleza y hacerte sentir increíble.
+						</p>
+					</div>
+				</li>
 
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim
-                                nunc? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
-                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                    cursus turpis massa tincidunt dui.
-                                </p>
-                            </div>
-                        </li>
+				<li data-aos="fade-up" data-aos-delay="200">
+					<i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">
+						¿Necesito programar una cita o aceptan clientes sin cita previa?
+						<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+					</a>
+					<div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+						<p>
+							Recomendamos programar una cita para garantizar que podamos atenderte de manera eficiente. Sin embargo, también aceptamos clientes sin cita previa, siempre y cuando haya disponibilidad en el momento.
+						</p>
+					</div>
+				</li>
 
-                        <li data-aos="fade-up" data-aos-delay="300">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing
-                                elit? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
-                                    Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
-                                    tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                                </p>
-                            </div>
-                        </li>
+				<li data-aos="fade-up" data-aos-delay="300">
+					<i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">
+						¿Cuánto tiempo de anticipación debo reservar mi cita?
+						<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+					</a>
+					<div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+						<p>
+							Sugerimos reservar tu cita con al menos una semana de anticipación para asegurar la disponibilidad deseada. Sin embargo, siempre trataremos de acomodar las citas de último minuto según la disponibilidad.
+						</p>
+					</div>
+				</li>
 
-                        <li data-aos="fade-up" data-aos-delay="400">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam
-                                sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
-                                    est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
-                                    suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                                </p>
-                            </div>
-                        </li>
+				<li data-aos="fade-up" data-aos-delay="400">
+					<i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">
+						¿Trabajan con todo tipo de cabello?
+						<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+					</a>
+					<div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+						<p>
+							Sí, nuestros estilistas son expertos en trabajar con una variedad de tipos de cabello. Sea cual sea la textura o longitud de tu cabello, estamos aquí para proporcionar servicios personalizados que se adapten a tus necesidades.
+						</p>
+					</div>
+				</li>
 
-                        <li data-aos="fade-up" data-aos-delay="500">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare.
-                                Varius vel pharetra vel turpis nunc eget lorem dolor? <i
-                                    class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                    integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-                                    eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                                </p>
-                            </div>
-                        </li>
+				<li data-aos="fade-up" data-aos-delay="500">
+					<i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">
+						¿Puedo traer a mis hijos al salón mientras recibo un servicio?
+						<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+					</a>
+					<div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+						<p>
+							Apreciamos la tranquilidad en nuestro salón y para garantizar la mejor experiencia para todos, recomendamos dejar a los niños en casa durante tu visita. Sin embargo, entendemos que las circunstancias pueden variar, así que no dudes en consultarnos sobre situaciones especiales.
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
 
-                    </ul>
-                </div>
-
-            </div>
-        </section><!-- End Frequently Asked Questions Section -->
+	</div>
+</section><!-- End Frequently Asked Questions Section -->
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
+<section id="contact" class="contact">
+	<div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Contact</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+		<div class="section-title">
+			<h2>Contacto</h2>
+			<p>
+				¡Estamos encantados de saber de ti! En nuestra sección de contacto, te ofrecemos una vía directa para establecer una conexión con nuestro equipo. Ya sea que tengas preguntas, comentarios, o simplemente quieras decir hola, estamos aquí para escucharte.
+			</p>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-5 d-flex align-items-stretch">
+				<div class="info">
+                <div class="address">
+                <a target="_blank" href="https://acortar.link/OBPGho">
+                  <i class="bi bi-geo-alt"></i>
+                </a>
+                <h4>Dirección:</h4>
+                <p><a target="_blank" href="https://acortar.link/OBPGho">Urb. Dorados Desamparados, San José</a></p>
+              </div>
+
+				<div class="email">
+                    <a onclick="abrirEmail()"> <i class="bi bi-envelope"> </i></a>
+                    <h4>Correo:</h4>
+                    <p><a style="color:#5DADE2; cursor: pointer;" onclick="abrirEmail()">utopiabeautysalon99@gmail.com</a></p>
                 </div>
 
-                <div class="row">
+            <script>
+                //Funcion para abrir la aplicación por default del dispositivo del usuario.
+                function abrirEmail()
+                {
+                    // Dirección de Correo del colegio:
+                    var destinatario = "utopiabeautysalon99@gmail.com";
+                    var enlaceCorreo = "mailto:" + destinatario;
+                    window.location.href = enlaceCorreo;
+                }
+            </script>
 
-                    <div class="col-lg-5 d-flex align-items-stretch">
-                        <div class="info">
-                            <div class="address">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
-                            </div>
+					<div class="phone">
+						<i class="bi bi-phone"></i>
+						<h4>Teléfono:</h4>
+						<p>+506 8918 0032</p>
+					</div>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.395951469245!2d-84.07062492520778!3d9.900942590199495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e34c171c793b%3A0xd93f42824d46b852!2zVXRvcMOtYSBCZWF1dHkgU2Fsw7Nu!5e0!3m2!1ses-419!2scr!4v1713126815113!5m2!1ses-419!2scr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+				</div>
+			</div>
 
-                            <div class="email">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>info@example.com</p>
-                            </div>
+			<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+				<form action="forms/contact.php" method="post" role="form" class="php-email-form">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="name">Nombre Completo:</label>
+							<input type="text" name="name" class="form-control" id="name" required>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="name">Correo Electrónico:</label>
+							<input type="email" class="form-control" name="email" id="email" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="name">Asunto:</label>
+						<input type="text" class="form-control" name="subject" id="subject" required>
+					</div>
+					<div class="form-group">
+						<label for="name">Descripción mensaje:</label>
+						<textarea class="form-control" name="message" rows="10" required></textarea>
+					</div>
+					<div class="my-3">
+						<div class="loading">Loading</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Your message has been sent. Thank you!</div>
+					</div>
+					<div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+				</form>
+			</div>
 
-                            <div class="phone">
-                                <i class="bi bi-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
-                            </div>
+		</div>
 
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" name="name" class="form-control" id="name" required>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="name">Your Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Message</label>
-                                <textarea class="form-control" name="message" rows="10" required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Contact Section -->
+	</div>
+</section><!-- End Contact Section -->
 
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer">
+<footer id="footer">
 
-        <div class="footer-newsletter">
+
+<div id="footer-newsletter" class="footer-newsletter">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        <h4>¿Te gustaría trabajar con nosotros?</h4>
+                        <p>Nos puedes facilitar tu enlace de LinkedIn y nosotros te vamos a contactar en caso de interesarnos tu perfil.</p>
+                        <form action="" method="">
+                            <input type="email" name="email"><input type="submit" value="Enviar">
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+</div>
 
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+<div id="footer-top" class="footer-top">
+    <div class="container">
+        <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Arsha</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Social Networks</h4>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="col-lg-3 col-md-6 footer-contact">
+                <h3>Salón Belleza</h3>
+                <p>
+                    Desamparados <br>
+                    San José, Costa Rica<br>
+                     <br>
+                    <strong>Teléfono:</strong> +506 8918 0032<br>
+                    <strong>Correo:</strong> UtopiaBeauty@gmail.com<br>
+                </p>
             </div>
-        </div>
 
-        <div class="container footer-bottom clearfix">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+            <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Accesos Rápidos:</h4>
+                <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Principal</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Horario</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Ubicación</a></li>
+                </ul>
             </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Información Extra</h4>
+                <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Historia</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Honores</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Políticas</a></li>
+                    <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>-->
+                </ul>
             </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+    <h4>Redes Sociales:</h4>
+    <p>En nuestras redes compartimos la experiencia del día a día del salón ¡Echa un vistazo!</p>
+    <div class="social-links mt-3">
+        <a href="https://www.facebook.com/profile.php?id=100057254267669" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/utopia_beauty_salon99?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.tiktok.com/@utopia_beauty_salon?is_from_webapp=1&sender_device=pc" class="tiktok" target="_blank"><i class="bx bxl-tiktok"></i></a>
+    </div>
+</div>
+
+
         </div>
-    </footer><!-- End Footer -->
+    </div>
+</div>
+
+<div class="container footer-bottom clearfix">
+    <div class="copyright">
+        &copy; Copyright <strong><span>UtopiaBeautySalon</span></strong>. Todos los derechos reservados
+    </div>
+    <div class="credits">
+        Créditos: <a href="https://www.instagram.com/ufidelitas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Universidad Fidélitas</a>
+    </div>
+</div>
+</footer><!-- End Footer -->
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
