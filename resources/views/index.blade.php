@@ -125,192 +125,107 @@
 
 
         <main class="container">
-            <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-                <div class="col-lg-6 px-0">
-                    <h1 class="display-4 fst-italic">Utopia Salon</h1>
-                    <p class="lead my-3">¡Nos complace darte la bienvenida a nuestro espacio! Somos un salón dedicado a
-                        brindarte los mejores servicios para que te sientas y luzcas genial. Nuestro compromiso es
-                        ofrecerte una experiencia excepcional en cada visita.</p>
-                </div>
+
+            <div class="jumbotron jumbotron-fluid bg-light">
+    <div class="container">
+        <h1 class="display-4 text-primary">¡Bienvenido a Utopia Salon!</h1>
+        <p class="lead">Somos un salón dedicado a brindarte los mejores servicios para que te sientas y luzcas genial.</p>
+        <p class="lead">Nuestro compromiso es ofrecerte una experiencia excepcional en cada visita.</p>
+    </div>
+</div>
+
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card border rounded h-100">
+            <div class="card-body">
+                <h5 class="card-title text-success-emphasis">Inventario</h5>
+                <h3 class="card-subtitle mb-3">Gestiona tus productos ahora</h3>
+                <p class="card-text">Aquí puedes administrar todos los productos disponibles en nuestro salón de belleza de manera eficiente y conveniente.</p>
+                <a href='productos' class="btn btn-primary">Ir a Inventario</a>
             </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-            <div class="row mb-2">
-
-                <div class="col-md-6">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h5 class="card-header d-inline-block mb-2 text-success-emphasis">Inventario</h5>
-                            <br>
-                            <h3 class="mb-0">Gestiona tus productos ahora</h3>
-                            <br>
-                            <p class="card-text mb-auto"> Aquí puedes administrar todos los productos disponibles en
-                                nuestro salón de belleza de manera eficiente y conveniente.</p>
-
-                        </div>
-
-                        <div class="col-auto d-none d-lg-block">
-
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-
-
-                <div class="col-md-6">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h5 class="card-header d-inline-block mb-2 text-success-emphasis">Inventario</h5>
-                            <br>
-                            <h3 class="mb-0">Gestiona tus proveedores</h3>
-                            <br>
-                            <p class="card-text mb-auto"> Aquí puedes administrar todos los proveedores que tienes
-                                disponibles y puedes agregar o elminar.</p>
-
-                        </div>
-
-                    </div>
-                </div>
+    <div class="col-md-6">
+        <div class="card border rounded h-100">
+            <div class="card-body">
+                <h5 class="card-title text-success-emphasis">Proveedores</h5>
+                <h3 class="card-subtitle mb-3">Gestiona tus proveedores</h3>
+                <p class="card-text">Aquí puedes administrar todos los proveedores disponibles y puedes agregar o eliminar.</p>
+                <a href="proveedores" class="btn btn-primary">Ir a Proveedores</a>
             </div>
-            <div class="row mb-2">
+        </div>
+    </div>
+</div>
 
-
-
-
-                <div class="col-md-6">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h5 class="card-header d-inline-block mb-2 text-success-emphasis">Gestion</h5>
-                            <br>
-                            <h3 class="mb-0">Gestiona tus servicios</h3>
-                            <br>
-                            <p class="card-text mb-auto"> Aquí puedes administrar todos los servicios disponibles en
-                                nuestro salón de belleza de manera eficiente y conveniente.</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div
-                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h5 class="card-header d-inline-block mb-2 text-success-emphasis">Gestion</h5>
-                            <br>
-                            <h3 class="mb-0">Gestiona tus citas</h3>
-                            <br>
-                            <p class="card-text mb-auto"> Aquí puedes administrar todos las citas disponibles en nuestro
-                                salón de belleza de manera eficiente y conveniente.</p>
-
-                        </div>
-                    </div>
-                </div>
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card border rounded h-100">
+            <div class="card-body">
+                <h5 class="card-title text-success-emphasis">Servicios</h5>
+                <h3 class="card-subtitle mb-3">Gestiona tus servicios</h3>
+                <p class="card-text">Aquí puedes administrar todos los servicios disponibles en nuestro salón de belleza de manera eficiente y conveniente.</p>
+                <a href="servicios" class="btn btn-primary">Ir a Servicios</a>
             </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card border rounded h-100">
+            <div class="card-body">
+                <h5 class="card-title text-success-emphasis">Citas</h5>
+                <h3 class="card-subtitle mb-3">Gestiona tus citas</h3>
+                <p class="card-text">Aquí puedes administrar todas las citas disponibles en nuestro salón de belleza de manera eficiente y conveniente.</p>
+                <a href="citas" class="btn btn-primary">Ir a Citas</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
             <br>
-            <div class="row g-5">
-                <div class="col-md-8">
-
-
-                    <article class="blog-post">
-
-                        <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
-
-                        <p class="text-center">En la página web de nuestro salón, te sumergirás en un oasis de belleza y
-                            bienestar. Desde el momento en que llegas, serás recibido con un diseño elegante y una
-                            navegación intuitiva que te guiará a través de nuestros servicios excepcionales. Explora una
-                            amplia gama de tratamientos capilares, desde cortes de vanguardia hasta colores vibrantes,
-                            diseñados para realzar tu belleza única. Nuestro equipo de expertos estilistas y
-                            esteticistas está dedicado a brindarte una experiencia personalizada y transformadora, donde
-                            cada visita es una oportunidad para rejuvenecer y revitalizar cuerpo y mente. Sumérgete en
-                            nuestra galería de imágenes, que captura la esencia de nuestro salón, desde el ambiente
-                            acogedor hasta los resultados deslumbrantes. ¡Bienvenido a nuestro mundo de belleza, donde
-                            tus sueños de estilo se hacen realidad!</p>
-                        <hr>
-
-                        <p class="text-center">
-                            Nuestro salón es un santuario de belleza y bienestar, donde la elegancia se combina con la
-                            comodidad para ofrecerte una experiencia inigualable. Desde el momento en que cruzas
-                            nuestras puertas, te envuelve una atmósfera de tranquilidad y profesionalismo. Con un equipo
-                            de talentosos estilistas y expertos en cuidado personal, estamos dedicados a brindarte
-                            servicios excepcionales que resalten tu estilo único y realcen tu confianza. Nuestro
-                            compromiso con la excelencia se refleja en cada detalle, desde la calidad de nuestros
-                            productos hasta la atención personalizada que recibes en cada visita. En nuestro salón, no
-                            solo te transformarás físicamente, sino que también encontrarás un refugio donde recargar
-                            energías y revitalizar tu espíritu. ¡Bienvenido a nuestro oasis de belleza, donde tus deseos
-                            de estilo se hacen realidad!
-
-                        </p>
-                        <!-- --->
-                    </article>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="position-sticky" style="top: 2rem;">
-                        <div class="p-4 mb-3 bg-body-tertiary rounded">
-                            <h4 class="fst-italic">Sobre Nosotros</h4>
-                            <p class="mb-0">Sala de Belleza, expertos en color y tratamientos especializados para el
-                                cabello.</p>
-                        </div>
-                        <div class="p-4 mb-3 bg-body-tertiary rounded">
-                            <h4 class="fst-italic">Dirección</h4>
-                            <p class="mb-0">San José, Desamparados, Costa Rica</p>
-                        </div>
-                        <div class="p-4 mb-3 bg-body-tertiary rounded">
-                            <h4 class="fst-italic">Horarios:</h4>
-                            <p class="mb-0">
-                                Lunes
-                                10:00 a.m. - 6:00 p.m.
-
-                            </p>
-                            <br>
-                            <p class="mb-0">
-                                Martes 10:00 a.m. - 6:00 p.m.
-                            </p>
-                            <br>
-
-                            <p class="mb-0">
-                                Miércoles 10:00 a.m. - 6:00 p.m.
-                            </p>
-                            <br>
-
-                            <p class="mb-0">
-                                Jueves 10:00 a.m. - 6:00 p.m.
-                            </p>
-                            <br>
-
-                            <p class="mb-0">
-                                Viernes 10:00 a.m. - 6:00 p.m.
-                            </p>
-                            <br>
-
-                            <p class="mb-0">
-                                Sábado 10:00 a.m. - 6:00 p.m.
-                            </p>
-                            <br>
-
-                            <p class="mb-0">
-                                Domingo CERRADO
-                            </p>
-
-                        </div>
-
-
-                    </div>
-                </div>
+            <div class="row g-5 mb-4">
+    <div class="col-md-8">
+        <article class="card border rounded shadow-sm">
+            <div class="card-body">
+              
+                <p class="text-center">En la página web de nuestro salón, te sumergirás en un oasis de belleza y bienestar. Desde el momento en que llegas, serás recibido con un diseño elegante y una navegación intuitiva que te guiará a través de nuestros servicios excepcionales. Explora una amplia gama de tratamientos capilares, desde cortes de vanguardia hasta colores vibrantes, diseñados para realzar tu belleza única. Nuestro equipo de expertos estilistas y esteticistas está dedicado a brindarte una experiencia personalizada y transformadora, donde cada visita es una oportunidad para rejuvenecer y revitalizar cuerpo y mente. Sumérgete en nuestra galería de imágenes, que captura la esencia de nuestro salón, desde el ambiente acogedor hasta los resultados deslumbrantes. ¡Bienvenido a nuestro mundo de belleza, donde tus sueños de estilo se hacen realidad!</p>
+                <hr>
+                <p class="text-center">Nuestro salón es un santuario de belleza y bienestar, donde la elegancia se combina con la comodidad para ofrecerte una experiencia inigualable. Desde el momento en que cruzas nuestras puertas, te envuelve una atmósfera de tranquilidad y profesionalismo. Con un equipo de talentosos estilistas y expertos en cuidado personal, estamos dedicados a brindarte servicios excepcionales que resalten tu estilo único y realcen tu confianza. Nuestro compromiso con la excelencia se refleja en cada detalle, desde la calidad de nuestros productos hasta la atención personalizada que recibes en cada visita. En nuestro salón, no solo te transformarás físicamente, sino que también encontrarás un refugio donde recargar energías y revitalizar tu espíritu. ¡Bienvenido a nuestro oasis de belleza, donde tus deseos de estilo se hacen realidad!</p>
             </div>
+        </article>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card position-sticky top-2rem">
+            <div class="card-body bg-body-tertiary rounded shadow-sm">
+                <h4 class="card-title fst-italic">Sobre Nosotros</h4>
+                <p class="card-text">Sala de Belleza, expertos en color y tratamientos especializados para el cabello.</p>
+            </div>
+        </div>
+        <div class="card position-sticky top-2rem">
+            <div class="card-body bg-body-tertiary rounded shadow-sm">
+                <h4 class="card-title fst-italic">Dirección</h4>
+                <p class="card-text">San José, Desamparados, Costa Rica</p>
+            </div>
+        </div>
+        <div class="card position-sticky top-2rem">
+            <div class="card-body bg-body-tertiary rounded shadow-sm">
+                <h4 class="card-title fst-italic">Horarios</h4>
+                <p class="card-text">Lunes 10:00 a.m. - 6:00 p.m.</p>
+                <p class="card-text">Martes 10:00 a.m. - 6:00 p.m.</p>
+                <p class="card-text">Miércoles 10:00 a.m. - 6:00 p.m.</p>
+                <p class="card-text">Jueves 10:00 a.m. - 6:00 p.m.</p>
+                <p class="card-text">Viernes 10:00 a.m. - 6:00 p.m.</p>
+                <p class="card-text">Sábado 10:00 a.m. - 6:00 p.m.</p>
+                <p class="card-text">Domingo CERRADO</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
         </main>
 

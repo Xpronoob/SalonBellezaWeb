@@ -53,6 +53,24 @@
                                     @enderror
                                 </div>
 
+                    
+
+                                <div class="form-group">
+                                    <label for="usuario">Nombre del cliente</label>
+                                    <select name="id_user" id="id_user" class="form-control">
+                                        <option value=""> --Seleccione un nombre--</option>
+                                        @foreach ($users as $user)
+                                            <option value="{{ $user->id }}"
+                                             {{ $appointment->user->id == $user->id ? 'selected' : '' }}>
+                                             {{ $user->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('id_user')
+                                        <div style="color: red;">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
                                 <div class="form-group">
                                     <label for="description">Descripcion de la cita</label>
                                     <input type="text" class="form-control" id="description" name="description" 

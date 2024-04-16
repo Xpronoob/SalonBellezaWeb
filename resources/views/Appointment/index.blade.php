@@ -36,6 +36,7 @@
                                         <th>Locación</th>
                                         <th>Fecha</th>
                                         <th>Estilista</th>
+                                        <th>Cliente</th>
                                         <th>Descripción</th>
                                         <th>Precio</th>
                                         <th class="text-center">Acciones</th>
@@ -47,6 +48,10 @@
                                             <td>{{ $appointment->location }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->stylist }}</td>
+
+                                             <td>{{ $appointment->user->name }}</td>
+
+
                                             <td>{{ $appointment->description }}</td>
                                             <td>{{ $appointment->cost }}</td>
                                             <td class="text-center">

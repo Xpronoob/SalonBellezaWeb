@@ -29,6 +29,7 @@ class AppointmentRequest extends FormRequest
             'stylist' => 'required|max:255',
             'description' => 'required|max:255',
             'cost' => 'required|numeric|min:0',
+            'id_user' => 'required|integer',
 
 
 
@@ -50,6 +51,7 @@ class AppointmentRequest extends FormRequest
 
             'cost.required' => 'El costo es requerido',
             'cost.numeric' => 'La cantidad debe ser un número.',
+            'id_user.required' => 'El nombre es requerido',
 
 
         ];

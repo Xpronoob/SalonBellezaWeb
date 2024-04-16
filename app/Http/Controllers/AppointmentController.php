@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AppointmentRequest;
 use App\Models\Appointment;
+use App\Models\User;
+
 use Illuminate\Http\Request;
 
 
@@ -26,7 +28,11 @@ class AppointmentController extends Controller
 
     public function create()
     {
-        return view('appointment.create');
+        $users = User::all();
+
+        return view('appointment.create', compact('users'));
+        //return view('appointment.create');
+
     }
 
     public function store(AppointmentRequest $request)
@@ -46,8 +52,10 @@ class AppointmentController extends Controller
 
     public function edit(string $id)
     {
+        
         $appointment = Appointment::find($id);
-        return view('appointment.edit', compact('appointment'));
+        $users = User::all();
+        return view('appointment.edit', compact('appointment','users'));
     }
 
     public function update(AppointmentRequest $request, $id_appointment)
