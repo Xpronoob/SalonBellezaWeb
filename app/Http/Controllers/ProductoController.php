@@ -39,7 +39,7 @@ class ProductoController extends Controller
     {
 
         try {
-            dump($request->all());
+            // dump($request->all());
             Product::create($request->validated());
 
             return redirect('/productos')->with('success', 'Producto creado correctamente.');
@@ -61,7 +61,7 @@ class ProductoController extends Controller
         $suppliers = Supplier::all();
         return view('product.edit', compact('product', 'categories', 'suppliers'));
     }
-    
+
     public function update(ProductRequest $request, $id_product)
     {
 

@@ -15,15 +15,15 @@
 
     <!-- App CSS -->
     <link type="text/css" href="../assets/css/app.css" rel="stylesheet">
-    <link type="text/css" href="../assets/css/app.rtl.css" rel="stylesheet">
+    {{-- <link type="text/css" href="../assets/css/app.rtl.css" rel="stylesheet"> --}}
 
     <!-- Material Design Icons -->
     <link type="text/css" href="../assets/css/vendor-material-icons.css" rel="stylesheet">
-    <link type="text/css" href="../assets/css/vendor-material-icons.rtl.css" rel="stylesheet">
+    {{-- <link type="text/css" href="../assets/css/vendor-material-icons.rtl.css" rel="stylesheet"> --}}
 
     <!-- Font Awesome FREE Icons -->
     <link type="text/css" href="../assets/css/vendor-fontawesome-free.css" rel="stylesheet">
-    <link type="text/css" href="../assets/css/vendor-fontawesome-free.rtl.css" rel="stylesheet">
+    {{-- <link type="text/css" href="../assets/css/vendor-fontawesome-free.rtl.css" rel="stylesheet"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133433427-1"></script>
@@ -43,7 +43,7 @@
 
     <div class="layout-login-centered-boxed__form card">
         <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 navbar-light">
-            <a href="../index.html" class="navbar-brand flex-column mb-2 align-items-center mr-0" style="min-width: 0">
+            <a href="/" class="navbar-brand flex-column mb-2 align-items-center mr-0" style="min-width: 0">
                 <span class="text-primary mr-2">
                 </span>
                 <span>¡Recuperar Contraseña!</span>
@@ -74,11 +74,11 @@
                 <label class="text-label" for="email">{{ __('Correo Electrónico') }}</label>
                 <input placeholder="Correo Electrónico" id="email"
                     class="form-control @error('email') is-invalid @enderror" type="text" name="email"
-                    value="{{ old('email') }}"  />
-            
+                    value="{{ old('email') }}" />
+
                 @error('email')
-                            <div style="color: red; padding: 1px;">{{ $message }}</div>
-            @enderror
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
             </div>
 
             {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
@@ -120,7 +120,7 @@
     <script src="../assets/js/app.js"></script>
 
     <!-- App Settings (safe to remove) -->
-    <script src="../assets/js/app-settings.js"></script>
+    {{-- <script src="../assets/js/app-settings.js"></script> --}}
 
 </body>
 

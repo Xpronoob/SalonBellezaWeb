@@ -45,8 +45,8 @@
         "MAIL_USERNAME": "resend",
         "MAIL_PASSWORD": "re_LThLaiaQ_AzdZA6WZpHq227c3ezrHJUV8",
         "MAIL_ENCRYPTION": "tls",
-        "MAIL_FROM_ADDRESS": "utopia-salon.com",
-        "MAIL_FROM_NAME": "${APP_NAME}",
+        "MAIL_FROM_ADDRESS": "admin@utopia-salon.com",
+        "MAIL_FROM_NAME": "Utopía Salón",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",

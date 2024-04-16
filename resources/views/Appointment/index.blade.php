@@ -48,18 +48,29 @@
                                             <td>{{ $appointment->location }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->stylist }}</td>
-
-                                             <td>{{ $appointment->user->name }}</td>
-
-
+                                            <td>{{ $appointment->user->name }}</td>
                                             <td>{{ $appointment->description }}</td>
                                             <td>{{ $appointment->cost }}</td>
                                             <td class="text-center">
+                                                <style>
+                                                    .btn-group .btn {
+                                                        max-height: 30px;
+                                                        /* Cambia el valor según lo necesites */
+                                                    }
+                                                </style>
                                                 <div class="btn-group" role="group">
                                                     <a href="{{ route('citas.edit', $appointment->id) }}"
                                                         class="btn btn-success">Editar</a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modal-danger">Eliminar</button>
+                                                    <form id="deleteForm_{{ $appointment->id }}"
+                                                        action="{{ route('citas.destroy', $appointment->id) }}"
+                                                        method="POST" style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <!-- Botón de eliminación que abre el modal -->
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-toggle="modal" data-target="#modal-danger"
+                                                            onclick="confirmDelete({{ $appointment->id }})">Eliminar</button>
+                                                    </form>
                                                 </div>
                                             </td>
                                         </tr>
@@ -79,3 +90,20 @@
         </div>
     </div>
 </x-main-layout>
+
+<script>
+    function confirmDelete(appointmentId) {
+        // Configura el formulario con el ID correspondiente al proveedor
+        var formId = 'deleteForm_' + appointmentId;
+        var form = document.getElementById(formId);
+
+        // Configura el modal para mostrar el mensaje de confirmación
+        $('#modal-danger').modal('show');
+
+        // Maneja el clic en el botón de confirmación del modal
+        $('#confirmDeleteButton').click(function() {
+            // Envía el formulario para ejecutar la solicitud DELETE
+            form.submit();
+        });
+    }
+</script>
