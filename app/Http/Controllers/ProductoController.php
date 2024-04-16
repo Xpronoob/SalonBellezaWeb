@@ -7,7 +7,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\Supplier;
 use App\Models\Category;
-
+use App\Models\ErrorLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -38,15 +38,22 @@ class ProductoController extends Controller
     public function store(ProductRequest $request)
     {
         try {
-            // Hacer una solicitud HTTP para cargar la imagen a tu nueva aplicación
-            $response = Http::attach(
-                'image',
-                file_get_contents($request->file('image')->path()),
-                $request->file('image')->getClientOriginalName()
-            )->post('https://utopia-salon.com/upload');
 
-            // Obtener la URL de la imagen desde la respuesta
-            $imageUrl = $response->body();
+            // $result = 1 / 0;
+            $imageUrl = null; // Inicializar la variable de URL de imagen como nula
+
+            // Verificar si se ha proporcionado una imagen
+            if ($request->hasFile('image')) {
+                // Hacer una solicitud HTTP para cargar la imagen a tu nueva aplicación
+                $response = Http::attach(
+                    'image',
+                    file_get_contents($request->file('image')->path()),
+                    $request->file('image')->getClientOriginalName()
+                )->post('https://utopia-salon.com/upload');
+
+                // Obtener la URL de la imagen desde la respuesta
+                $imageUrl = $response->body();
+            }
 
             // Guardar la URL de la imagen en tu base de datos
             Product::create([
@@ -61,10 +68,18 @@ class ProductoController extends Controller
             ]);
 
             return redirect('admin/inventario/productos')->with('success', 'Producto creado correctamente.');
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
+            // Guardar el error en la base de datos
+            ErrorLog::create([
+                'exception' => get_class($e),
+                'error_message' => $e->getMessage(),
+                'user_id' => auth()->id()
+            ]);
+
             return redirect('admin/inventario/productos')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
+
 
 
     public function show(Product $product)
@@ -108,15 +123,25 @@ class ProductoController extends Controller
 
                 // Actualizar la URL de la imagen en la base de datos
                 $product->image = $imageUrl; // Guardar la URL en lugar de la ruta local
+            } elseif (!$request->hasFile('image') && $product->image) {
+                // Si no se proporciona una nueva imagen pero hay una imagen existente, mantener la misma imagen
+                $product->image = $product->image;
             }
 
             $product->save();
 
             return redirect('admin/inventario/productos')->with('success', 'Producto actualizado correctamente.');
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
+            // Guardar el error en la base de datos
+            ErrorLog::create([
+                'exception' => get_class($e),
+                'error_message' => $e->getMessage(),
+                'user_id' => auth()->id()
+            ]);
             return redirect('admin/inventario/productos')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
+
 
     public function destroy($id_product)
     {

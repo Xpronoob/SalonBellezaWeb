@@ -171,6 +171,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'password' => [
+            'required' => 'La contraseña es requerida.',
+        ],
+        'current_password' => [
+            'required' => 'El campo contraseña actual es requerido.',
+        ],
     ],
 
     /*

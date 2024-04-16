@@ -12,8 +12,7 @@ use App\Http\Controllers\CategoryController;
 use App\Models\Service; // Importa el modelo Service si aún no lo has hecho
 use App\Http\Controllers\AccountingController;
 use App\Http\Controllers\AppointmentController;
-
-
+use App\Http\Controllers\ErrorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,13 +27,26 @@ use App\Http\Controllers\AppointmentController;
 
 
 Route::get('/', function () {
-    $services = Service::all(); // Recupera todos los servicios desde la base de datos
+    $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos
     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
 
     return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
 });
 
+
+// Route::get('cliente/servicios', function () {
+//     $services = Service::all(); // Recupera todos los servicios desde la base de datos
+//     // $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
+
+//     return view('cliente.servicios', ['services' => $services]);
+// });
+
 Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
+    // Admin
+    Route::prefix('administracion')->group(function () {
+        Route::get('errors', [ErrorController::class, 'index'])->name('admin.errors.index');
+    });
+
     // Inventario
     Route::prefix('inventario')->group(function () {
         Route::resource('productos', ProductoController::class);
@@ -47,6 +59,9 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
         Route::resource('citas', AppointmentController::class);
         Route::resource('servicios', ServiceController::class);
         Route::resource('contabilidad', AccountingController::class);
+        Route::get('/vistaCalculadora', function () {
+            return view('vistaCalculadora');
+        })->name('calculadora.index');
     });
 
     // Otros
@@ -64,9 +79,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
 // });
 
 
-Route::get('/vistaCalculadora', function () {
-    return view('vistaCalculadora');
-});
+
 
 
 // Route::get('/dashboard', function () {

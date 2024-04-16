@@ -150,10 +150,8 @@
                     <h2>Plataforma Web Oficial del Salón de Belleza | Costa Rica</h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="#contact" class="btn-get-started scrollto">Ubicación | Contacto</a>
-                        <a href="https://www.youtube.com/watch?v=CT0qfXTaNvg" class="glightbox btn-watch-video"><i
-                                class="bi bi-play-circle"></i><span>Ver Video</span></a>
-
-
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
+                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>
                 </div>
 
@@ -320,65 +318,6 @@
             </div>
         </section><!-- End Why Us Section -->
 
-        <!-- ======= Skills Section ======= -->
-        <section id="skills" class="skills">
-            <div class="container" data-aos="fade-up">
-
-                <div class="row">
-                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                        <img src="{{ asset('assets/assetsUser/img/trabajo1.jpg') }}" class="img-fluid"
-                            alt="Servicios del Salón">
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3 class="text-center" style="color:black">Nuestros Servicios Más Cotizados</h3>
-                        <p class="fst-italic">
-                            En Utopía Beauty Salón, nos especializamos en una variedad de servicios diseñados para
-                            realzar tu belleza y mejorar tu bienestar.
-                        </p>
-
-                        <div class="skills-content">
-
-                            <div class="progress">
-                                <span class="skill">Coloración de Cabello / Balayage / Keratina <i
-                                        class="val">45%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;"
-                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Manicure / Pedicure / Masajes<i class="val">20%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 20%;"
-                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Maquillaje / Capacitaciones<i class="val">15%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 15%;"
-                                        aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Corte de Pelo<i class="val">20%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 20%;"
-                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Skills Section -->
-
         <!-- Solo mostrar la sección si hay servicios disponibles -->
         <div class="section-title mt-4">
             <h2>Nuestros Servicios:</h2>
@@ -390,13 +329,13 @@
                     <div class="row">
                         @foreach ($services as $service)
                             <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                                <h3 class="" style="color:black">{{ $service->title }}</h3>
+                                <h3 class="text-center" style="color:black">{{ $service->title }}</h3>
                                 <p class="fst-italic">
                                     {{ $service->description }}
                                 </p>
 
                                 <img src="{{ asset($service->image) }}" class="img-fluid"
-                                    alt="{{ $service->title }}" style="max-width: 300px">
+                                    alt="{{ $service->title }}">
 
                             </div>
                         @endforeach
@@ -404,27 +343,6 @@
                 </div>
             </section><!-- End Skills Section -->
         @endif
-
-        {{-- @if ($services->isNotEmpty())
-            <!-- ======= Skills Section ======= -->
-            <section id="services" class="skills">
-                <div class="container" data-aos="fade-up">
-                    <div class="row">
-                        @foreach ($services as $service)
-                            <div class="card" style="width: 18rem;"><img class="card-img-top"
-                                    src="{{ $service->image }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $service->title }}</h5>
-                                    <p class="card-text">{{ $service->description }}</p><a href="#"
-                                        class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </section><!-- End Skills Section -->
-        @endif --}}
-
 
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">

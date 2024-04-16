@@ -8,7 +8,7 @@
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
             <ul class="sidebar-submenu collapse {{ Request::is('admin*') ? 'show' : '' }}" id="dashboards_menu">
-                <li class="sidebar-menu-item {{ Request::is('admin/usuarios*') ? 'active' : '' }}">
+                {{-- <li class="sidebar-menu-item {{ Request::is('admin/usuarios*') ? 'active' : '' }}">
                     <a class="sidebar-menu-button" href="">
                         <span class="sidebar-menu-text">Usuarios</span>
                     </a>
@@ -22,9 +22,9 @@
                     <a class="sidebar-menu-button" href="">
                         <span class="sidebar-menu-text">Acciones</span>
                     </a>
-                </li>
-                <li class="sidebar-menu-item {{ Request::is('admin/errores*') ? 'active' : '' }}">
-                    <a class="sidebar-menu-button" href="">
+                </li> --}}
+                <li class="sidebar-menu-item {{ Request::is('admin/administracion*') ? 'active' : '' }}">
+                    <a class="sidebar-menu-button" href="{{ route('admin.errors.index') }}">
                         <span class="sidebar-menu-text">Errores</span>
                     </a>
                 </li>
@@ -76,6 +76,11 @@
                 <li class="sidebar-menu-item {{ Request::is('admin/gestion/contabilidad*') ? 'active' : '' }}">
                     <a class="sidebar-menu-button" href="{{ route('contabilidad.index') }}">
                         <span class="sidebar-menu-text">Contabilidad</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item {{ Request::is('admin/gestion/vistaCalculadora') ? 'active' : '' }}">
+                    <a class="sidebar-menu-button" href="{{ route('calculadora.index') }}">
+                        <span class="sidebar-menu-text">Calculadora de beneficios</span>
                     </a>
                 </li>
             </ul>

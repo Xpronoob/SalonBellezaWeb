@@ -15,7 +15,12 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo Citas</h1>
-                <a href="{{ route('citas.create') }}" class="btn btn-primary mb-2">Nueva Cita</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ route('citas.create') }}" class="btn btn-success mb-2">Nuevo Cita</a>
             </div>
         </div>
 
