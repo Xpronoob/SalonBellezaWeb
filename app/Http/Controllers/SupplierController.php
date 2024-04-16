@@ -29,9 +29,9 @@ class SupplierController extends Controller
         try {
             Supplier::create($request->validated());
 
-            return redirect('/proveedores')->with('success', 'Proveedor creado correctamente.');
+            return redirect('admin/inventario/proveedores')->with('success', 'Proveedor creado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/proveedores')->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('admin/inventario/proveedores')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
 
@@ -53,9 +53,9 @@ class SupplierController extends Controller
             $supplier = Supplier::find($id_supplier);
             $supplier->update($request->validated());
 
-            return redirect('/proveedores')->with('success', 'Proveedor actualizado correctamente.');
+            return redirect('admin/inventario/proveedores')->with('success', 'Proveedor actualizado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/proveedores')->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('admin/inventario/proveedores')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
 
@@ -65,9 +65,9 @@ class SupplierController extends Controller
         try {
             $suppliers = Supplier::findOrFail($id_supplier);
             $suppliers->delete();
-            return redirect('/proveedores')->with('deleted', 'Se eliminó correctamente.');
+            return redirect('admin/inventario/proveedores')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect('/proveedores')->with('deleted', 'Hubo un problema al eliminar los datos.');
+            return redirect('admin/inventario/proveedores')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 }

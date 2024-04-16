@@ -40,9 +40,9 @@ class AppointmentController extends Controller
         try {
             Appointment::create($request->validated());
 
-            return redirect('/citas')->with('success', 'Cita creada correctamente.');
+            return redirect('admin/gestion/citas')->with('success', 'Cita creada correctamente.');
         } catch (\Exception $e) {
-            return redirect('/citas')->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('admin/gestion/citas')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
     public function show(Appointment $appointment)
@@ -52,10 +52,10 @@ class AppointmentController extends Controller
 
     public function edit(string $id)
     {
-        
+
         $appointment = Appointment::find($id);
         $users = User::all();
-        return view('appointment.edit', compact('appointment','users'));
+        return view('appointment.edit', compact('appointment', 'users'));
     }
 
     public function update(AppointmentRequest $request, $id_appointment)
@@ -65,9 +65,9 @@ class AppointmentController extends Controller
             $appointment = Appointment::find($id_appointment);
             $appointment->update($request->validated());
 
-            return redirect('/citas')->with('success', 'Cita actualizada correctamente.');
+            return redirect('admin/gestion/citas')->with('success', 'Cita actualizada correctamente.');
         } catch (\Exception $e) {
-            return redirect('/citas')->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('admin/gestion/citas')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
     public function destroy($id_appointment)
@@ -75,9 +75,9 @@ class AppointmentController extends Controller
         try {
             $appointments = Appointment::findOrFail($id_appointment);
             $appointments->delete();
-            return redirect('/citas')->with('deleted', 'Se eliminó correctamente.');
+            return redirect('admin/gestion/citas')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect('/citas')->with('deleted', 'Hubo un problema al eliminar los datos.');
+            return redirect('admin/gestion/citas')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 }

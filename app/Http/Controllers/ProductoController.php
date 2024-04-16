@@ -60,9 +60,9 @@ class ProductoController extends Controller
                 'image' => $imageUrl // Guardar la URL en lugar de la ruta local
             ]);
 
-            return redirect('/productos')->with('success', 'Producto creado correctamente.');
+            return redirect('admin/inventario/productos')->with('success', 'Producto creado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/productos')->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('admin/inventario/productos')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
 
@@ -112,9 +112,9 @@ class ProductoController extends Controller
 
             $product->save();
 
-            return redirect('/productos')->with('success', 'Producto actualizado correctamente.');
+            return redirect('admin/inventario/productos')->with('success', 'Producto actualizado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/productos')->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('admin/inventario/productos')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
 
@@ -123,9 +123,9 @@ class ProductoController extends Controller
         try {
             $products = Product::findOrFail($id_product);
             $products->delete();
-            return redirect('/productos')->with('deleted', 'Se eliminó correctamente.');
+            return redirect('admin/inventario/productos')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect('/productos')->with('deleted', 'Hubo un problema al eliminar los datos.');
+            return redirect('admin/inventario/productos')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 

@@ -55,9 +55,9 @@ class ServiceController extends Controller
             $service->image = $imageUrl; // Guardar la URL en lugar de la ruta local
             $service->save();
 
-            return redirect('/servicios')->with('success', 'Servicio creado correctamente.');
+            return redirect('admin/gestion/servicios')->with('success', 'Servicio creado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/servicios')->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('admin/gestion/servicios')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
 
@@ -100,9 +100,9 @@ class ServiceController extends Controller
 
             $service->save();
 
-            return redirect('/servicios')->with('success', 'Servicio actualizado correctamente.');
+            return redirect('admin/gestion/servicios')->with('success', 'Servicio actualizado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/servicios')->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('admin/gestion/servicios')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
 
@@ -112,9 +112,9 @@ class ServiceController extends Controller
         try {
             $services = Service::findOrFail($id_service);
             $services->delete();
-            return redirect('/servicios')->with('deleted', 'Se eliminó correctamente.');
+            return redirect('admin/gestion/servicios')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect('/servicios')->with('deleted', 'Hubo un problema al eliminar los datos.');
+            return redirect('admin/gestion/servicios')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 }

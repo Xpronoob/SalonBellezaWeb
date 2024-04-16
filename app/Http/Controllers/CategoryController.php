@@ -33,9 +33,9 @@ class CategoryController extends Controller
         try {
             Category::create($request->validated());
 
-            return redirect('/categorias')->with('success', 'Categoria creada correctamente.');
+            return redirect('admin/inventario/categorias')->with('success', 'Categoria creada correctamente.');
         } catch (\Exception $e) {
-            return redirect('/categorias')->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('admin/inventario/categorias')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
     public function show(Category $category)
@@ -56,9 +56,9 @@ class CategoryController extends Controller
             $category = Category::find($id_category);
             $category->update($request->validated());
 
-            return redirect('/categorias')->with('success', 'Categoria actualizada correctamente.');
+            return redirect('admin/inventario/categorias')->with('success', 'Categoria actualizada correctamente.');
         } catch (\Exception $e) {
-            return redirect('/categorias')->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('admin/inventario/categorias')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
     public function destroy($id_category)
@@ -66,9 +66,9 @@ class CategoryController extends Controller
         try {
             $categories = Category::findOrFail($id_category);
             $categories->delete();
-            return redirect('/categorias')->with('deleted', 'Se eliminó correctamente.');
+            return redirect('admin/inventario/categorias')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect('/categorias')->with('deleted', 'Hubo un problema al eliminar los datos.');
+            return redirect('admin/inventario/categorias')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 }

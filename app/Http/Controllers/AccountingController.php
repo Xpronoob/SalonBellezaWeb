@@ -35,9 +35,9 @@ class AccountingController extends Controller
         try {
             Accounting::create($request->validated());
 
-            return redirect('/contabilidad')->with('success', 'Registro creado correctamente.');
+            return redirect('admin/gestion/contabilidad')->with('success', 'Registro creado correctamente.');
         } catch (\Exception $e) {
-            return redirect('/contabilidad')->with('error', 'Hubo un problema al guardar los datos.');
+            return redirect('admin/gestion/contabilidad')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
     public function show(Accounting $accounting)
@@ -58,9 +58,9 @@ class AccountingController extends Controller
             $accounting = Accounting::find($id_accounting);
             $accounting->update($request->validated());
 
-            return redirect('/contabilidad')->with('success', 'Registro actualizada correctamente.');
+            return redirect('admin/gestion/contabilidad')->with('success', 'Registro actualizada correctamente.');
         } catch (\Exception $e) {
-            return redirect('/contabilidad')->with('error', 'Hubo un problema al actualizar los datos.');
+            return redirect('admin/gestion/contabilidad')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
     public function destroy($id_accounting)
@@ -68,9 +68,9 @@ class AccountingController extends Controller
         try {
             $categories = Accounting::findOrFail($id_accounting);
             $categories->delete();
-            return redirect('/contabilidad')->with('deleted', 'Se eliminó correctamente.');
+            return redirect('admin/gestion/contabilidad')->with('deleted', 'Se eliminó correctamente.');
         } catch (\Exception $e) {
-            return redirect('/contabilidad')->with('deleted', 'Hubo un problema al eliminar los datos.');
+            return redirect('admin/gestion/contabilidad')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
     }
 }
