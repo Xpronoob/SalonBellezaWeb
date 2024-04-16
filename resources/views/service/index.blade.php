@@ -16,6 +16,19 @@
             {{ session('error') }}
         </div>
     @endif
+
+    {{-- @if ($lowStockProducts->isNotEmpty())
+        <div class="alert alert-warning" role="alert">
+            <p>Algunos productos tienen un stock menor a 20:</p>
+            <ul>
+                @foreach ($lowStockProducts as $product)
+                    <li>{{ $product->name }} - Stock Restante: {{ $product->stock }}</li>
+                @endforeach
+            </ul>
+            <p>¡Por favor, reabastece el inventario!</p>
+        </div>
+    @endif --}}
+
     <div class="col-12 text-center">
         <h1 class="display-6 fw-bold mb-4 p-3 rounded bg-dark text-light">Módulo de Servicios</h1>
     </div>
@@ -45,7 +58,8 @@
                                 <th>Título del Servicio</th>
                                 <th>Descripción</th>
                                 <th>Imagen</th>
-                                <th class="text-center">Acciones</th> </tr>
+                                <th class="text-center">Acciones</th>
+                            </tr>
                         </thead>
                         <tbody class="list" id="staff02">
                             @foreach ($services as $service)
@@ -57,30 +71,41 @@
                                             style="max-width: 100px;">
                                     </td>
 
-                                        <td class="text-center">
+                                    <td class="text-center">
                                         <div class="btn-group" role="group">
-                                            <a href="{{ route('servicios.edit', $service->id) }}"><button type="button" class="btn btn-success btn-action">Editar</button></a>
-                                            <form class="delete-form" action="{{ route('servicios.destroy', $service->id) }}" method="POST">
+                                            <a href="{{ route('servicios.edit', $service->id) }}"><button type="button"
+                                                    class="btn btn-success btn-action">Editar</button></a>
+                                            <form id="deleteForm_{{ $service->id }}"
+                                                action="{{ route('servicios.destroy', $service->id) }}" method="POST"
+                                                style="display: inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-action">Eliminar</button>
+                                                <!-- Botón de eliminación que abre el modal -->
+                                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                    data-target="#modal-danger"
+                                                    onclick="confirmDelete({{ $service->id }})">Eliminar</button>
                                             </form>
                                         </div>
                                     </td>
-
-                                    </td>
-
                                 </tr>
-                                <script>
-                                    $(document).ready(function() {
-                                        // Maneja el clic en el botón de confirmación del modal
-                                        $('#confirmDeleteButton').click(function() {
-                                            // Envía el formulario para ejecutar la solicitud DELETE
-                                            $('#deleteForm').submit();
-                                        });
-                                    });
-                                </script>
                             @endforeach
+                            <script>
+                                function confirmDelete(serviceId) {
+                                    // Configura el formulario con el ID correspondiente al proveedor
+                                    var formId = 'deleteForm_' + serviceId;
+                                    var form = document.getElementById(formId);
+
+                                    // Configura el modal para mostrar el mensaje de confirmación
+                                    $('#modal-danger').modal('show');
+
+                                    // Maneja el clic en el botón de confirmación del modal
+                                    $('#confirmDeleteButton').click(function() {
+                                        // Envía el formulario para ejecutar la solicitud DELETE
+                                        form.submit();
+                                    });
+                                }
+                            </script>
+
                         </tbody>
                     </table>
                 </div>

@@ -82,6 +82,16 @@
                                         <div style="color: red;">{{ $message }}</div>
                                     @enderror
                                 </div>
+
+                                <div class="form-group">
+
+                                    <label for="image">Subir imagen</label>
+                                    <input type="file" class="form-control" name="image" id="image"
+                                        placeholder="Ingrese la URL de la imagen">
+                                    @error('image')
+                                        <div style="color: red;">{{ $message }}</div>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
 

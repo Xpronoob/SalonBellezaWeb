@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Iniciar Sesión</title>
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
@@ -37,7 +37,6 @@
 </head>
 
 <body class="layout-login">
-    <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <div class="layout-login__overlay"></div>
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
@@ -45,8 +44,9 @@
             <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
                 <a href="../index.html" class="navbar-brand" style="min-width: 0">
                     {{-- <img class="navbar-brand-icon" src="../assets/images/LogoSalon.png" width="100" alt=""> --}}
-                    <img class="navbar-brand-icon" src="{{ asset('assets/images/LogoSalon.png') }}" width="100"
-                        alt="">
+                    <a href="/">
+                        <img src="{{ asset('assets/images/LogoSalon.png') }}" width="125" alt="Logo Salon">
+                    </a>
                     <span></span>
                 </a>
             </div>
@@ -54,6 +54,7 @@
             <h4 class="m-0 text-center">Utopía Beauty Salón</h4> <br>
             <p class="mb-5 text-center">Ingresa las credenciales para iniciar sesión:</p>
 
+            <x-auth-session-status class="mb-4" :status="session('status')" />
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf

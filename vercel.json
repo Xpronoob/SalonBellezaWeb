@@ -36,7 +36,7 @@
     "env": {
         "APP_NAME": "Utopia-Salon",
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "VITE_HTTPS": "true",
 
         "MAIL_MAILER": "smtp",

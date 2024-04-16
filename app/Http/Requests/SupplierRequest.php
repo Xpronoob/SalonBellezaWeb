@@ -23,23 +23,24 @@ class SupplierRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'number' => 'required|numeric|digits_between:1,12', 
+            'number' => 'required|numeric|digits_between:8,12',
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:255',
         ];
     }
 
     public function messages(): array
-{
-    return [
-        'name.required' => 'El nombre del proveedor es requerido',
-        'number.required' => 'El número de contacto es requerido',
-        'email.required' => 'El correo electrónico es requerido',
-        'address.required' => 'La dirección es requerida',
-        'number.numeric' => 'El campo número debe ser un número',
-        'number.digits_between' => 'El campo número debe tener entre :min y :max dígitos',
-        'email.email' => 'El correo electrónico debe ser válido',
-    ];
-}
-
+    {
+        return [
+            'name.required' => 'El nombre del proveedor es requerido',
+            'number.required' => 'El número de contacto es requerido',
+            'number.numeric' => 'El campo número debe ser un número',
+            'number.digits_between' => 'El campo número debe tener entre :min y :max dígitos',
+            'number.min' => 'El campo número debe tener al menos :min dígitos',
+            'number.max' => 'El campo número no puede tener más de :max dígitos',
+            'email.required' => 'El correo electrónico es requerido',
+            'email.email' => 'El correo electrónico debe ser válido',
+            'address.required' => 'La dirección es requerida',
+        ];
+    }
 }

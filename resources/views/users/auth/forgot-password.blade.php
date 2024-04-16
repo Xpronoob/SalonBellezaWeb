@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Recuperar Cuenta</title>
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
@@ -43,6 +43,9 @@
 
     <div class="layout-login-centered-boxed__form card">
         <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 navbar-light">
+            <a class="mb-4" href="/">
+                <img src="{{ asset('assets/images/LogoSalon.png') }}" width="125" alt="Logo Salon">
+            </a>
             <a href="/" class="navbar-brand flex-column mb-2 align-items-center mr-0" style="min-width: 0">
                 <span class="text-primary mr-2">
                 </span>
@@ -51,7 +54,7 @@
             <p class="m-0">Utopía Beauty Salón</p>
         </div>
         <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+        <x-auth-session-status class="mb-2" :status="session('status')" />
 
         @isset($status)
             <div class="alert alert-soft-success d-flex" role="alert">

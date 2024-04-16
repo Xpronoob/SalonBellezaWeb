@@ -23,8 +23,9 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|max:255|alpha_num',
-            'description' => 'required|max:255|alpha_num',
+            'name' => 'required|max:255',
+            'description' => 'required|max:255',
+            'image' => 'required|image',
             'stock' => 'required|integer|min:0',
             'purchase_price' => 'required|numeric|min:0',
             'selling_price' => [
@@ -46,10 +47,12 @@ class ProductRequest extends FormRequest
         return [
             'name.required' => 'El nombre del producto es requerido',
             'name.max' => 'El nombre del producto no puede tener más de :max caracteres.',
-            'name.alpha_num' => 'El nombre del producto no puede contener unicamente caracteres especiales.',
+            // 'name.alpha_num' => 'El nombre del producto no puede contener unicamente caracteres especiales.',
             'description.required' => 'La descripción es requerida',
             'description.max' => 'La descripción no puede tener más de :max caracteres.',
-            'description.alpha_num' => 'La description del producto no puede contener unicamente caracteres especiales.',
+            // 'description.alpha_num' => 'La description del producto no puede contener unicamente caracteres especiales.',
+            'image.required' => 'La imagen del producto es requerida',
+            'image.image' => 'La imagen debe tener la extension jpg, jpeg, png, bmp, gif, svg, o webp',
             'stock.required' => 'La cantidad en stock es requerida',
             'purchase_price.required' => 'El precio de compra es requerido',
             'selling_price.required' => 'El precio de venta es requerido',

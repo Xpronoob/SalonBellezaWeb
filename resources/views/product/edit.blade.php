@@ -22,8 +22,7 @@
                         <div class="form-group">
                             <label for="description">Descripción del Producto</label>
                             <input type="text" class="form-control" name="description" id="description"
-                                placeholder="Ingrese la descripción del producto"
-                                value="{{ $product->description }}" />
+                                placeholder="Ingrese la descripción del producto" value="{{ $product->description }}" />
                             @error('description')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
@@ -41,8 +40,7 @@
                         <div class="form-group">
                             <label for="purchase_price">Precio de Compra</label>
                             <input type="text" class="form-control" name="purchase_price" id="purchase_price"
-                                placeholder="Ingrese el precio de compra"
-                                value="{{ $product->purchase_price }}" />
+                                placeholder="Ingrese el precio de compra" value="{{ $product->purchase_price }}" />
                             @error('purchase_price')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
@@ -87,6 +85,21 @@
                             @error('id_supplier')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image">URL de la Imagen</label>
+                            <input type="file" class="form-control" name="image" id="image"
+                                placeholder="Ingrese la URL de la imagen">
+                            @error('image')
+                                <div style="color: red;">{{ $message }}</div>
+                            @enderror
+                            @if ($product->image)
+                                <div class="form-group">
+                                    <label class="mt-2">Imagen Actual</label><br>
+                                    <img style="max-width: 350px" src="{{ $product->image }}" alt="Imagen Actual">
+                                </div>
+                            @endif
                         </div>
 
                         <div class="form-group modal-footer">

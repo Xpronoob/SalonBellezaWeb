@@ -28,30 +28,40 @@ use App\Http\Controllers\AppointmentController;
 
 
 Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::prefix('admin')->group(function () {
-});
-
-Route::resource('proveedores', SupplierController::class);
-Route::resource('providers', SupplierController::class);
-Route::resource('categorias', CategoryController::class);
-Route::resource('contabilidad', AccountingController::class);
-Route::resource('citas', AppointmentController::class);
-Route::resource('servicios', ServiceController::class);
-Route::resource('productos', ProductoController::class);
-
-Route::get('/vistaUsuario', function () {
     $services = Service::all(); // Recupera todos los servicios desde la base de datos
     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
 
     return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
 });
+
+Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
+    // Inventario
+    Route::prefix('inventario')->group(function () {
+        Route::resource('productos', ProductoController::class);
+        Route::resource('categorias', CategoryController::class);
+        Route::resource('proveedores', SupplierController::class);
+    });
+
+    // Gestion
+    Route::prefix('gestion')->group(function () {
+        Route::resource('citas', AppointmentController::class);
+        Route::resource('servicios', ServiceController::class);
+        Route::resource('contabilidad', AccountingController::class);
+    });
+
+    // Otros
+    Route::get('/dashboard', function () {
+        return view('index');
+    });
+});
+
+
+// Route::get('/vistaUsuario', function () {
+//     $services = Service::all(); // Recupera todos los servicios desde la base de datos
+//     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
+
+//     return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
+// });
 
 
 Route::get('/vistaCalculadora', function () {
@@ -59,9 +69,9 @@ Route::get('/vistaCalculadora', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('index');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

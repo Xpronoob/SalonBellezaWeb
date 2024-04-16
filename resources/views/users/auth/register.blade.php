@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login</title>
+    <title>Registrarse</title>
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
@@ -44,7 +44,9 @@
 <body class="layout-login d-flex align-items-center justify-content-center">
     <div class="layout-login__form card p-4">
         <div class="text-center mb-4">
-            <img src="{{ asset('assets/images/LogoSalon.png') }}" width="150" alt="Logo Salon">
+            <a href="/">
+                <img src="{{ asset('assets/images/LogoSalon.png') }}" width="150" alt="Logo Salon">
+            </a>
             <h5 class="mt-2">Utopía Beauty Salon</h5>
             <p class="m-0">Crea una cuenta en nuestro Sitio Web</p>
         </div>
@@ -174,7 +176,9 @@
                         id="terms" />
                     <label class="custom-control-label" style="padding-top: 2px;" name="terms"
                         for="terms">Acepto <a href="#" id="openPopup">Términos y Condiciones</a></label>
-                    <x-input-error :messages="$errors->get('terms')" class="mt-2" />
+                    @error('terms')
+                        <div style="color: red; padding: 1px;">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
 

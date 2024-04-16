@@ -9,38 +9,11 @@
             <div class="col-lg-8 card-form__body card-body">
                 <form action="{{ route('servicios.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    {{-- comment --}}
-                    {{-- <div class="form-group">
-
-                            <label for="title">Título del Servicio</label>
-                            <input for="title" type="text" class="form-control" name="title" id="title"
-                                placeholder="Ingrese el título del servicio">
-                            @error('title')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Descripción</label>
-                            <input for="description" type="text" class="form-control" name="description"
-                                id="description" placeholder="Ingrese la descripción del servicio">
-                            @error('description')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="image">URL de la Imagen</label>
-                            <input type="text" class="form-control" for="image" name="image" id="image"
-                                placeholder="Ingrese la URL de la imagen">
-                            @error('image')
-                                <div style="color: red;">{{ $message }}</div>
-                            @enderror
-                        </div> --}}
-                    {{-- comment --}}
                     <div class="form-group">
 
                         <label for="title">Título del Servicio</label>
                         <input type="text" class="form-control" name="title" id="title"
-                            placeholder="Ingrese el título del servicio">
+                            placeholder="Ingrese el título del servicio" value="{{ old('title') }}">
                         @error('title')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror
@@ -48,7 +21,7 @@
                     <div class="form-group">
                         <label for="description">Descripción</label>
                         <textarea class="form-control" name="description" id="description" rows="4"
-                            placeholder="Ingrese la descripción del servicio"></textarea>
+                            placeholder="Ingrese la descripción del servicio" value="{{ old('description') }}"></textarea>
                         @error('description')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror
@@ -56,9 +29,9 @@
 
                     <div class="form-group">
 
-                        <label for="image">URL de la Imagen</label>
+                        <label for="image">Subir imagen</label>
                         <input type="file" class="form-control" name="image" id="image"
-                            placeholder="Ingrese la URL de la imagen">
+                            placeholder="Ingrese la URL de la imagen" value="{{ old('image') }}">
                         @error('image')
                             <div style="color: red;">{{ $message }}</div>
                         @enderror

@@ -9,7 +9,7 @@ use App\Models\Supplier;
 use App\Models\Category;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Http;
 
 class ProductoController extends Controller
 {
@@ -37,10 +37,28 @@ class ProductoController extends Controller
 
     public function store(ProductRequest $request)
     {
-
         try {
-            // dump($request->all());
-            Product::create($request->validated());
+            // Hacer una solicitud HTTP para cargar la imagen a tu nueva aplicación
+            $response = Http::attach(
+                'image',
+                file_get_contents($request->file('image')->path()),
+                $request->file('image')->getClientOriginalName()
+            )->post('https://utopia-salon.com/upload');
+
+            // Obtener la URL de la imagen desde la respuesta
+            $imageUrl = $response->body();
+
+            // Guardar la URL de la imagen en tu base de datos
+            Product::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'stock' => $request->stock,
+                'purchase_price' => $request->purchase_price,
+                'selling_price' => $request->selling_price,
+                'id_category' => $request->id_category,
+                'id_supplier' => $request->id_supplier,
+                'image' => $imageUrl // Guardar la URL en lugar de la ruta local
+            ]);
 
             return redirect('/productos')->with('success', 'Producto creado correctamente.');
         } catch (\Exception $e) {
@@ -64,19 +82,41 @@ class ProductoController extends Controller
 
     public function update(ProductRequest $request, $id_product)
     {
-
-
         try {
-
             $product = Product::find($id_product);
-            $product->update($request->validated());
+
+            // Actualizar los campos del producto con los datos validados del formulario
+            $product->name = $request->name;
+            $product->description = $request->description;
+            $product->stock = $request->stock;
+            $product->purchase_price = $request->purchase_price;
+            $product->selling_price = $request->selling_price;
+            $product->id_category = $request->id_category;
+            $product->id_supplier = $request->id_supplier;
+
+            // Verificar si se ha proporcionado una nueva imagen
+            if ($request->hasFile('image')) {
+                // Hacer una solicitud HTTP para cargar la nueva imagen a tu nueva aplicación
+                $response = Http::attach(
+                    'image',
+                    file_get_contents($request->file('image')->path()),
+                    $request->file('image')->getClientOriginalName()
+                )->post('https://utopia-salon.com/upload');
+
+                // Obtener la URL de la nueva imagen desde la respuesta
+                $imageUrl = $response->body();
+
+                // Actualizar la URL de la imagen en la base de datos
+                $product->image = $imageUrl; // Guardar la URL en lugar de la ruta local
+            }
+
+            $product->save();
 
             return redirect('/productos')->with('success', 'Producto actualizado correctamente.');
         } catch (\Exception $e) {
             return redirect('/productos')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
-
 
     public function destroy($id_product)
     {

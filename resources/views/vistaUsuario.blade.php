@@ -82,24 +82,48 @@
                     </li>
 
                     <li class="dropdown">
-
                         <a class="bi bi-person" href="#" id="profileDropdown">
-
                             <i class="bi bi-chevron-down"></i>
-
                         </a>
-
                         <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-
                             <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
+                            @auth
+                                <p href="{{ route('profile.edit') }}" class="dropdown-item">Hola
+                                    {{ Auth::user()->name }}</p>
+                                <li><a href="{{ route('profile.edit') }}" class="dropdown-item">Mi Perfil</a></li>
+                                <form id="formL" action="{{ route('logout') }}" method="POST">
+                                    @method('POST')
+                                    @csrf
+                                    <button class="dropdown-item type="submit">
+                                        <a class="dropdown-item">Cerrar Sesión</a>
+                                    </button>
+                                @else
+                                    <a class="" href="{{ route('login') }}">Iniciar Sesión</a>
+                                    <a class="" href="{{ route('register') }}">Registrarse</a>
 
-                            <li><a class="dropdown-item">Configuración</a></li>
-
-                            <li><a class="dropdown-item">Cerrar Sesión</a></li>
-
+                                @endauth
+                            </form>
                         </ul>
-
                     </li>
+
+                    @role('admin')
+                        <li class="dropdown">
+                            <a class="bi bi-hdd" href="#" id="profileDropdown">
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                                <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
+                                <li><a href="{{ route('productos.index') }}" class="dropdown-item">Productos</a></li>
+                                <li><a href="{{ route('proveedores.index') }}" class="dropdown-item">Proveedores</a></li>
+                                <li><a href="{{ route('categorias.index') }}" class="dropdown-item">Categorías</a></li>
+
+                                <li><a href="{{ route('contabilidad.index') }}" class="dropdown-item">Contabilidad</a></li>
+                                <li><a href="{{ route('citas.index') }}" class="dropdown-item">Citas</a></li>
+                                <li><a href="{{ route('servicios.index') }}" class="dropdown-item">Servicios</a></li>
+                            </ul>
+                        </li>
+                    @endrole
+
 
                     <li><a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">Cotiza un
                             trabajo</a></li>
@@ -132,8 +156,8 @@
                 </div>
 
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="{{ asset('assets/assetsUser/img/123.png') }}" class="img-fluid animated" alt=""
-                        style="width: 400px; height: auto;">
+                    <img src="{{ asset('assets/assetsUser/img/123.png') }}" class="img-fluid animated"
+                        alt="" style="width: 400px; height: auto;">
                 </div>
             </div>
         </div>

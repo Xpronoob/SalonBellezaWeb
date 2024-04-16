@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ServiceController extends Controller
 {
@@ -23,28 +24,35 @@ class ServiceController extends Controller
     {
         return view('service.create');
     }
+    // $input = $request->all();
+
+    // if ($image_url = $request->file('image_url')) {
+    //     $destinationPath = 'image_url/';
+    //     $profileImage = date('YmdHis') . "." . $image_url->getClientOriginalExtension();
+    //     $image_url->move($destinationPath, $profileImage);
+    //     $input['image_url'] = "$profileImage";
+    // }
+    // Service::create($request->validated());
+
 
     public function store(ServiceRequest $request)
     {
-
         try {
+            // Hacer una solicitud HTTP para cargar la imagen a tu nueva aplicación
+            $response = Http::attach(
+                'image',
+                file_get_contents($request->file('image')->path()),
+                $request->file('image')->getClientOriginalName()
+            )->post('https://utopia-salon.com/upload');
 
-            // $input = $request->all();
+            // Obtener la URL de la imagen desde la respuesta
+            $imageUrl = $response->body();
 
-            // if ($image_url = $request->file('image_url')) {
-            //     $destinationPath = 'image_url/';
-            //     $profileImage = date('YmdHis') . "." . $image_url->getClientOriginalExtension();
-            //     $image_url->move($destinationPath, $profileImage);
-            //     $input['image_url'] = "$profileImage";
-            // }
-            // Service::create($request->validated());
-
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('images'), $imageName);
+            // Guardar la URL de la imagen en tu base de datos
             $service = new Service();
             $service->title = $request->title;
             $service->description = $request->description;
-            $service->image = 'images/' . $imageName;
+            $service->image = $imageUrl; // Guardar la URL en lugar de la ruta local
             $service->save();
 
             return redirect('/servicios')->with('success', 'Servicio creado correctamente.');
@@ -52,6 +60,7 @@ class ServiceController extends Controller
             return redirect('/servicios')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
+
 
     public function show(Service $service)
     {
@@ -66,19 +75,37 @@ class ServiceController extends Controller
 
     public function update(ServiceRequest $request, $id_service)
     {
-
-
         try {
-
             $service = Service::find($id_service);
-            $service->update($request->validated());
 
+            // Actualizar los campos del servicio con los datos validados del formulario
+            $service->title = $request->title;
+            $service->description = $request->description;
+
+            // Verificar si se ha proporcionado una nueva imagen
+            if ($request->hasFile('image')) {
+                // Hacer una solicitud HTTP para cargar la nueva imagen a tu nueva aplicación
+                $response = Http::attach(
+                    'image',
+                    file_get_contents($request->file('image')->path()),
+                    $request->file('image')->getClientOriginalName()
+                )->post('https://utopia-salon.com/upload');
+
+                // Obtener la URL de la nueva imagen desde la respuesta
+                $imageUrl = $response->body();
+
+                // Actualizar la URL de la imagen en la base de datos
+                $service->image = $imageUrl; // Guardar la URL en lugar de la ruta local
+            }
+
+            $service->save();
 
             return redirect('/servicios')->with('success', 'Servicio actualizado correctamente.');
         } catch (\Exception $e) {
             return redirect('/servicios')->with('error', 'Hubo un problema al actualizar los datos.');
         }
     }
+
 
     public function destroy($id_service)
     {
