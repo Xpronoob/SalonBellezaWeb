@@ -41,27 +41,27 @@
         {!! Vite::content('resources/assets/vendor/toastr.min.css') !!}
     </style>
 
-    {{-- <!-- Perfect Scrollbar -->
-    <link type="text/css" href="./assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+    <!-- Perfect Scrollbar -->
+    {{-- <link type="text/css" href="{{ asset('./assets/vendor/perfect-scrollbar.css') }} rel="stylesheet">
 
     <!-- App CSS -->
-    <link type="text/css" href="./assets/css/app.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('./assets/css/app.css') }} rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="./assets/css/vendor-material-icons.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('./assets/css/vendor-material-icons.css') }} rel="stylesheet">
 
     <!-- Font Awesome FREE Icons -->
-    <link type="text/css" href="./assets/css/vendor-fontawesome-free.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('./assets/css/vendor-fontawesome-free.css') }} rel="stylesheet">
 
     <!-- Flatpickr -->
-    <link type="text/css" href="./assets/css/vendor-flatpickr.css" rel="stylesheet">
-    <link type="text/css" href="./assets/css/vendor-flatpickr-airbnb.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('./assets/css/vendor-flatpickr.css') }} rel="stylesheet">
+    <link type="text/css" href="{{ asset('./assets/css/vendor-flatpickr-airbnb.css') }} rel="stylesheet">
 
     <!-- Vector Maps -->
-    <link type="text/css" href="./assets/vendor/jqvmap/jqvmap.min.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('./assets/vendor/jqvmap/jqvmap.min.css') }} rel="stylesheet">
 
     <!-- Toastr -->
-    <link type="text/css" href="./assets/vendor/toastr.min.css" rel="stylesheet"> --}}
+    <link type="text/css" href="{{ asset('./assets/vendor/toastr.min.css') }} rel="stylesheet"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133433427-1"></script>

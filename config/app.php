@@ -174,6 +174,7 @@ return [
 
         Spatie\Permission\PermissionServiceProvider::class,
         App\Providers\StockAlertServiceProvider::class,
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
 
     ])->toArray(),
 
@@ -190,6 +191,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class
     ])->toArray(),
 
 ];

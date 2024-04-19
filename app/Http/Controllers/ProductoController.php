@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\ErrorLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ProductoController extends Controller
 {
@@ -38,21 +39,15 @@ class ProductoController extends Controller
     public function store(ProductRequest $request)
     {
         try {
-
-            // $result = 1 / 0;
             $imageUrl = null; // Inicializar la variable de URL de imagen como nula
 
             // Verificar si se ha proporcionado una imagen
             if ($request->hasFile('image')) {
-                // Hacer una solicitud HTTP para cargar la imagen a tu nueva aplicación
-                $response = Http::attach(
-                    'image',
-                    file_get_contents($request->file('image')->path()),
-                    $request->file('image')->getClientOriginalName()
-                )->post('https://utopia-salon.com/upload');
+                // Cargar la imagen a Cloudinary
+                $cloudinaryResponse = Cloudinary::upload($request->file('image')->getRealPath());
 
-                // Obtener la URL de la imagen desde la respuesta
-                $imageUrl = $response->body();
+                // Obtener la URL segura de la imagen cargada desde Cloudinary
+                $imageUrl = $cloudinaryResponse->getSecurePath();
             }
 
             // Guardar la URL de la imagen en tu base de datos
@@ -111,21 +106,14 @@ class ProductoController extends Controller
 
             // Verificar si se ha proporcionado una nueva imagen
             if ($request->hasFile('image')) {
-                // Hacer una solicitud HTTP para cargar la nueva imagen a tu nueva aplicación
-                $response = Http::attach(
-                    'image',
-                    file_get_contents($request->file('image')->path()),
-                    $request->file('image')->getClientOriginalName()
-                )->post('https://utopia-salon.com/upload');
+                // Cargar la nueva imagen a Cloudinary
+                $cloudinaryResponse = Cloudinary::upload($request->file('image')->getRealPath());
 
-                // Obtener la URL de la nueva imagen desde la respuesta
-                $imageUrl = $response->body();
+                // Obtener la URL segura de la nueva imagen cargada desde Cloudinary
+                $imageUrl = $cloudinaryResponse->getSecurePath();
 
                 // Actualizar la URL de la imagen en la base de datos
                 $product->image = $imageUrl; // Guardar la URL en lugar de la ruta local
-            } elseif (!$request->hasFile('image') && $product->image) {
-                // Si no se proporciona una nueva imagen pero hay una imagen existente, mantener la misma imagen
-                $product->image = $product->image;
             }
 
             $product->save();
