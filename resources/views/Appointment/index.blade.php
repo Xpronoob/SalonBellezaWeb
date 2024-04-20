@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('citas.create') }}" class="btn btn-success mb-2">Nuevo Cita</a>
+                <a href="{{ route('citas.create') }}" class="btn btn-success mb-2">Nueva Cita</a>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
                                             <td>{{ $appointment->location }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->stylist }}</td>
-                                            <td>{{ $appointment->user->name }}</td>
+                                            <td>{{ $appointment->user->email }}</td>
                                             <td>{{ $appointment->description }}</td>
                                             <td>{{ $appointment->cost }}</td>
                                             <td class="text-center">

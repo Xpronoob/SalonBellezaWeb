@@ -35,6 +35,8 @@ class ServiceRequest extends FormRequest
             'description.required' => 'La descripción del servicio es requerido',
             'image.required' => 'La imagen del servicio es requerida',
             'image.image' => 'La imagen debe tener la extension jpg, jpeg, png, bmp, gif, svg, o webp',
+            'description.max' => 'La descripción no puede exceder los 255 caracteres',
+
         ];
     }
 }

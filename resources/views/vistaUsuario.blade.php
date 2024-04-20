@@ -330,14 +330,20 @@
                             alt="Servicios del Salón">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3 class="text-center" style="color:black">Nuestros Servicios Más Cotizados</h3>
+                        <h3 class="text-center" style="color:black">Alguno de nuestros servicios</h3>
                         <p class="fst-italic">
                             En Utopía Beauty Salón, nos especializamos en una variedad de servicios diseñados para
                             realzar tu belleza y mejorar tu bienestar.
                         </p>
 
                         <div class="skills-content">
+                        <div class="progress">
+                        <span class="skill">Coloración de Cabello / Balayage / Keratina <i class="val"></i></span>
+                        <span class="skill">Manicure / Pedicure / Masajes<i class="val"></i></span>
+                        <span class="skill">Maquillaje / Capacitaciones<i class="val"></i></span>
+                        <span class="skill">Corte de Pelo<i class="val"></i></span>
 
+</div>
                             <div class="progress">
                                 <span class="skill">Coloración de Cabello / Balayage / Keratina <i
                                         class="val">45%</i></span>
