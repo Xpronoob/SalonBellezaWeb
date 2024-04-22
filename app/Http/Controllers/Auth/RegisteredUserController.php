@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use Illuminate\Validation\Rules\Password;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -35,8 +36,8 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'phone' => ['required', 'numeric'],
+            'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()->symbols()], //Cambio sebas para que se pueda registrar con letras, 1 numero y caracter especial obligatoriamente
+            'phone' => ['required', 'numeric', 'digits:8'], // Ajuste de numeros
             'terms' => [
                 'accepted', // Esta regla valida que el checkbox haya sido marcado
                 Rule::requiredIf(function () use ($request) {
@@ -53,10 +54,13 @@ class RegisteredUserController extends Controller
             'password.required' => 'La contraseña es requerida',
             'password.confirmed' => 'La confirmación de contraseña no coincide',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres',
+            'password.letters' => 'La contraseña debe contener al menos una letra',
+            'password.symbols' => 'La contraseña debe contener al menos un símbolo', // Mensaje para símbolos
+            'password.numbers' => 'La contraseña debe contener al menos un número', // Mensaje para números
             'phone.required' => 'El teléfono es requerido',
-            'phone.numeric' => 'El número de teléfono solo puede contener números'
+            'phone.numeric' => 'El número de teléfono solo puede contener números',
+            'phone.digits' => 'El número de teléfono debe ser de :digits dígitos',
         ]);
-
         $user = User::create([
             'name' => $request->name,
             'email' => strtolower($request->email), // Convertir a minúsculas

@@ -23,7 +23,7 @@ class SupplierRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'number' => 'required|numeric|digits_between:8,12',
+            'number' => 'required|numeric|digits:8', // Solamente admite 8 digitos
             'email' => 'required|email|max:255',
             'address' => 'required|string|max:255',
         ];
@@ -35,7 +35,7 @@ class SupplierRequest extends FormRequest
             'name.required' => 'El nombre del proveedor es requerido',
             'number.required' => 'El número de contacto es requerido',
             'number.numeric' => 'El campo número debe ser un número',
-            'number.digits_between' => 'El campo número debe tener entre :min y :max dígitos',
+            'number.digits' => 'El campo número debe de ser de :digits dígitos', // Ajuste
             'number.min' => 'El campo número debe tener al menos :min dígitos',
             'number.max' => 'El campo número no puede tener más de :max dígitos',
             'email.required' => 'El correo electrónico es requerido',

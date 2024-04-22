@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="text-label" for="phone">Número de teléfono:</label>
+                        <label class="text-label" for="phone">Número de teléfono(+506):</label>
                         <div class="input-group input-group-merge">
                             <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
                                 class="form-control form-control-prepended" placeholder="Número de teléfono">

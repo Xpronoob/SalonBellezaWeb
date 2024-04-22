@@ -64,3 +64,23 @@ body {
 #igual:hover {
     background-color: #e65766;
 }
+.calculadora-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculadora {
+    background-color: #15173c;
+    color: white;
+    width: 350px;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+    margin-bottom: 1rem; /* Espacio adicional entre la calculadora y el texto */
+}
+

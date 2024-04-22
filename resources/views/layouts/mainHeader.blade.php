@@ -113,7 +113,7 @@
                                     class="dropdown-menu dropdown-menu-right navbar-notifications-menu">
                                     <div class="dropdown-item d-flex align-items-center py-2">
                                         <span class="flex navbar-notifications-menu__title m-0">Notificaciones</span>
-                                        {{-- <a href="javascript:void(0)" class="text-muted"><small>Clear all</small></a> --}}
+                                        {{-- <a href="javascript:void(0)" class="text-muted"><small>Borrar Notificaciones</small></a> --}}
                                     </div>
                                     <div class="navbar-notifications-menu__content" data-perfect-scrollbar>
                                         <div class="py-2">

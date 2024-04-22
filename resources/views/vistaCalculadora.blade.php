@@ -44,9 +44,10 @@
             <button id="btn-10" class="btn col-3 col-md-auto">% 10</button>
 <button id="btn-30" class="btn col-3 col-md-auto">% 30</button>
 <button id="btn-50" class="btn col-3 col-md-auto">% 50</button>
-
         </div>
     </div>
+                <h2>Calculadora</h2>
+                <p>Esta calculadora básica te permite realizar operaciones aritméticas simples. Simplemente presiona los botones numéricos y los operadores para realizar cálculos.</p>
 
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
