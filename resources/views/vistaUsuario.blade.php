@@ -335,47 +335,24 @@
                             En Utopía Beauty Salón, nos especializamos en una variedad de servicios diseñados para
                             realzar tu belleza y mejorar tu bienestar.
                         </p>
-
                         <div class="skills-content">
-                        <div class="progress">
-                        <span class="skill">Coloración de Cabello / Balayage / Keratina <i class="val"></i></span>
-                        <span class="skill">Manicure / Pedicure / Masajes<i class="val"></i></span>
-                        <span class="skill">Maquillaje / Capacitaciones<i class="val"></i></span>
-                        <span class="skill">Corte de Pelo<i class="val"></i></span>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Coloración de Cabello / Balayage / Keratina <i class="val"></i></li>
+        <li class="list-group-item">Manicure / Pedicure / Masajes <i class="val"></i></li>
+        <li class="list-group-item">Maquillaje / Capacitaciones <i class="val"></i></li>
+        <li class="list-group-item">Corte de Pelo <i class="val"></i></li>
+    </ul>
+</div>
+
+
+
+
+
 
 </div>
-                            <div class="progress">
-                                <span class="skill">Coloración de Cabello / Balayage / Keratina <i
-                                        class="val">45%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 45%;"
-                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
 
-                            <div class="progress">
-                                <span class="skill">Manicure / Pedicure / Masajes<i class="val">20%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 20%;"
-                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Maquillaje / Capacitaciones<i class="val">15%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 15%;"
-                                        aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress">
-                                <span class="skill">Corte de Pelo<i class="val">20%</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" style="width: 20%;"
-                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
+</div>
+                           
 
                         </div>
 

@@ -71,7 +71,11 @@
                                                 </style>
                                                 <div class="btn-group" role="group">
                                                     <a href="{{ route('productos.edit', $product->id) }}"
-                                                        class="btn btn-success">Editar</a>
+                                                        class="btn btn-success">
+                                                        <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> </a>
+                                                              
+                                               
+
                                                     <form id="deleteForm_{{ $product->id }}"
                                                         action="{{ route('productos.destroy', $product->id) }}"
                                                         method="POST" style="display: inline;">
@@ -80,7 +84,9 @@
                                                         <!-- Botón de eliminación que abre el modal -->
                                                         <button type="button" class="btn btn-danger"
                                                             data-toggle="modal" data-target="#modal-danger"
-                                                            onclick="confirmDelete({{ $product->id }})">Eliminar</button>
+                                                            onclick="confirmDelete({{ $product->id }})">
+                                                            <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
+                                                        </button>
                                                     </form>
                                                 </div>
                                             </td>

@@ -51,9 +51,11 @@
         {{-- <td scope="row">{{ $category->id_category }}</td> --}}
         <td>{{ $category->name }}</td>
         <td class="text-center">
+
             <div class="">
                 <a href="{{ route('categorias.edit', $category->id) }}"
-                    class="btn btn-success">Editar
+                    class="btn btn-success">    
+                    <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
                 </a>
                 <form id="deleteForm_{{ $category->id }}" action="{{ route('categorias.destroy', $category->id) }}"
                     method="POST" style="display: inline;">
@@ -61,10 +63,11 @@
                     @method('DELETE')
                     <!-- Botón de eliminación que abre el modal -->
                     <button type="button" class="btn btn-danger" data-toggle="modal"
-                        data-target="#modal-danger" onclick="confirmDelete({{ $category->id }})">Eliminar
+                        data-target="#modal-danger" onclick="confirmDelete({{ $category->id }})">   <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
                     </button>
                 </form>
             </div>
+
         </td>
     </tr>
 @endforeach

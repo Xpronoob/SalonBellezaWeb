@@ -1,4 +1,4 @@
-<div class="sidebar sidebar-light sidebar-left sidebar-p-t" data-perfect-scrollbar>
+<div class="sidebar sidebar-light sidebar-left sidebar-p-t navbar-expand-md" data-perfect-scrollbar>
     <div class="sidebar-heading">Menú</div>
     <ul class="sidebar-menu">
         <li class="sidebar-menu-item {{ Request::is('administration*') ? 'active open' : '' }}">

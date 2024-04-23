@@ -92,6 +92,8 @@
                                         <div style="color: red;">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <input type="hidden" name="default_image" value="{{ asset('assets/assetsUser/img/123.png') }}">
+
                             </div>
                         </div>
 

@@ -38,10 +38,8 @@ class ProductoController extends Controller
     public function store(ProductRequest $request)
     {
         try {
-
-            // $result = 1 / 0;
             $imageUrl = null; // Inicializar la variable de URL de imagen como nula
-
+    
             // Verificar si se ha proporcionado una imagen
             if ($request->hasFile('image')) {
                 // Hacer una solicitud HTTP para cargar la imagen a tu nueva aplicación
@@ -50,12 +48,15 @@ class ProductoController extends Controller
                     file_get_contents($request->file('image')->path()),
                     $request->file('image')->getClientOriginalName()
                 )->post('https://utopia-salon.com/upload');
-
+    
                 // Obtener la URL de la imagen desde la respuesta
                 $imageUrl = $response->body();
+            } else {
+                // Si no se proporciona una imagen, guardar la ruta de la imagen por defecto
+                $imageUrl = $request->input('default_image'); // Ajusta el nombre del campo oculto según sea necesario
             }
-
-            // Guardar la URL de la imagen en tu base de datos
+    
+            // Guardar los datos del producto en la base de datos
             Product::create([
                 'name' => $request->name,
                 'description' => $request->description,
@@ -64,9 +65,9 @@ class ProductoController extends Controller
                 'selling_price' => $request->selling_price,
                 'id_category' => $request->id_category,
                 'id_supplier' => $request->id_supplier,
-                'image' => $imageUrl // Guardar la URL en lugar de la ruta local
+                'image' => $imageUrl // Guardar la URL de la imagen
             ]);
-
+    
             return redirect('admin/inventario/productos')->with('success', 'Producto creado correctamente.');
         } catch (\Throwable $e) {
             // Guardar el error en la base de datos
@@ -75,11 +76,10 @@ class ProductoController extends Controller
                 'error_message' => $e->getMessage(),
                 'user_id' => auth()->id()
             ]);
-
+    
             return redirect('admin/inventario/productos')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
-
 
 
     public function show(Product $product)

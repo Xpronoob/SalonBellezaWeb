@@ -74,7 +74,9 @@
                                     <td class="text-center">
                                         <div class="btn-group" role="group">
                                             <a href="{{ route('servicios.edit', $service->id) }}"><button type="button"
-                                                    class="btn btn-success btn-action">Editar</button></a>
+                                                    class="btn btn-success btn-action">
+                                                    <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                                                </button></a>
                                             <form id="deleteForm_{{ $service->id }}"
                                                 action="{{ route('servicios.destroy', $service->id) }}" method="POST"
                                                 style="display: inline;">
@@ -83,11 +85,19 @@
                                                 <!-- Botón de eliminación que abre el modal -->
                                                 <button type="button" class="btn btn-danger" data-toggle="modal"
                                                     data-target="#modal-danger"
-                                                    onclick="confirmDelete({{ $service->id }})">Eliminar</button>
+                                                    onclick="confirmDelete({{ $service->id }})">
+                                                    <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
+                  </button>
                                             </form>
                                         </div>
                                     </td>
                                 </tr>
+
+                                <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                  <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
+                  
+
+
                             @endforeach
                             <script>
                                 function confirmDelete(serviceId) {
