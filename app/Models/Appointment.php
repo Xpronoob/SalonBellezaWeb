@@ -11,14 +11,12 @@ class Appointment extends Model
     use HasFactory;
     protected $table = 'appointments';
     protected $primaryKey = 'id';
-    protected $fillable = ['location', 'appointment_date', 'stylist', 'description', 'cost','id_user'];
+    protected $fillable = ['location', 'appointment_date', 'stylist', 'description', 'cost', 'id_user'];
     protected $guarded = [];
     public $timestamps = false;
 
-    public function User()
+    public function user()
     {
         return $this->belongsTo(User::class, 'id_user');
     }
-  
-
 }

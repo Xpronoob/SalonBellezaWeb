@@ -163,7 +163,10 @@
                                             </div>
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="{{ route('profile.edit') }}"><i
-                                                    class="material-icons">account_circle</i> Mi perfil</a>
+                                                    class="fas fa-user"></i> Mi perfil</a>
+                                            <a class="dropdown-item" href="{{ route('appointments') }}">
+                                                <i class="fas fa-calendar-alt"></i> Mis Citas
+                                            </a>
                                             <div class="dropdown-divider"></div>
                                             <style>
                                                 #btnL {

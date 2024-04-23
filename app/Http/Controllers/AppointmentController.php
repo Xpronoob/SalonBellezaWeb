@@ -23,6 +23,20 @@ class AppointmentController extends Controller
         return view('appointment.index', compact('appointments', 'busqueda'));
     }
 
+    public function indexClient(Request $request)
+    {
+        $user = auth()->user();
+        $userId = $user->id;
+        $userNew = User::find($userId);
+        $busqueda = $request->busqueda;
+
+        $appointments = $userNew->appointments()
+            ->where('description', 'LIKE', '%' . $busqueda . '%')
+            ->paginate(5);
+
+        return view('profile.appointments', compact('appointments', 'busqueda'));
+    }
+
 
     //Metodo para crear:
 
@@ -79,5 +93,13 @@ class AppointmentController extends Controller
         } catch (\Exception $e) {
             return redirect('admin/gestion/citas')->with('deleted', 'Hubo un problema al eliminar los datos.');
         }
+    }
+
+    public function destroyAppointment($id)
+    {
+        $appointment = Appointment::findOrFail($id);
+        $appointment->delete();
+
+        return redirect()->route('appointments')->with('deleted', 'Cita eliminada correctamente');
     }
 }

@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         $this->notify(new PasswordReset($token));
     }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'id_user');
+    }
 }

@@ -14,6 +14,7 @@ use App\Http\Controllers\AccountingController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ErrorController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,6 @@ use App\Http\Controllers\ErrorController;
 |
 */
 
-
 Route::get('/', function () {
     $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos
     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
@@ -34,20 +34,18 @@ Route::get('/', function () {
     return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
 });
 
-Route::get('/citaCliente', function () {
-    $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos
-    $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
+Route::get('appointments', [AppointmentController::class, 'indexClient'])->name('appointments');
+Route::delete('appointments/{id}', [AppointmentController::class, 'destroyAppointment'])->name('appointments.destroy');
 
-    return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
-});
+// Route::get('/citas', function () {
+//     $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos
+//     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
 
-
-// Route::get('cliente/servicios', function () {
-//     $services = Service::all(); // Recupera todos los servicios desde la base de datos
-//     // $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
-
-//     return view('cliente.servicios', ['services' => $services]);
+//     return view('appointments', ['services' => $services, 'proveedores' => $proveedores]);
 // });
+
+
+Route::post('/send-mail', [MailController::class, 'maildata'])->name('send_mail');
 
 Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
     // Admin
@@ -78,21 +76,6 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
     });
 });
 
-
-// Route::get('/vistaUsuario', function () {
-//     $services = Service::all(); // Recupera todos los servicios desde la base de datos
-//     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
-
-//     return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
-// });
-
-
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('index');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

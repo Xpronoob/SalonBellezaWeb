@@ -68,6 +68,7 @@
                                 <p href="{{ route('profile.edit') }}" class="dropdown-item">Hola {{ Auth::user()->name }}
                                 </p>
                                 <li><a href="{{ route('profile.edit') }}" class="dropdown-item">Mi Perfil</a></li>
+                                <li><a href="{{ route('appointments') }}" class="dropdown-item">Mis Citas</a></li>
                                 <form id="formL" action="{{ route('logout') }}" method="POST">
                                     @method('POST')
                                     @csrf
@@ -666,33 +667,69 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="" method="post" role="form" class="php-email-form">
+                        <form id="mailForm" action="{{ route('send_mail') }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Nombre Completo:</label>
                                     <input type="text" name="name" class="form-control" id="name">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="name">Correo Electrónico:</label>
+                                    <label for="email">Correo Electrónico:</label>
                                     <input type="email" class="form-control" name="email" id="email">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name">Asunto:</label>
-                                <input type="text" class="form-control" name="subject" id="subject">
+                                <label for="subject">Asunto:</label>
+                                <input type="text" class="form-control" name="sub" id="subject">
+                                @error('sub')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="name">Descripción mensaje:</label>
-                                <textarea class="form-control" name="message" rows="10"></textarea>
+                                <label for="message">Descripción mensaje:</label>
+                                <textarea class="form-control" name="mess" rows="10"></textarea>
+                                @error('mess')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                                @if (session('mailMessage'))
+                                    <div class="alert alert-success" role="alert">
+                                        <div class="d-flex gap-4">
+                                            <span><i class="fa-solid fa-circle-check icon-success"></i></span>
+                                            <div>
+                                                {{ session('mailMessage') }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                             <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
                         </form>
+
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                // Verificar si la variable de sesión está presente
+                                @if (Session::has('scrollToForm'))
+                                    var element = document.getElementById('mailForm');
+                                    if (element) {
+                                        element.scrollIntoView({
+                                            behavior: 'smooth'
+                                        });
+                                    }
+                                @endif
+                            });
+                        </script>
+
 
 
                     </div>
