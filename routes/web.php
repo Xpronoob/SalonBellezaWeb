@@ -56,7 +56,6 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
 
     // Gestion
     Route::prefix('gestion')->group(function () {
-        Route::resource('citas', AppointmentController::class);
         Route::resource('servicios', ServiceController::class);
         Route::resource('contabilidad', AccountingController::class);
         Route::get('/vistaCalculadora', function () {
@@ -69,6 +68,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
         return view('index');
     });
 });
+Route::resource('citas', AppointmentController::class);
 
 
 // Route::get('/vistaUsuario', function () {

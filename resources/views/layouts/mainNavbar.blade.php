@@ -1,4 +1,4 @@
-<div class="sidebar sidebar-light sidebar-left sidebar-p-t" data-perfect-scrollbar>
+<div class="sidebar sidebar-light sidebar-left sidebar-p-t navbar-expand-md" data-perfect-scrollbar>
     <div class="sidebar-heading">Menú</div>
     <ul class="sidebar-menu">
         <li class="sidebar-menu-item {{ Request::is('administration*') ? 'active open' : '' }}">
@@ -33,7 +33,9 @@
 
         <li class="sidebar-menu-item {{ Request::is('admin/inventario*') ? 'active open' : '' }}">
             <a class="sidebar-menu-button" data-toggle="collapse" href="#apps_menu">
-                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">slideshow</i>
+               
+<i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">store</i> 
+
                 <span class="sidebar-menu-text">Inventario</span>
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
@@ -58,8 +60,12 @@
 
         <li class="sidebar-menu-item {{ Request::is('admin/gestion*') ? 'active open' : '' }}">
             <a class="sidebar-menu-button" data-toggle="collapse" href="#pages_menu">
-                <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
+          
+   
+            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">description</i>
+
                 <span class="sidebar-menu-text">Gestión</span>
+
                 <span class="ml-auto sidebar-menu-toggle-icon"></span>
             </a>
             <ul class="sidebar-submenu collapse {{ Request::is('admin/gestion*') ? 'show' : '' }}" id="pages_menu">

@@ -7,13 +7,26 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
+                                <!--
                                 <div class="form-group">
                                     <label for="location">Localización de la cita</label>
                                     <input type="text" class="form-control" id="location" name="location" placeholder="Ingrese la locación de la cita" value="{{ old('location') }}">
                                     @error('location')
                                         <div style="color: red;">{{ $message }}</div>
                                     @enderror
-                                </div>
+                                </div> -->
+
+                                <div class="form-group">
+    <label for="location">Localización de la cita</label>
+    <select class="form-control" id="location" name="location">
+        <option value="">Seleccione la locación </option>
+        <option value="Sede desamparados"> Sede desamparados</option>
+        <option value="Sede San Pedro"> Sede San Pedro</option>
+    </select>
+    @error('location')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
 
                                 <div class="form-group">
                                     <label for="description">Descripción del Producto</label>
@@ -42,11 +55,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="usuario">Nombre del cliente</label>
+                                    <label for="usuario">Correo del cliente</label>
                                     <select name="id_user" id="id_user" class="form-control">
-                                        <option value=""> --Seleccione un nombre--</option>
+                                        <option value=""> --Seleccione un Correo--</option>
                                         @foreach ($users as $user)
-                                            <option value="{{ $user->id }}" {{ old('id_user') == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                                            <option value="{{ $user->id }}" {{ old('id_user') == $user->id ? 'selected' : '' }}>{{ $user->email }}</option>
                                         @endforeach
                                     </select>
                                     @error('id_user')

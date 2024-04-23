@@ -32,8 +32,15 @@
                         <td>{{$cliente->correo}}</td>
 
                         <td class="text-center">
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$cliente->id}}">Editar</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$cliente->id}}">Eliminar</button>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{$cliente->id}}">
+                            <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                            </button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#delete{{$cliente->id}}">
+                            <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
+
+                            </button>
+                            
+
                         </td>
                     </tr>
                     @include('cliente.info')

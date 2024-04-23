@@ -20,7 +20,7 @@
 
         <div class="row">
             <div class="col-12">
-                <a href="{{ route('citas.create') }}" class="btn btn-success mb-2">Nuevo Cita</a>
+                <a href="{{ route('citas.create') }}" class="btn btn-success mb-2">Nueva Cita</a>
             </div>
         </div>
 
@@ -53,30 +53,30 @@
                                             <td>{{ $appointment->location }}</td>
                                             <td>{{ $appointment->appointment_date }}</td>
                                             <td>{{ $appointment->stylist }}</td>
-                                            <td>{{ $appointment->user->name }}</td>
+                                            <td>{{ $appointment->user->email }}</td>
                                             <td>{{ $appointment->description }}</td>
                                             <td>{{ $appointment->cost }}</td>
                                             <td class="text-center">
                                                 <style>
                                                     .btn-group .btn {
                                                         max-height: 30px;
-                                                        /* Cambia el valor según lo necesites */
+                                                     
                                                     }
                                                 </style>
-                                                <div class="btn-group" role="group">
-                                                    <a href="{{ route('citas.edit', $appointment->id) }}"
-                                                        class="btn btn-success">Editar</a>
-                                                    <form id="deleteForm_{{ $appointment->id }}"
-                                                        action="{{ route('citas.destroy', $appointment->id) }}"
-                                                        method="POST" style="display: inline;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <!-- Botón de eliminación que abre el modal -->
-                                                        <button type="button" class="btn btn-danger"
-                                                            data-toggle="modal" data-target="#modal-danger"
-                                                            onclick="confirmDelete({{ $appointment->id }})">Eliminar</button>
-                                                    </form>
-                                                </div>
+                                                
+                                     <div class="btn-group" role="group">
+                                        <a href="{{ route('citas.edit', $appointment->id) }}" class="btn btn-success">
+                                         <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                                        </a>
+                                          <form id="deleteForm_{{ $appointment->id }}" action="{{ route('citas.destroy', $appointment->id) }}" method="POST" style="display: inline;">
+                                          @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" onclick="confirmDelete({{ $appointment->id }})">
+                                                <i class="fas fa-trash-alt" style="font-size: 1rem;"></i> <!-- Icono de basurero -->
+                                            </button>
+                                        </form>
+                                    </div>
+
                                             </td>
                                         </tr>
                                     @endforeach

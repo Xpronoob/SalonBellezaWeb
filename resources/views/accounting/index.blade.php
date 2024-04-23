@@ -64,20 +64,24 @@
                                                 /* Cambia el valor según lo necesites */
                                             }
                                         </style>
+                                      
+
                                         <div class="btn-group" role="group">
-                                            <a href="{{ route('contabilidad.edit', $accounting->id) }}"
-                                                class="btn btn-success">Editar</a>
-                                            <form id="deleteForm_{{ $accounting->id }}"
+                                        <a href="{{ route('contabilidad.edit', $accounting->id) }}"
+                                         class="btn btn-success">
+                                         <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                                        </a>
+                                        <form id="deleteForm_{{ $accounting->id }}"
                                                 action="{{ route('contabilidad.destroy', $accounting->id) }}"
                                                 method="POST" style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <!-- Botón de eliminación que abre el modal -->
-                                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#modal-danger"
-                                                    onclick="confirmDelete({{ $accounting->id }})">Eliminar</button>
-                                            </form>
-                                        </div>
+                                          @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger" 
+                                            onclick="confirmDelete({{ $accounting->id }})">
+                                                <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                     </td>
                                 </tr>
                             @endforeach

@@ -50,7 +50,7 @@ class ProductoController extends Controller
                 $imageUrl = $cloudinaryResponse->getSecurePath();
             }
 
-            // Guardar la URL de la imagen en tu base de datos
+            // Guardar los datos del producto en la base de datos
             Product::create([
                 'name' => $request->name,
                 'description' => $request->description,
@@ -59,7 +59,7 @@ class ProductoController extends Controller
                 'selling_price' => $request->selling_price,
                 'id_category' => $request->id_category,
                 'id_supplier' => $request->id_supplier,
-                'image' => $imageUrl // Guardar la URL en lugar de la ruta local
+                'image' => $imageUrl // Guardar la URL de la imagen
             ]);
 
             return redirect('admin/inventario/productos')->with('success', 'Producto creado correctamente.');
@@ -74,7 +74,6 @@ class ProductoController extends Controller
             return redirect('admin/inventario/productos')->with('error', 'Hubo un problema al guardar los datos.');
         }
     }
-
 
 
     public function show(Product $product)
