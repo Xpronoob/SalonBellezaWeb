@@ -58,6 +58,14 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="starting_amount">Saldo inicial:</label>
+                            <input type="text" class="form-control" for="starting_amount" name="starting_amount" id="starting_amount"
+                                placeholder="Ingrese el saldo inicial" value="{{ old('starting_amount') }}">
+                            @error('starting_amount')
+                                <div style="color: red;">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="pending_balance">Saldo pendiente:</label>
                             <input type="text" class="form-control" for="pending_balance" name="pending_balance" id="pending_balance"
                                 placeholder="Ingrese el saldo pendiente" value="{{ old('pending_balance') }}">

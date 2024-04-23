@@ -61,6 +61,15 @@
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label for="starting_amount">Saldo inicial:</label>
+                            <input type="number" class="form-control" for="starting_amount" name="starting_amount"
+                             id="starting_amount" placeholder="Ingrese el saldo inicial" 
+                             value="{{ $accounting->starting_amount }}">
+                            @error('starting_amount')
+                                <div style="color: red;">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <div class="form-group">
                             <label for="pending_balance">Saldo pendiente:</label>
