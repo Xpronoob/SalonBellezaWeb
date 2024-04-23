@@ -42,103 +42,8 @@
 </head>
 
 <body class="layout-login d-flex align-items-center justify-content-center">
-    <div class="layout-login__form card">
-        <div class="text-center">
-            <a href="/">
-                <img src="{{ asset('assets/images/LogoSalon.png') }}" width="115" alt="Logo Salon">
-            </a>
-            <h5 class="mt-2">Utopía Beauty Salon</h5>
-            <p class="m-0">Crea una cuenta en nuestro Sitio Web</p>
-        </div>
-        <div class="page-separator mb-4">
-            <div class="page-separator__text">Ingresar Credenciales</div>
-        </div>
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="text-label" for="name">Nombre Completo:</label>
-                        <div class="input-group input-group-merge">
-                            <input id="name" type="text" name="name" value="{{ old('name') }}"
-                                class="form-control form-control-prepended" placeholder="Nombre completo">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fa-solid fa-user"></i>
-                                </div>
-                            </div>
-                        </div>
-                        @error('name')
-                            <div style="color: red; padding: 1px;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="text-label" for="email">Correo Electrónico:</label>
-                        <div class="input-group input-group-merge">
-                            <input id="email" type="text" name="email" value="{{ old('email') }}"
-                                class="form-control form-control-prepended" placeholder="Correo electrónico">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                            </div>
-                        </div>
-                        @error('email')
-                            <div style="color: red; padding: 1px;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="text-label" for="phone">Número de teléfono(+506):</label>
-                        <div class="input-group input-group-merge">
-                            <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
-                                class="form-control form-control-prepended" placeholder="Número de teléfono">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                            </div>
-                        </div>
-                        @error('phone')
-                            <div style="color: red; padding: 1px;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="text-label" for="password">Contraseña:</label>
-                        <div class="input-group input-group-merge">
-                            <input id="password" type="password" name="password"
-                                class="form-control form-control-prepended" placeholder="Ingresa tu contraseña">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fa-solid fa-lock"></i>
-                                </div>
-                            </div>
-                        </div>
-                        @error('password')
-                            <div style="color: red; padding: 1px;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
-                <div class="input-group input-group-merge">
-                    <input id="password_confirmation" type="password" name="password_confirmation"
-                        class="form-control form-control-prepended" placeholder="Confirma tu contraseña">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <i class="fa-solid fa-lock"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
             <style>
                 /* Estilos para la ventana emergente */
                 .popup {
@@ -169,75 +74,146 @@
                 }
             </style>
 
-
-            <div class="form-group mb-5">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" checked class="custom-control-input" for="terms" name="terms"
-                        id="terms" />
-                    <label class="custom-control-label" style="padding-top: 2px;" name="terms"
-                        for="terms">Acepto <a href="#" id="openPopup">Términos y Condiciones</a></label>
-                    @error('terms')
-                        <div style="color: red; padding: 1px;">{{ $message }}</div>
-                    @enderror
+<div class="layout-login__form card">
+    <div class="text-center">
+        <a href="/">
+            <img src="{{ asset('assets/images/LogoSalon.png') }}" width="115" alt="Logo Salon">
+        </a>
+        <h5 class="mt-2">Utopía Beauty Salon</h5>
+        <p class="m-0">Crea una cuenta en nuestro Sitio Web</p>
+    </div>
+    <div class="page-separator mb-4">
+        <div class="page-separator__text">Ingresar Credenciales</div>
+    </div>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label class="text-label" for="name">Nombre Completo:</label>
+                <div class="input-group input-group-merge">
+                    <input id="name" type="text" name="name" value="{{ old('name') }}"
+                        class="form-control form-control-prepended" placeholder="Nombre completo" >
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                @error('name')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="text-label" for="email">Correo Electrónico:</label>
+                <div class="input-group input-group-merge">
+                    <input id="email" type="text" name="email" value="{{ old('email') }}"
+                        class="form-control form-control-prepended" placeholder="Correo electrónico" >
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+                @error('email')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label class="text-label" for="phone">Número de teléfono(+506):</label>
+                <div class="input-group input-group-merge">
+                    <input id="phone" type="tel" name="phone" value="{{ old('phone') }}"
+                        class="form-control form-control-prepended" placeholder="Número de teléfono" >
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                    </div>
+                </div>
+                @error('phone')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="text-label" for="password">Contraseña:</label>
+                <div class="input-group input-group-merge">
+                    <input id="password" type="password" name="password" class="form-control form-control-prepended" placeholder="Ingresa tu contraseña" >
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary toggle-password" type="button" data-target="#password" style="border: none;">
+                            <span class="fa fa-eye"></span>
+                        </button>
+                    </div>
+                </div>
+                @error('password')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="text-label" for="password_confirmation">Confirmar contraseña:</label>
+            <div class="input-group input-group-merge">
+                <input id="password_confirmation" type="password" name="password_confirmation" class="form-control form-control-prepended" placeholder="Confirma tu contraseña" >
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="#password_confirmation" style="border: none;">
+                        <span class="fa fa-eye"></span>
+                    </button>
                 </div>
             </div>
+            @error('password_confirmation')
+                <div style="color: red; padding: 1px;">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group mb-4">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" checked class="custom-control-input" id="terms" name="terms"  />
+                <label class="custom-control-label" for="terms">Acepto <a href="#" id="openPopup">Términos y Condiciones</a></label>
+                @error('terms')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
 
-            <div id="popup" class="popup">
-                <div class="popup-content bg-white p-4 rounded">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h2 class="card-title text-center text-success mb-4">Términos y Condiciones</h2>
-                            <p class="mb-4">Reservas y Cancelaciones: Se recomienda reservar con anticipación.
-                                Cancelaciones con menos de 24 horas de anticipación pueden incurrir en cargos.</p>
-                            <p class="mb-4">Pagos: Se aceptan efectivo, tarjetas de crédito/débito y otros métodos
-                                electrónicos.</p>
-                            <p class="mb-4">Responsabilidad: No nos hacemos responsables por pérdidas o daños
-                                personales. Infórmanos sobre alergias o condiciones médicas.</p>
-                            <p class="mb-4">Comportamiento del Cliente: Se espera comportamiento respetuoso hacia el
-                                personal y otros clientes. Nos reservamos el derecho de negar el servicio por
-                                comportamiento inapropiado.</p>
-                            <p class="mb-4">Garantía: Si no estás satisfecho, comunícanoslo dentro de las 48 horas
-                                posteriores al servicio.</p>
-                            <p class="mb-4">Derechos de Autor: Todo contenido asociado con Utopia Beauty Salon es
-                                propiedad exclusiva nuestra.</p>
-                            <!-- Botón Cerrar -->
-                            <div class="text-center">
-                                <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton"
-                                    type="button">Cerrar</button>
-                            </div>
+        <div id="popup" class="popup">
+            <div class="popup-content bg-white p-4 rounded">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title text-center text-success mb-4">Términos y Condiciones</h2>
+                        <p class="mb-4">Reservas y Cancelaciones: Se recomienda reservar con anticipación. Cancelaciones con menos de 24 horas de anticipación pueden incurrir en cargos.</p>
+                        <p class="mb-4">Pagos: Se aceptan efectivo, tarjetas de crédito/débito y otros métodos electrónicos.</p>
+                        <p class="mb-4">Responsabilidad: No nos hacemos responsables por pérdidas o daños personales. Infórmanos sobre alergias o condiciones médicas.</p>
+                        <p class="mb-4">Comportamiento del Cliente: Se espera comportamiento respetuoso hacia el personal y otros clientes. Nos reservamos el derecho de negar el servicio por comportamiento inapropiado.</p>
+                        <p class="mb-4">Garantía: Si no estás satisfecho, comunícanoslo dentro de las 48 horas posteriores al servicio.</p>
+                        <p class="mb-4">Derechos de Autor: Todo contenido asociado con Utopia Beauty Salon es propiedad exclusiva nuestra.</p>
+                        <div class="text-center">
+                            <button class="btn btn-success" style="margin-top: 20px;" id="acceptButton" type="button">Cerrar</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="form-group text-center">
+            <button class="btn btn-primary" type="submit">Crear Cuenta</button>
+            <p class="mt-3 mb-0"><a href="{{ route('login') }}">¿Ya tienes una cuenta? Inicia Sesión</a></p>
+        </div>
+    </form>
+</div>
 
 
-            <script>
-                document.getElementById("openPopup").addEventListener("click", function(event) {
-                    event.preventDefault();
-                    document.getElementById("popup").style.display = "block";
-                });
 
-                document.getElementById("acceptButton").addEventListener("click", function() {
-                    document.getElementById("popup").style.display = "none";
-                });
-
-                // Cerrar la ventana emergente cuando se hace clic fuera de ella
-                window.addEventListener("click", function(event) {
-                    var popup = document.getElementById("popup");
-                    if (event.target == popup) {
-                        popup.style.display = "none";
-                    }
-                });
-            </script>
-            <div class="form-group text-center">
-                <button class="btn btn-primary" type="submit">Crear Cuenta</button>
-                <p class="mt-3 mb-0"><a href="{{ route('login') }}">¿Ya tienes una cuenta? Inicia Sesión</a></p>
-            </div>
-        </form>
-    </div>
-
-    <!-- jQuery -->
-    <script src="../assets/vendor/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="../assets/vendor/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../assets/vendor/popper.min.js"></script>
     <script src="../assets/vendor/bootstrap.min.js"></script>
@@ -256,6 +232,41 @@
     <!-- App Settings (safe to remove) -->
     {{-- <script src="../assets/js/app-settings.js"></script> --}}
 
-</body>
+<script>
+    // Abrir la ventana emergente al hacer clic en el botón
+    document.getElementById("openPopup").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("popup").style.display = "block";
+    });
 
+    // Cerrar la ventana emergente al hacer clic en el botón de aceptar
+    document.getElementById("acceptButton").addEventListener("click", function() {
+        document.getElementById("popup").style.display = "none";
+    });
+
+    // Cerrar la ventana emergente cuando se hace clic fuera de ella
+    window.addEventListener("click", function(event) {
+        var popup = document.getElementById("popup");
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    });
+
+    $(document).ready(function() {
+        $(".toggle-password").click(function() {
+            var target = $($(this).data('target'));
+            var icon = $(this).find("span.fa");
+            if (icon.hasClass("fa-eye")) {
+                icon.removeClass("fa-eye").addClass("fa-eye-slash");
+                target.attr('type', 'text');
+            } else {
+                icon.removeClass("fa-eye-slash").addClass("fa-eye");
+                target.attr('type', 'password');
+            }
+        });
+    });
+</script>
+
+
+</body>
 </html>

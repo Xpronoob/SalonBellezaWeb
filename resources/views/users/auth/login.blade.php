@@ -38,77 +38,79 @@
 
 <body class="layout-login">
 
-    <div class="layout-login__overlay"></div>
-    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="layout-login__form bg-white" data-perfect-scrollbar>
-            <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
-                <a href="../index.html" class="navbar-brand" style="min-width: 0">
-                    {{-- <img class="navbar-brand-icon" src="../assets/images/LogoSalon.png" width="100" alt=""> --}}
-                    <a href="/">
-                        <img src="{{ asset('assets/images/LogoSalon.png') }}" width="125" alt="Logo Salon">
-                    </a>
-                    <span></span>
-                </a>
+<div class="layout-login__overlay"></div>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="layout-login__form bg-white" data-perfect-scrollbar>
+        <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
+            <a href="/" class="navbar-brand" style="min-width: 0">
+                <img src="{{ asset('assets/images/LogoSalon.png') }}" width="125" alt="Logo Salon">
+                <span></span>
+            </a>
+        </div>
+
+        <h4 class="m-0 text-center">Utopía Beauty Salón</h4>
+        <p class="mb-5 text-center">Ingresa las credenciales para iniciar sesión:</p>
+
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="form-group">
+                <label class="text-label" for="email">Correo Electrónico:</label>
+                <div class="input-group input-group-merge">
+                    <input id="email" type="text" name="email" value="{{ old('email') }}"
+                        class="form-control form-control-prepended" placeholder="Correo Electrónico">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="far fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                @error('email')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
             </div>
 
-            <h4 class="m-0 text-center">Utopía Beauty Salón</h4> <br>
-            <p class="mb-5 text-center">Ingresa las credenciales para iniciar sesión:</p>
-
-            <x-auth-session-status class="mb-4" :status="session('status')" />
-
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="form-group">
-                    <label class="text-label" for="email" name="email">Correo Electrónico:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="email" for="email" name="email" type="text" value="{{ old('email') }}"
-                            class="form-control form-control-prepended" placeholder="Correo Electrónico">
-
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="far fa-envelope"></span>
-                            </div>
+            <div class="form-group">
+                <label class="text-label" for="password">Contraseña:</label>
+                <div class="input-group input-group-merge">
+                    <input id="password" type="password" name="password" class="form-control form-control-prepended"
+                        placeholder="Ingresa la contraseña">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <span class="fa fa-key"></span>
                         </div>
                     </div>
-                    @error('email')
-                        <div style="color: red; padding: 1px;">{{ $message }}</div>
-                    @enderror
-                </div>
-
-
-                <div class="form-group">
-                    <label class="text-label" for="password" name="password">Contraseña:</label>
-                    <div class="input-group input-group-merge">
-                        <input id="password" for="password" name="password" type="password"
-                            value="{{ old('password') }}" class="form-control form-control-prepended"
-                            placeholder="Ingresa la contraseña">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <span class="fa fa-key"></span>
-                            </div>
-                        </div>
-                    </div>
-                    @error('password')
-                        <div style="color: red; padding: 1px;">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="form-group mb-5">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" checked="" id="remember">
-                        <label class="custom-control-label" style="padding-top: 2px;" for="remember">Recordar
-                            credenciales</label>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary toggle-password" type="button"
+                            style="border: none; outline: none;">
+                            <span class="fa fa-eye"></span>
+                        </button>
                     </div>
                 </div>
-                <div class="form-group text-center">
-                    <button class="btn btn-primary mb-5" type="submit">Iniciar Sesión</button> <br>
-                    <a href="{{ route('password.request') }}">¿Olvidaste la contraseña?</a> <br><br>
-                    No tienes cuenta? <a class="text-body text-underline"
-                        href="{{ route('register') }}">¡Registrate!</a>
+                @error('password')
+                    <div style="color: red; padding: 1px;">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="form-group mb-5">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked id="remember">
+                    <label class="custom-control-label" style="padding-top: 2px;" for="remember">Recordar
+                        credenciales</label>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-primary mb-3" type="submit">Iniciar Sesión</button>
+                <br>
+                <a href="{{ route('password.request') }}">¿Olvidaste la contraseña?</a>
+                <br><br>
+                ¿No tienes cuenta? <a class="text-body text-underline" href="{{ route('register') }}">¡Registrate!</a>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <!-- jQuery -->
     <script src="../assets/vendor/jquery.min.js"></script>
@@ -132,6 +134,24 @@
     <script src="../assets/js/dropdown.js"></script>
     <script src="../assets/js/sidebar-mini.js"></script>
     <script src="../assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".toggle-password").click(function() {
+                var icon = $(this).find("span.fa");
+                if (icon.hasClass("fa-eye")) {
+                    icon.removeClass("fa-eye").addClass("fa-eye-slash");
+                    var input = $("#password");
+                    input.attr('type', 'text');
+                } else {
+                    icon.removeClass("fa-eye-slash").addClass("fa-eye");
+                    var input = $("#password");
+                    input.attr('type', 'password');
+                }
+            });
+        });
+    </script>
+
 
     {{-- <!-- App Settings (safe to remove) -->
     <script src="../assets/js/app-settings.js"></script> --}}

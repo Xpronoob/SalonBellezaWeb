@@ -1,6 +1,7 @@
 @include('modals.global')
 
 @include('layouts.mainHeader')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
 <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
     <!-- CONTENT VIEW -->
@@ -77,6 +78,15 @@
 <script src="{{ asset('assets/vendor/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/jqvmap/maps/jquery.vmap.world.js') }}"></script>
 <script src="{{ asset('assets/js/vector-maps.js') }}"></script>
+
+
+<!-- JavaScript de jQuery (necesario para Select2) -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+<!-- JavaScript de Select2 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
 
 {{-- <!-- Chart.js -->
 <script src="{{ asset('assets/vendor/Chart.min.js') }}"></script>
