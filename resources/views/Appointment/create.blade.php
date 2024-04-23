@@ -55,17 +55,21 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="usuario">Correo del cliente</label>
-                                    <select name="id_user" id="id_user" class="form-control">
-                                        <option value=""> --Seleccione un Correo--</option>
-                                        @foreach ($users as $user)
-                                            <option value="{{ $user->id }}" {{ old('id_user') == $user->id ? 'selected' : '' }}>{{ $user->email }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('id_user')
-                                        <div style="color: red;">{{ $message }}</div>
-                                    @enderror
-                                </div>
+    <label for="usuario">Correo del cliente</label>
+    <select name="id_user" id="id_user" class="form-control">
+        <option value=""> --Seleccione un Correo--</option>
+        @foreach ($users as $user)
+            <option value="{{ $user->id }}" {{ old('id_user') == $user->id ? 'selected' : '' }}>
+            #{{ $user->id }} - {{ $user->email }} | {{ $user->name }}
+            </option>
+        @endforeach
+    </select>
+    @error('id_user')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
+
 
                                 <div class="form-group">
                                     <label for="description">Descripcion de la cita</label>
@@ -99,4 +103,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            // Inicializar Select2 para el selector de categoría
+            $('#id_user').select2({
+                placeholder: '--Seleccione una categoría--',
+                allowClear: true, // Opcional: permite borrar la selección
+                language: {
+                    noResults: function() {
+                        return "No se encontraron resultados de esa categoría";
+                    }
+                }
+            });
+        });
+    </script>   
+
 </x-main-layout>

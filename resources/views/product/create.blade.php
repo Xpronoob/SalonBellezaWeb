@@ -32,7 +32,7 @@
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}"
                                                 {{ old('id_category') == $category->id ? 'selected' : '' }}>
-                                                {{ $category->name }}</option>
+                                                #{{ $category->id }}: {{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('id_category')
@@ -41,19 +41,20 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="proveedor">Proveedor</label>
-                                    <select name="id_supplier" id="id_supplier" class="form-control">
-                                        <option value=""> --Seleccione un proveedor--</option>
-                                        @foreach ($suppliers as $supplier)
-                                            <option value="{{ $supplier->id }}"
-                                                {{ old('id_supplier') == $supplier->id ? 'selected' : '' }}>
-                                                {{ $supplier->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('id_supplier')
-                                        <div style="color: red;">{{ $message }}</div>
-                                    @enderror
-                                </div>
+    <label for="proveedor">Proveedor</label>
+    <select name="id_supplier" id="id_supplier" class="form-control">
+        <option value=""> --Seleccione un proveedor--</option>
+        @foreach ($suppliers as $supplier)
+            <option value="{{ $supplier->id }}" {{ old('id_supplier') == $supplier->id ? 'selected' : '' }}>
+            #{{ $supplier->id }}: {{ $supplier->name }} | {{ $supplier->email }}
+            </option>
+        @endforeach
+    </select>
+    @error('id_supplier')
+        <div style="color: red;">{{ $message }}</div>
+    @enderror
+</div>
+
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -113,4 +114,32 @@
             </div>
         </div>
     </div>
+
+    
+<script>
+$(document).ready(function() {
+    // Inicializar Select2 para el selector de categoría
+    $('#id_category').select2({
+        placeholder: '--Seleccione una categoría--',
+        allowClear: true, // Opcional: permite borrar la selección
+        language: {
+            noResults: function() {
+                return "No se encontraron resultados de esa categoría";
+            }
+        }
+    });
+
+    // Inicializar Select2 para el selector de proveedor
+    $('#id_supplier').select2({
+        placeholder: '--Seleccione un proveedor--',
+        allowClear: true, // Opcional: permite borrar la selección
+        language: {
+            noResults: function() {
+                return "No se encontraron resultados de ese proveedor";
+            }
+        }
+    });
+});
+</script>
+
 </x-main-layout>
