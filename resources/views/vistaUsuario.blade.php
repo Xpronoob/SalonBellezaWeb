@@ -668,7 +668,7 @@
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
                         <form id="mailForm" action="{{ route('send_mail') }}" method="POST"
-                            enctype="multipart/form-data">
+                            enctype="multipart/form-data" class="php-email-form">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
@@ -715,7 +715,6 @@
                             <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
                         </form>
 
-
                         <script>
                             document.addEventListener("DOMContentLoaded", function() {
                                 // Verificar si la variable de sesión está presente
@@ -729,9 +728,6 @@
                                 @endif
                             });
                         </script>
-
-
-
                     </div>
 
                 </div>
