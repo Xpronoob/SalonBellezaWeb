@@ -22,7 +22,6 @@ class AccountingRequest extends FormRequest
     public function rules(): array
     {
         return [
-
             //
             'movement_description' => 'required|max:255',
             'amount' => 'required|numeric|min:0',
@@ -35,21 +34,13 @@ class AccountingRequest extends FormRequest
     public function messages(): array
     {
         return [
-           
-
             'movement_description.required' => 'La descripción del movimiento es requerida',
             'movement_description.max' => 'La descripción no puede tener más de :max caracteres.',
-
             'amount.required' => 'La cantidad es requerida',
             'amount.numeric' => 'La cantidad debe ser un número.',
-
             'movement_date.required' => 'La fecha es requerida',
-
-
             'movement_type.required' => 'El tipo de movimineto es requerido',
-
             'transaction_type.required' => 'El tipo de transacción es requerido',
-
             'pending_balance.required' => 'El saldo pendiente es requerido',
             'pending_balance.numeric' => 'El saldo debe ser un número.'
         ];

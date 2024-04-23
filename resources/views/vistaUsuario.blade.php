@@ -38,106 +38,74 @@
 
 
     <!-- ======= Header ======= -->
-
-    <header id="header" class="fixed-top">
-
-        <div class="container d-flex align-items-center">
-
-            <h1 class="logo me-auto"><a href="index.html">Utopía Beauty Salón</a></h1>
-
-
-
-            <nav id="navbar" class="navbar">
-
-                <ul>
-
-                    <li><a class="nav-link scrollto active" href="#hero">Principal</a></li>
-
-                    <li><a class="nav-link scrollto" href="#team">Estilistas</a></li>
-
-                    <li><a class="nav-link scrollto" href="#contact">Ubicación</a></li>
-
-                    <li><a class="nav-link scrollto" href="#footer-top">Redes Sociales</a></li>
-
-                    <li class="dropdown">
-
-                        <a href="#faq">
-
-                            <span>FAQ</span> <i class="bi bi-chevron-down"></i>
-
-                        </a>
-
-                        <ul>
-
-                            <li><a href="#footer-newsletter">Trabaja con nosotros</a></li>
-
-                            <li><a href="#why-us">¿Por qué nosotros?</a></li>
-
-                            <li><a href="#contact">Correo Electrónico</a></li>
-
-                            <li><a href="#contact">Telefono - WhatsApp</a></li>
-
-                        </ul>
-
-                    </li>
-
-                    <li class="dropdown">
-                        <a class="bi bi-person" href="#" id="profileDropdown">
-                            <i class="bi bi-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                            <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
-                            @auth
-                                <p href="{{ route('profile.edit') }}" class="dropdown-item">Hola
-                                    {{ Auth::user()->name }}</p>
-                                <li><a href="{{ route('profile.edit') }}" class="dropdown-item">Mi Perfil</a></li>
-                                <form id="formL" action="{{ route('logout') }}" method="POST">
-                                    @method('POST')
-                                    @csrf
-                                    <button class="dropdown-item type="submit">
-                                        <a class="dropdown-item">Cerrar Sesión</a>
-                                    </button>
-                                @else
-                                    <a class="" href="{{ route('login') }}">Iniciar Sesión</a>
-                                    <a class="" href="{{ route('register') }}">Registrarse</a>
-
-                                @endauth
-                            </form>
-                        </ul>
-                    </li>
-
-                    @role('admin')
-                        <li class="dropdown">
-                            <a class="bi bi-hdd" href="#" id="profileDropdown">
-                                <i class="bi bi-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                                <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
-                                <li><a href="{{ route('productos.index') }}" class="dropdown-item">Productos</a></li>
-                                <li><a href="{{ route('proveedores.index') }}" class="dropdown-item">Proveedores</a></li>
-                                <li><a href="{{ route('categorias.index') }}" class="dropdown-item">Categorías</a></li>
-
-                                <li><a href="{{ route('contabilidad.index') }}" class="dropdown-item">Contabilidad</a></li>
-                                <li><a href="{{ route('citas.index') }}" class="dropdown-item">Citas</a></li>
-                                <li><a href="{{ route('servicios.index') }}" class="dropdown-item">Servicios</a></li>
-                            </ul>
-                        </li>
-                    @endrole
-
-
-                    <li><a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">Cotiza un
-                            trabajo</a></li>
-
-                </ul>
-
-                <i class="bi bi-list mobile-nav-toggle"></i>
-
-            </nav><!-- .navbar -->
-
-        </div>
-
-    </header><!-- End Header -->
-
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><a href="index.html">Utopía Beauty Salón</a></h1>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Principal</a></li>
+                <li><a class="nav-link scrollto" href="#team">Estilistas</a></li>
+                <li><a class="nav-link scrollto" href="#contact">Ubicación</a></li>
+                <li><a class="nav-link scrollto" href="#footer-top">Redes Sociales</a></li>
+                <li class="dropdown">
+                    <a href="#faq">
+                        <span>FAQ</span> <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#footer-newsletter">Trabaja con nosotros</a></li>
+                        <li><a href="#why-us">¿Por qué nosotros?</a></li>
+                        <li><a href="#contact">Correo Electrónico</a></li>
+                        <li><a href="#contact">Telefono - WhatsApp</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="bi bi-person" href="" id="profileDropdown">
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                        <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
+                        @auth
+                        <p href="{{ route('profile.edit') }}" class="dropdown-item">Hola {{ Auth::user()->name }}</p>
+                        <li><a href="{{ route('profile.edit') }}" class="dropdown-item">Mi Perfil</a></li>
+                        <form id="formL" action="{{ route('logout') }}" method="POST">
+                            @method('POST')
+                            @csrf
+                            <button class="dropdown-item" type="submit">
+                                <a class="dropdown-item">Cerrar Sesión</a>
+                            </button>
+                        @else
+                        <a class="" href="{{ route('login') }}">Iniciar Sesión</a>
+                        <a class="" href="{{ route('register') }}">Registrarse</a>
+                        @endauth
+                        </form>
+                    </ul>
+                </li>
+                @role('admin')
+                <li class="dropdown">
+                    <a class="bi bi-hdd" href="#" id="profileDropdown">
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                        <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
+                        <li><a href="{{ route('productos.index') }}" class="dropdown-item">Productos</a></li>
+                        <li><a href="{{ route('proveedores.index') }}" class="dropdown-item">Proveedores</a></li>
+                        <li><a href="{{ route('categorias.index') }}" class="dropdown-item">Categorías</a></li>
+                        <li><a href="{{ route('contabilidad.index') }}" class="dropdown-item">Contabilidad</a></li>
+                        <li><a href="{{ route('citas.index') }}" class="dropdown-item">Citas</a></li>
+                        <li><a href="{{ route('servicios.index') }}" class="dropdown-item">Servicios</a></li>
+                    </ul>
+                </li>
+                @endrole
+                <li>
+                    <a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">
+                        Cotiza un trabajo <i class="bx bxl-whatsapp fs-5"></i>
+                    </a>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+    </div>
+</header><!-- End Header -->
 
 
     <!-- ======= Hero Section ======= -->
@@ -234,7 +202,7 @@
                             donde la experiencia de belleza sea más que un simple servicio, sino un momento de auténtico
                             cuidado personal."
                         </p>
-                        <a href="#" class="btn-learn-more">Contáctanos</a>
+                        <a href="#contact" class="btn-learn-more">Contáctanos</a>
                     </div>
                 </div>
             </div>

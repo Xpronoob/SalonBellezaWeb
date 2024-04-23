@@ -41,22 +41,27 @@
 
                         <div class="form-group">
                             <label for="movement_type">Tipo de movimiento:</label>
-                            <input type="text" class="form-control" for="movement_type" name="movement_type"
-                                id="movement_type" placeholder="Ingrese el tipo de movimiento"
-                                value="{{ $accounting->movement_type }}">
+                            <select class="form-control" id="movement_type" name="movement_type">
+                                <option value="Sinpe móvil" @if($accounting->movement_type == "Sinpe móvil") selected @endif>Sinpe móvil</option>
+                                <option value="Transferencia bancaria" @if($accounting->movement_type == "Transferencia bancaria") selected @endif>Transferencia bancaria</option>
+                                <option value="Efectivo" @if($accounting->movement_type == "Efectivo") selected @endif>Efectivo</option>
+                            </select>
                             @error('movement_type')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="transaction_type">Tipo de transacción:</label>
-                            <input type="text" class="form-control" for="transaction_type" name="transaction_type"
-                                id="transaction_type" placeholder="Ingrese el tipo de transacción"
-                                value="{{ $accounting->transaction_type }}">
+                            <select class="form-control" id="transaction_type" name="transaction_type">
+                                <option value="Ingreso" @if($accounting->transaction_type == "Ingreso") selected @endif>Ingreso</option>
+                                <option value="Gasto" @if($accounting->transaction_type == "Gasto") selected @endif>Gasto</option>
+                            </select>
                             @error('transaction_type')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="pending_balance">Saldo pendiente:</label>
                             <input type="number" class="form-control" for="pending_balance" name="pending_balance"
