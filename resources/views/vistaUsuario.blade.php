@@ -38,79 +38,92 @@
 
 
     <!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-        <h1 class="logo me-auto"><a href="index.html">Utopía Beauty Salón</a></h1>
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Principal</a></li>
-                <li><a class="nav-link scrollto" href="#team">Estilistas</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Ubicación</a></li>
-                <li><a class="nav-link scrollto" href="#footer-top">Redes Sociales</a></li>
-                <li class="dropdown">
-                    <a href="#faq">
-                        <span>FAQ</span> <i class="bi bi-chevron-down"></i>
-                    </a>
-                    <ul>
-                        <li><a href="#footer-newsletter">Trabaja con nosotros</a></li>
-                        <li><a href="#why-us">¿Por qué nosotros?</a></li>
-                        <li><a href="#contact">Correo Electrónico</a></li>
-                        <li><a href="#contact">Telefono - WhatsApp</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="bi bi-person" href="" id="profileDropdown">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                    <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                        <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
-                        @auth
-                        <p href="{{ route('profile.edit') }}" class="dropdown-item">Hola {{ Auth::user()->name }}</p>
-                        <li><a href="{{ route('profile.edit') }}" class="dropdown-item">Mi Perfil</a></li>
-                        <form id="formL" action="{{ route('logout') }}" method="POST">
-                            @method('POST')
-                            @csrf
-                            <button class="dropdown-item" type="submit">
-                                <a class="dropdown-item">Cerrar Sesión</a>
-                            </button>
-                        @else
-                        <a class="" href="{{ route('login') }}">Iniciar Sesión</a>
-                        <a class="" href="{{ route('register') }}">Registrarse</a>
-                        @endauth
-                        </form>
-                    </ul>
-                </li>
-                @role('admin')
-                <li class="dropdown">
-                    <a class="bi bi-hdd" href="#" id="profileDropdown">
-                        <i class="bi bi-chevron-down"></i>
-                    </a>
-                    <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                        <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
-                        <li><a href="{{ route('productos.index') }}" class="dropdown-item">Productos</a></li>
-                        <li><a href="{{ route('proveedores.index') }}" class="dropdown-item">Proveedores</a></li>
-                        <li><a href="{{ route('categorias.index') }}" class="dropdown-item">Categorías</a></li>
-                        <li><a href="{{ route('contabilidad.index') }}" class="dropdown-item">Contabilidad</a></li>
-                        <li><a href="{{ route('citas.index') }}" class="dropdown-item">Citas</a></li>
-                        <li><a href="{{ route('servicios.index') }}" class="dropdown-item">Servicios</a></li>
-                    </ul>
-                </li>
-                @endrole
-                <li>
-                    <a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">
-                        Cotiza un trabajo <i class="bx bxl-whatsapp fs-5"></i>
-                    </a>
-                </li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-    </div>
-</header><!-- End Header -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto"><a href="index.html">Utopía Beauty Salón</a></h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Principal</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Estilistas</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Ubicación</a></li>
+                    <li><a class="nav-link scrollto" href="#footer-top">Redes Sociales</a></li>
+                    <li class="dropdown">
+                        <a href="#faq">
+                            <span>FAQ</span> <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="#footer-newsletter">Trabaja con nosotros</a></li>
+                            <li><a href="#why-us">¿Por qué nosotros?</a></li>
+                            <li><a href="#contact">Correo Electrónico</a></li>
+                            <li><a href="#contact">Telefono - WhatsApp</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="bi bi-person" href="" id="profileDropdown">
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                            <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
+                            @auth
+                                <p href="{{ route('profile.edit') }}" class="dropdown-item">Hola {{ Auth::user()->name }}
+                                </p>
+                                <li><a href="{{ route('profile.edit') }}" class="dropdown-item">Mi Perfil</a></li>
+                                <form id="formL" action="{{ route('logout') }}" method="POST">
+                                    @method('POST')
+                                    @csrf
+                                    <button class="dropdown-item" type="submit">
+                                        <a class="dropdown-item">Cerrar Sesión</a>
+                                    </button>
+                                @else
+                                    <a class="" href="{{ route('login') }}">Iniciar Sesión</a>
+                                    <a class="" href="{{ route('register') }}">Registrarse</a>
+                                @endauth
+                            </form>
+                        </ul>
+                    </li>
+                    @role('admin')
+                        <li class="dropdown">
+                            <a class="bi bi-hdd" href="#" id="profileDropdown">
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                                <!-- Aquí debería ir el nombre del usuario registrado y poder cerrar sesión -->
+                                <li><a href="{{ route('productos.index') }}" class="dropdown-item">Productos</a></li>
+                                <li><a href="{{ route('proveedores.index') }}" class="dropdown-item">Proveedores</a></li>
+                                <li><a href="{{ route('categorias.index') }}" class="dropdown-item">Categorías</a></li>
+                                <li><a href="{{ route('contabilidad.index') }}" class="dropdown-item">Contabilidad</a></li>
+                                <li><a href="{{ route('citas.index') }}" class="dropdown-item">Citas</a></li>
+                                <li><a href="{{ route('servicios.index') }}" class="dropdown-item">Servicios</a></li>
+                            </ul>
+                        </li>
+                    @endrole
+                    <li>
+                        <a target="_blank" class="getstarted scrollto" href="https://wa.link/u0zt1v">
+                            Cotiza un trabajo <i class="bx bxl-whatsapp fs-5"></i>
+                        </a>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
 
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center" style="background-color: black; color: white;">
         <div class="container">
+
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    <div class="d-flex gap-4">
+                        <span><i class="fa-solid fa-circle-check icon-success"></i></span>
+                        <div>
+                            {{ session('success') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
+
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up" data-aos-delay="200">
@@ -304,28 +317,29 @@
                             realzar tu belleza y mejorar tu bienestar.
                         </p>
                         <div class="skills-content">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Coloración de Cabello / Balayage / Keratina <i class="val"></i></li>
-        <li class="list-group-item">Manicure / Pedicure / Masajes <i class="val"></i></li>
-        <li class="list-group-item">Maquillaje / Capacitaciones <i class="val"></i></li>
-        <li class="list-group-item">Corte de Pelo <i class="val"></i></li>
-    </ul>
-</div>
-
-
-
-
-
-
-</div>
-
-</div>
-                           
-
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Coloración de Cabello / Balayage / Keratina <i
+                                        class="val"></i></li>
+                                <li class="list-group-item">Manicure / Pedicure / Masajes <i class="val"></i></li>
+                                <li class="list-group-item">Maquillaje / Capacitaciones <i class="val"></i></li>
+                                <li class="list-group-item">Corte de Pelo <i class="val"></i></li>
+                            </ul>
                         </div>
 
+
+
+
+
+
                     </div>
+
                 </div>
+
+
+            </div>
+
+            </div>
+            </div>
 
             </div>
         </section><!-- End Skills Section -->
@@ -652,26 +666,25 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="" method="post" role="form" class="php-email-form">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Nombre Completo:</label>
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        required>
+                                    <input type="text" name="name" class="form-control" id="name">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="name">Correo Electrónico:</label>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        required>
+                                    <input type="email" class="form-control" name="email" id="email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Asunto:</label>
-                                <input type="text" class="form-control" name="subject" id="subject" required>
+                                <input type="text" class="form-control" name="subject" id="subject">
                             </div>
                             <div class="form-group">
                                 <label for="name">Descripción mensaje:</label>
-                                <textarea class="form-control" name="message" rows="10" required></textarea>
+                                <textarea class="form-control" name="message" rows="10"></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
@@ -680,6 +693,8 @@
                             </div>
                             <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
                         </form>
+
+
                     </div>
 
                 </div>

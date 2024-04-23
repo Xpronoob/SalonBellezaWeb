@@ -42,10 +42,10 @@
 </head>
 
 <body class="layout-login d-flex align-items-center justify-content-center">
-    <div class="layout-login__form card p-4">
-        <div class="text-center mb-4">
+    <div class="layout-login__form card">
+        <div class="text-center">
             <a href="/">
-                <img src="{{ asset('assets/images/LogoSalon.png') }}" width="150" alt="Logo Salon">
+                <img src="{{ asset('assets/images/LogoSalon.png') }}" width="115" alt="Logo Salon">
             </a>
             <h5 class="mt-2">Utopía Beauty Salon</h5>
             <p class="m-0">Crea una cuenta en nuestro Sitio Web</p>

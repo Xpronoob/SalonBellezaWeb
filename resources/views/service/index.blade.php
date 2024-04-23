@@ -75,7 +75,7 @@
                                         <div class="btn-group" role="group">
                                             <a href="{{ route('servicios.edit', $service->id) }}"><button type="button"
                                                     class="btn btn-success btn-action">
-                                                    <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                                                    <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i>
                                                 </button></a>
                                             <form id="deleteForm_{{ $service->id }}"
                                                 action="{{ route('servicios.destroy', $service->id) }}" method="POST"
@@ -87,17 +87,11 @@
                                                     data-target="#modal-danger"
                                                     onclick="confirmDelete({{ $service->id }})">
                                                     <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
-                  </button>
+                                                </button>
                                             </form>
                                         </div>
                                     </td>
                                 </tr>
-
-                                <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
-                  <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
-                  
-
-
                             @endforeach
                             <script>
                                 function confirmDelete(serviceId) {

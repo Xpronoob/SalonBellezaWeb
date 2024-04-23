@@ -69,7 +69,7 @@
 <script src="{{ asset('assets/vendor/flatpickr/flatpickr.min.js') }}"></script>
 <script src="{{ asset('assets/js/flatpickr.js') }}"></script>
 
-{{-- <script src="{{ asset('assets/js/settings.js') }}"></script> --}}
+<script src="{{ asset('assets/js/settings.js') }}"></script>
 
 <script src="{{ asset('assets/vendor/moment.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/moment-range.js') }}"></script>

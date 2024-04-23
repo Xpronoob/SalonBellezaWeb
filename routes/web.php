@@ -12,6 +12,7 @@ use App\Http\Controllers\CategoryController;
 use App\Models\Service; // Importa el modelo Service si aún no lo has hecho
 use App\Http\Controllers\AccountingController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ErrorController;
 
 /*
@@ -27,6 +28,13 @@ use App\Http\Controllers\ErrorController;
 
 
 Route::get('/', function () {
+    $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos
+    $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
+
+    return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
+});
+
+Route::get('/citaCliente', function () {
     $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos
     $proveedores = Supplier::all(); // Recupera todos los proveedores desde la base de datos
 
@@ -56,6 +64,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
 
     // Gestion
     Route::prefix('gestion')->group(function () {
+        Route::resource('citas', AppointmentController::class);
         Route::resource('servicios', ServiceController::class);
         Route::resource('contabilidad', AccountingController::class);
         Route::get('/vistaCalculadora', function () {
@@ -68,7 +77,6 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(fu
         return view('index');
     });
 });
-Route::resource('citas', AppointmentController::class);
 
 
 // Route::get('/vistaUsuario', function () {
