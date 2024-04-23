@@ -56,8 +56,14 @@
                                         <div class="btn-group" role="group">
                                             <a href="{{ route('proveedores.edit', $supplier->id) }}">
                                                 <button type="button"
-                                                    class="btn btn-success btn-action">Editar</button>
+                                                    class="btn btn-success btn-action">
+                                                    <i class="fas fa-pencil-alt" style="font-size: 1rem;"></i> 
+                                                </button>
                                             </a>
+
+
+
+                                            
                                             <form id="deleteForm_{{ $supplier->id }}"
                                                 action="{{ route('proveedores.destroy', $supplier->id) }}"
                                                 method="POST" style="display: inline;">
@@ -66,7 +72,9 @@
                                                 <!-- Botón de eliminación que abre el modal -->
                                                 <button type="button" class="btn btn-danger" data-toggle="modal"
                                                     data-target="#modal-danger"
-                                                    onclick="confirmDelete({{ $supplier->id }})">Eliminar</button>
+                                                    onclick="confirmDelete({{ $supplier->id }})">
+                                                    <i class="fas fa-trash-alt" style="font-size: 1rem;"></i>
+                                                </button>
                                             </form>
                                         </div>
                                     </td>
