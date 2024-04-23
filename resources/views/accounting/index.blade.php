@@ -44,7 +44,9 @@
                                 <th>Fecha</th>
                                 <th>Tipo de movimiento</th>
                                 <th>Tipo de transacción</th>
+                                <th>Saldo inicial</th>
                                 <th>Saldo pendiente</th>
+
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -56,7 +58,9 @@
                                     <td>{{ $accounting->movement_date }}</td>
                                     <td>{{ $accounting->movement_type }}</td>
                                     <td>{{ $accounting->transaction_type }}</td>
+                                    <td>{{ $accounting->starting_amount }}</td>
                                     <td>{{ $accounting->pending_balance }}</td>
+                              
                                     <td class="text-center">
                                         <style>
                                             .btn-group .btn {

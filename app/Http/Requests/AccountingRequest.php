@@ -28,7 +28,17 @@ class AccountingRequest extends FormRequest
             'movement_date' => 'required|date',
             'movement_type' => 'required|max:255',
             'transaction_type' => 'required|max:255',
-            'pending_balance' => 'required|numeric|min:0'
+            'pending_balance' => 'required|numeric|min:0',
+
+            'starting_amount'=> [
+                'required',
+                'numeric',
+                function ($attribute, $value, $fail) {
+                    if ($value <= $this->input('pending_balance')) {
+                        $fail('El saldo inicial debe ser mayor que el saldo pendiente.');
+                    }
+                },
+            ],
         ];
     }
     public function messages(): array
@@ -42,7 +52,9 @@ class AccountingRequest extends FormRequest
             'movement_type.required' => 'El tipo de movimineto es requerido',
             'transaction_type.required' => 'El tipo de transacción es requerido',
             'pending_balance.required' => 'El saldo pendiente es requerido',
-            'pending_balance.numeric' => 'El saldo debe ser un número.'
+            'pending_balance.numeric' => 'El saldo debe ser un número.',
+            'starting_amount.required' => 'El saldo inicial es requerido',
+            'starting_amount.numeric' => 'El saldo inicial debe ser un número.'
         ];
     }
 }
