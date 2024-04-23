@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('movement_type', 255);
             $table->string('transaction_type', 255)->nullable();
             $table->decimal('pending_balance', 10, 2)->nullable();
+            $table->decimal('starting_amount', 10, 2);
         });
     }
 
