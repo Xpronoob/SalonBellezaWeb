@@ -1,6 +1,5 @@
-@include('modals.global')
-
 @include('layouts.mainHeader')
+@include('modals.global')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
 <div class="mdk-drawer-layout js-mdk-drawer-layout" data-push data-responsive-width="992px">
