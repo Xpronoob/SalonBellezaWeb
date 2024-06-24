@@ -103,45 +103,75 @@
                             <input type="text" class="form-control" placeholder="Buscar" />
                         </form>
 
-                        <ul class="nav navbar-nav ml-auto d-none d-md-flex">
-                            <li class="nav-item dropdown">
-                                <a href="#notifications_menu" class="nav-link dropdown-toggle" data-toggle="dropdown"
-                                    data-caret="false">
-                                    <i class="material-icons nav-icon navbar-notifications-indicator">notifications</i>
-                                </a>
-                                <div id="notifications_menu"
-                                    class="dropdown-menu dropdown-menu-right navbar-notifications-menu">
-                                    <div class="dropdown-item d-flex align-items-center py-2">
-                                        <span class="flex navbar-notifications-menu__title m-0">Notificaciones</span>
-                                        {{-- <a href="javascript:void(0)" class="text-muted"><small>Borrar Notificaciones</small></a> --}}
+                  <!-- HTML con clases condicionales y script -->
+<ul class="nav navbar-nav ml-auto d-none d-md-flex">
+    <li class="nav-item dropdown">
+        <a href="#notifications_menu" class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
+            <i id="notifications_icon" class="material-icons nav-icon navbar-notifications-indicator {{ $lowStockProducts->isEmpty() ? 'notifications-inactive' : 'notifications-active' }}">notifications_active</i>
+            <span class="badge badge-pill badge-danger navbar-notifications-badge">{{ $lowStockProducts->count() }}</span>
+        </a>
+        <div id="notifications_menu" class="dropdown-menu dropdown-menu-right navbar-notifications-menu">
+            <div class="dropdown-item d-flex align-items-center py-2">
+                <span class="flex navbar-notifications-menu__title m-0">Notificaciones</span>
+            </div>
+            <div class="navbar-notifications-menu__content" data-perfect-scrollbar>
+                <div class="py-2">
+                    @if ($lowStockProducts->isNotEmpty())
+                        @foreach ($lowStockProducts as $product)
+                            <div class="dropdown-item d-flex">
+                                <div class="mr-3">
+                                    <div class="avatar avatar-sm" style="width: 32px; height: 32px;">
+                                        <img src="{{ $product->image }}" alt="Avatar" class="avatar-img rounded-circle" />
                                     </div>
-                                    <div class="navbar-notifications-menu__content" data-perfect-scrollbar>
-                                        <div class="py-2">
-                                            @if ($lowStockProducts->isNotEmpty())
-                                                @foreach ($lowStockProducts as $product)
-                                                    <div class="dropdown-item d-flex">
-                                                        <div class="mr-3">
-                                                            <div class="avatar avatar-sm"
-                                                                style="width: 32px; height: 32px">
-                                                                <img src="{{ $product->image }}" alt="Avatar"
-                                                                    class="avatar-img rounded-circle" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="flex">
-                                                            <p>El producto {{ $product->name }} se está agotando, tiene
-                                                                un stock menor a 20</p>
-                                                            {{-- <small class="text-muted">1 minute ago</small> --}}
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item text-center navbar-notifications-menu__footer">Cerrar</a>
                                 </div>
-                            </li>
-                        </ul>
+                                <div class="flex">
+                                    <p>El producto {{ $product->name }} se está agotando, tiene un stock menor a 20</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p class="text-muted m-3">No hay notificaciones</p>
+                    @endif
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="dropdown-item text-center navbar-notifications-menu__footer">Cerrar</a>
+        </div>
+    </li>
+</ul>
+
+<!-- CSS para estilos condicionales -->
+<style>
+    .notifications-active {
+        color: #dc3545; /* Color rojo para cuando hay notificaciones */
+    }
+
+    .notifications-inactive {
+        color: #6c757d; /* Color gris para cuando no hay notificaciones */
+    }
+</style>
+
+<!-- Script JavaScript para cambiar dinámicamente la clase del icono -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var notificationsIcon = document.getElementById('notifications_icon');
+        var notificationCount = {{ $lowStockProducts->count() }};
+
+        // Función para actualizar la clase del icono según el contador de notificaciones
+        function updateNotificationIcon() {
+            if (notificationCount === 0) {
+                notificationsIcon.classList.remove('notifications-active');
+                notificationsIcon.classList.add('notifications-inactive');
+            } else {
+                notificationsIcon.classList.remove('notifications-inactive');
+                notificationsIcon.classList.add('notifications-active');
+            }
+        }
+
+        // Llamamos a la función al cargar la página
+        updateNotificationIcon();
+    });
+</script>
+
 
                         @auth
                             <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-height align-items-center">
