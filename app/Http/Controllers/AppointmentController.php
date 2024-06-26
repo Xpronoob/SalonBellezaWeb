@@ -66,11 +66,12 @@ class AppointmentController extends Controller
 
     public function edit(string $id)
     {
-
         $appointment = Appointment::find($id);
+        $appointment->appointment_date = \Carbon\Carbon::parse($appointment->appointment_date)->format('Y-m-d\TH:i');
         $users = User::all();
         return view('appointment.edit', compact('appointment', 'users'));
     }
+
 
     public function update(AppointmentRequest $request, $id_appointment)
     {

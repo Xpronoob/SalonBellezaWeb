@@ -8312,31 +8312,7 @@ a.close.disabled {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  z-index: 1040;
-  width: 100vw;
-  height: 100vh;
-}
 
-[dir] .modal-backdrop {
-  background-color: #000;
-}
-
-[dir=ltr] .modal-backdrop {
-  left: 0;
-}
-
-[dir=rtl] .modal-backdrop {
-  right: 0;
-}
-.modal-backdrop.fade {
-  opacity: 0;
-}
-.modal-backdrop.show {
-  opacity: 0.5;
-}
 
 .modal-header {
   display: flex;

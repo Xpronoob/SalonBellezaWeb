@@ -43,3 +43,5 @@ yarn-error.log
 /.idea
 /.vscode
 .vercel
+
+pnpm-lock.yaml

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
             $table->string('location', 255)->nullable();
-            $table->date('appointment_date');
+            $table->datetime('appointment_date');
             $table->string('stylist', 255)->nullable();
             $table->text('description')->nullable();
             $table->decimal('cost', 10, 2)->nullable();

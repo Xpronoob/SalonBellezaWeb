@@ -16,15 +16,13 @@ class ProductoController extends Controller
 {
     public function index(Request $request)
     {
-
         //$products = Producto::all();
 
         $busqueda = $request->busqueda;
 
-        $products = Product::where('name', 'LIKE', '%' . $busqueda . '%')
-            ->orWhere('description', 'LIKE', '%' . $busqueda . '%')
+        $products = Product::whereRaw('LOWER(name) LIKE ?', ['%' . strtolower($busqueda) . '%'])
+            ->orWhereRaw('LOWER(description) LIKE ?', ['%' . strtolower($busqueda) . '%'])
             ->paginate(5);
-
 
         return view('product.index', compact('products', 'busqueda'));
     }

@@ -17,9 +17,9 @@
                         @enderror
                     </div>
                         <div class="form-group">
-                            <label for="amount">Cantidad:</label>
+                            <label for="amount">Cantidad de la transacción:</label>
                             <input type="text" class="form-control" for="amount" name="amount" id="amount"
-                                placeholder="Ingrese la cantidad" value="{{ old('amount') }}">
+                                placeholder="Ingrese la cantidad de la transacción" value="{{ old('amount') }}">
                             @error('amount')
                                 <div style="color: red;">{{ $message }}</div>
                             @enderror

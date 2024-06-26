@@ -34,8 +34,12 @@ Route::get('/', function () {
     return view('vistaUsuario', ['services' => $services, 'proveedores' => $proveedores]);
 });
 
-Route::get('appointments', [AppointmentController::class, 'indexClient'])->name('appointments');
-Route::delete('appointments/{id}', [AppointmentController::class, 'destroyAppointment'])->name('appointments.destroy');
+Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('appointments', [AppointmentController::class, 'indexClient'])->name('appointments');
+    Route::delete('appointments/{id}', [AppointmentController::class, 'destroyAppointment'])->name('appointments.destroy');
+});
+
 
 // Route::get('/citas', function () {
 //     $services = Service::take(4)->get(); // Recupera solo los primeros 4 servicios desde la base de datos

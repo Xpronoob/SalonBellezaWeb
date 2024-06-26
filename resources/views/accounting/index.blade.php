@@ -40,7 +40,7 @@
                         <thead>
                             <tr>
                                 <th>Descripcion del movimiento</th>
-                                <th>Cantidad</th>
+                                <th>Cantidad de la transacción</th>
                                 <th>Fecha</th>
                                 <th>Tipo de movimiento</th>
                                 <th>Tipo de transacción</th>
