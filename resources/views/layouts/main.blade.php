@@ -47,6 +47,28 @@
         }"></app-settings>
 </div>
 
+<script>
+    $(document).ready(function() {
+        // Inicializar Select2 si es necesario
+        $('select').select2({
+            placeholder: function() {
+                $(this).data('placeholder');
+            },
+            allowClear: true,
+            language: {
+                noResults: function() {
+                    return "No se encontraron resultados";
+                }
+            }
+        });
+
+        // Deshabilitar el botón de envío después de hacer clic
+        $('form').on('submit', function() {
+            $(this).find('button[type="submit"]').prop('disabled', true);
+        });
+    });
+</script>
+
 <script src="{{ asset('assets/vendor/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/popper.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap.min.js') }}"></script>
