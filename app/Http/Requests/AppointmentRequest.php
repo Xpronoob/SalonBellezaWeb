@@ -38,20 +38,22 @@ class AppointmentRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'location.required' => 'La locación es requerida',
+            'location.required' => 'La locación es requerida.',
             'location.max' => 'La locación no puede tener más de :max caracteres.',
 
-            'appointment_date.required' => 'La fecha es requerida',
+            'appointment_date.required' => 'La fecha es requerida.',
 
-            'stylist.required' => 'El nombre del estilista es requerido',
+            'stylist.required' => 'El nombre del estilista es requerido.',
             'stylist.max' => 'El nombre del estilista no puede tener más de :max caracteres.',
 
-            'description.required' => 'La descripción es requerida',
+            'description.required' => 'La descripción es requerida.',
             'description.max' => 'La descripción no puede tener más de :max caracteres.',
 
-            'cost.required' => 'El costo es requerido',
+            'cost.required' => 'El costo es requerido.',
             'cost.numeric' => 'La cantidad debe ser un número.',
-            'id_user.required' => 'El nombre es requerido',
+            'cost.min' => 'La cantidad debe ser mayor o igual a 0.',
+
+            'id_user.required' => 'El nombre es requerido.',
 
 
         ];
