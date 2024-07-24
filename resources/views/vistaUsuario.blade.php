@@ -193,7 +193,7 @@
         <section id="about" class="about">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Nosotros:</h2>
+                    <h2 id="nosotros">Nosotros:</h2>
                 </div>
                 <div class="row content">
                     <div class="col-lg-6">
@@ -233,7 +233,7 @@
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
                         <div class="content">
-                            <h3>¿Por qué nosotros <strong>somos tu mejor opción?</strong></h3>
+                            <h3 id="preguntas">¿Por qué nosotros <strong>somos tu mejor opción?</strong></h3>
                             <p>
                                 Nosotros tenemos productos de calidad y trabajamos solo con marcas orginales. Además,
                                 ofrecemos horarios y trabajamos en fechas que normalmente no trabajan los demás salones.
@@ -312,7 +312,7 @@
                             alt="Servicios del Salón">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3 class="text-center" style="color:black">Alguno de nuestros servicios</h3>
+                        <h3 id="bienestar" class="text-center" style="color:black">Alguno de nuestros servicios</h3>
                         <p class="fst-italic">
                             En Utopía Beauty Salón, nos especializamos en una variedad de servicios diseñados para
                             realzar tu belleza y mejorar tu bienestar.
@@ -347,49 +347,32 @@
 
         <!-- Solo mostrar la sección si hay servicios disponibles -->
         <div class="section-title mt-4">
-            <h2>Nuestros Servicios:</h2>
+            <h2 id="servicios">Nuestros Servicios:</h2>
         </div>
         @if ($services->isNotEmpty())
-            <!-- ======= Skills Section ======= -->
-            <section id="services" class="skills">
+            <!-- ======= Services Section ======= -->
+            <section id="services" class="services">
                 <div class="container" data-aos="fade-up">
                     <div class="row">
                         @foreach ($services as $service)
-                            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                                <h3 class="" style="color:black">{{ $service->title }}</h3>
-                                <p class="fst-italic">
-                                    {{ $service->description }}
-                                </p>
-
-                                <img src="{{ asset($service->image) }}" class="img-fluid"
-                                    alt="{{ $service->title }}" style="max-width: 300px">
-
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </section><!-- End Skills Section -->
-        @endif
-
-        {{-- @if ($services->isNotEmpty())
-            <!-- ======= Skills Section ======= -->
-            <section id="services" class="skills">
-                <div class="container" data-aos="fade-up">
-                    <div class="row">
-                        @foreach ($services as $service)
-                            <div class="card" style="width: 18rem;"><img class="card-img-top"
-                                    src="{{ $service->image }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $service->title }}</h5>
-                                    <p class="card-text">{{ $service->description }}</p><a href="#"
-                                        class="btn btn-primary">Go somewhere</a>
+                            <div class="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch" data-aos="fade-left"
+                                data-aos-delay="100">
+                                <div class="card shadow-sm border-0 h-100">
+                                    <img src="{{ asset($service->image) }}" class="card-img-top img-fluid"
+                                        alt="{{ $service->title }}" style="max-height: 200px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <h3 class="card-title" style="color: black;">{{ $service->title }}</h3>
+                                        <p class="card-text fst-italic">
+                                            {{ $service->description }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
-            </section><!-- End Skills Section -->
-        @endif --}}
+            </section><!-- End Services Section -->
+        @endif
 
 
         <!-- ======= Cta Section ======= -->
@@ -420,7 +403,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Profesionales Utopía Beauty Salón</h2>
+                    <h2 id="equipo">Profesionales Utopía Beauty Salón</h2>
                     <p>Nuestro equipo en Utopía Beauty Salón está compuesto por profesionales altamente capacitados y
                         dedicados a brindarte la mejor experiencia de belleza y bienestar. Con un enfoque en la
                         excelencia y el liderazgo, estamos comprometidos a proporcionarte un servicio de calidad y
@@ -438,10 +421,10 @@
                                 <p>Encargado de la gestión general con enfoque en eficiencia y liderazgo. Siendo
                                     excelente en proceso asignado.</p>
                                 <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    {{-- <a href=""><i class="ri-twitter-fill"></i></a>
                                     <a href=""><i class="ri-facebook-fill"></i></a>
                                     <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -457,10 +440,10 @@
                                 <p>Experta en coloración. Su pasión es crear experiencias únicas con colores asombrosos.
                                 </p>
                                 <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    {{-- <a href=""><i class="ri-twitter-fill"></i></a>
                                     <a href=""><i class="ri-facebook-fill"></i></a>
                                     <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -475,10 +458,10 @@
                                 <span>Técnico de Informática | Publicidad RRSS</span>
                                 <p>Apasionado técnico de informática y experto en publicidad en redes sociales</p>
                                 <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    {{-- <a href=""><i class="ri-twitter-fill"></i></a>
                                     <a href=""><i class="ri-facebook-fill"></i></a>
                                     <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -494,10 +477,10 @@
                                 <p>Con más de 5 la industria de la belleza, Maria es una apasionada experta en peinados,
                                     maquillaje y masajes.</p>
                                 <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    {{-- <a href=""><i class="ri-twitter-fill"></i></a>
                                     <a href=""><i class="ri-facebook-fill"></i></a>
                                     <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a> --}}
                                 </div>
                             </div>
                         </div>
@@ -748,13 +731,26 @@
                         <h4>¿Te gustaría trabajar con nosotros?</h4>
                         <p>Nos puedes facilitar tu enlace de LinkedIn y nosotros te vamos a contactar en caso de
                             interesarnos tu perfil.</p>
-                        <form action="" method="">
-                            <input type="email" name="email"><input type="submit" value="Enviar">
+                        <form action="" method=""
+                            onsubmit="event.preventDefault(); showConfirmationMessage();">
+                            <input type="email" name="email" required>
+                            <input id="submit-button" type="submit" value="Enviar">
                         </form>
+                        <div id="confirmation-message" style="display: none; color: green; margin-top: 10px;">
+                            ¡Enviado correctamente! Nos pondremos en contacto contigo pronto.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            function showConfirmationMessage() {
+                document.getElementById('confirmation-message').style.display = 'block';
+                document.getElementById('submit-button').disabled = true;
+            }
+        </script>
+
 
         <div id="footer-top" class="footer-top">
             <div class="container">
@@ -775,17 +771,17 @@
                         <h4>Accesos Rápidos:</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Principal</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Horario</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Ubicación</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#nosotros">Nosotros</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#preguntas">Preguntas</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Información Extra</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Historia</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Honores</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Políticas</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#bienestar">Bienestar y belleza</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#servicios">Servicios</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#equipo">Equipo de trabajo</a></li>
                             <!--<li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>-->
